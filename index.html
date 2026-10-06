@@ -5,42 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الرئيسية | مكتبة الفيزياء</title>
 <style>
-:root{--bg:#07101d;--panel:#0e1a2a;--panel2:#122237;--text:#eef7ff;--muted:#9eb0c4;--line:#1e334c;--a:#35c8ff;--b:#6675ff;--danger:#ff5470;--ok:#35d39a}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#153052 0,transparent 35%),var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}a{text-decoration:none;color:inherit}.top{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;background:#07101de8;backdrop-filter:blur(16px);z-index:5}.brand{display:flex;align-items:center;gap:10px;cursor:pointer}.brand>span{font-size:30px}.brand b{display:block;font-size:18px}.brand small{color:var(--muted)}nav{display:flex;gap:18px;color:var(--muted);align-items:center}nav a{cursor:pointer}nav a:hover{color:var(--a)}.theme{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:9px;cursor:pointer;color:var(--text)}.hero{max-width:1180px;margin:55px auto 30px;padding:50px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(135deg,#10243a,#0b1525);display:flex;justify-content:space-between;align-items:center;overflow:hidden}.hero h1{font-size:50px;margin:18px 0}.hero em{font-style:normal;background:linear-gradient(90deg,var(--a),#8791ff);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;line-height:1.9}.orb{font-size:130px;filter:drop-shadow(0 0 35px #35c8ff66)}.pill{display:inline-block;padding:7px 12px;border-radius:999px;background:#35c8ff15;border:1px solid #35c8ff40;color:var(--a);font-size:13px}.search{display:flex;gap:10px;margin-top:25px;max-width:650px}.search input,input,select,textarea{width:100%;background:#081322;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:13px;outline:none}.search button,.primary{border:0;border-radius:12px;background:linear-gradient(90deg,var(--a),var(--b));color:white;padding:12px 22px;font-weight:bold;cursor:pointer}.stats{max-width:1180px;margin:20px auto 50px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.stats div,.panel,.announcement{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.stats b{font-size:28px;display:block}.stats span{color:var(--muted)}.section,.page-head,.admin-grid,.files,.schedule{max-width:1180px;margin:35px auto}.section-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}.section-head span{color:var(--muted)}h2{margin:0 0 20px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{display:flex;align-items:center;gap:15px;padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:18px;transition:.2s;cursor:pointer}.card:hover{transform:translateY(-3px);border-color:#35c8ff66}.icon{font-size:30px}.card h3{margin:0 0 7px}.card small{color:var(--muted)}.card strong{margin-right:auto;color:var(--a)}.ann-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.announcement p{color:var(--muted);line-height:1.8}.page-head{padding:30px 0}.page-head h1{font-size:38px;margin:12px 0}.page-head p{color:var(--muted)}.filters{max-width:1180px;margin:0 auto 20px;display:flex;gap:8px;flex-wrap:wrap}.filters a{padding:9px 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--muted);cursor:pointer}.filters .active{color:var(--a);border-color:var(--a)}.mini{max-width:1180px;margin:20px auto}.file{display:flex;align-items:center;gap:15px;background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:16px;margin:10px 0}.pdf{background:#ff47571a;color:#ff7080;border:1px solid #ff475740;padding:12px;border-radius:10px;font-weight:bold}.fileinfo{flex:1}.fileinfo h3{margin:0 0 8px}.fileinfo span{color:var(--muted);font-size:12px;margin-left:10px}.actions{display:flex;gap:7px;align-items:center}.actions form{margin:0}.btn{border:0;border-radius:10px;padding:9px 12px;cursor:pointer;font-weight:bold;display:inline-block}.view{background:#35c8ff18;color:var(--a)}.download{background:#35d39a18;color:var(--ok)}.danger{background:#ff547018;color:#ff7187}.empty{text-align:center;padding:50px;color:var(--muted);background:var(--panel);border-radius:18px}.auth{min-height:70vh;display:grid;place-items:center}.authbox{width:min(430px,90%);background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:35px;text-align:center}.authbox>*{margin-bottom:15px}.authbox form{display:grid;gap:12px}.authbox .primary{padding:13px}.bigicon{font-size:45px}.admin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.panel h2{font-size:20px}.panel form{display:grid;gap:10px}.panel label{display:grid;gap:6px;color:var(--muted);font-size:13px}.uploadbox{border:1px dashed #35c8ff66;padding:18px;text-align:center;border-radius:14px;cursor:pointer}.uploadbox input{border:0}.panel hr{border:0;border-top:1px solid var(--line);margin:25px 0}.minirow{display:flex;justify-content:space-between;gap:15px;align-items:center;border-top:1px solid var(--line);padding:13px 0}.minirow small{display:block;color:var(--muted);margin-top:5px}.schedule{display:grid;gap:12px}.schedule article{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr 2fr 2fr auto;gap:10px;align-items:center}.schedule strong{color:var(--a)}.schedule small{color:var(--muted)}footer{text-align:center;color:var(--muted);padding:50px 20px}.flash{max-width:1180px;margin:15px auto;padding:12px;border-radius:12px;background:#35d39a18;color:var(--ok)}.flash.error{background:#ff547018;color:#ff7187}.sync-bar{max-width:1180px;margin:0 auto 25px;background:linear-gradient(135deg,#10243a,#0e1a2a);border:1px solid var(--a);border-radius:18px;padding:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63758b;--line:#d8e1ec}body.light .top{background:#ffffffdd}body.light input,body.light select,body.light textarea{background:#f7faff;color:#102035}@media(max-width:800px){.top{height:auto;padding:15px 4%;flex-wrap:wrap;gap:12px}nav{order:3;width:100%;overflow:auto}.hero{margin:20px 4%;padding:28px;display:block}.hero h1{font-size:36px}.orb{display:none}.section,.page-head,.files,.schedule,.admin-grid,.sync-bar{margin-left:4%;margin-right:4%}.grid,.admin-grid,.ann-grid,.stats{grid-template-columns:1fr}.stats{margin-left:4%;margin-right:4%}.file{align-items:flex-start;flex-wrap:wrap}.actions{width:100%}.actions .btn{flex:1;text-align:center}.schedule article{grid-template-columns:1fr 1fr}.schedule article span,.schedule article small{grid-column:1/-1}}
+:root{--bg:#07101d;--panel:#0e1a2a;--panel2:#122237;--text:#eef7ff;--muted:#9eb0c4;--line:#1e334c;--a:#35c8ff;--b:#6675ff;--danger:#ff5470;--ok:#35d39a;--warn:#ffb142;--font-scale:1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#153052 0,transparent 35%),var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh;font-size:calc(16px * var(--font-scale))}a{text-decoration:none;color:inherit}
+.top{min-height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:10px 4%;position:sticky;top:0;background:#07101de8;backdrop-filter:blur(16px);z-index:20;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer}.brand>span{font-size:30px}.brand b{display:block;font-size:18px}.brand small{color:var(--muted)}
+nav{display:flex;gap:14px;color:var(--muted);align-items:center;flex-wrap:wrap}nav a{cursor:pointer;font-size:14px;padding:6px 8px;border-radius:8px;transition:.2s}nav a:hover,nav a.active-nav{color:var(--a);background:#35c8ff12}
+.top-tools{display:flex;gap:8px;align-items:center}
+.theme{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 11px;cursor:pointer;color:var(--text);font-weight:bold}
+.ticker{background:linear-gradient(90deg,#1e3a8a,#0e1a2a);border-bottom:1px solid var(--line);padding:9px 5%;color:var(--a);font-size:14px;display:flex;align-items:center;gap:10px}
+.ticker b{background:var(--danger);color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;white-space:nowrap}
+.countdown-bar{max-width:1180px;margin:20px auto 0;padding:16px 24px;border-radius:18px;background:linear-gradient(135deg,#162c46,#0e1a2a);border:1px solid #35c8ff55;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.cd-boxes{display:flex;gap:10px}.cd-box{background:#07101d;border:1px solid var(--line);border-radius:12px;padding:8px 14px;text-align:center;min-width:65px}.cd-box b{display:block;font-size:20px;color:var(--a)}.cd-box small{font-size:11px;color:var(--muted)}
+.hero{max-width:1180px;margin:30px auto;padding:45px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(135deg,#10243a,#0b1525);display:flex;justify-content:space-between;align-items:center;overflow:hidden}
+.hero h1{font-size:46px;margin:18px 0}.hero em{font-style:normal;background:linear-gradient(90deg,var(--a),#8791ff);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;line-height:1.9}.orb{font-size:120px;filter:drop-shadow(0 0 35px #35c8ff66)}
+.pill{display:inline-block;padding:7px 12px;border-radius:999px;background:#35c8ff15;border:1px solid #35c8ff40;color:var(--a);font-size:13px}
+.badge-new{background:#ff547025;color:#ff7187;border:1px solid #ff547066;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:bold;margin-right:6px}
+.badge-vid{background:#6675ff25;color:#9aa4ff;border:1px solid #6675ff66;padding:12px;border-radius:10px;font-weight:bold}
+.search{display:flex;gap:10px;margin-top:25px;max-width:650px}.search input,input,select,textarea{width:100%;background:#081322;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px;outline:none;font-family:inherit}
+.search button,.primary{border:0;border-radius:12px;background:linear-gradient(90deg,var(--a),var(--b));color:white;padding:12px 22px;font-weight:bold;cursor:pointer}
+.stats{max-width:1180px;margin:20px auto 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.stats div,.panel,.announcement{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.stats b{font-size:28px;display:block;color:var(--a)}.stats span{color:var(--muted)}
+.section,.page-head,.admin-grid,.files,.schedule{max-width:1180px;margin:35px auto}.section-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}.section-head span{color:var(--muted)}h2{margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{display:flex;align-items:center;gap:15px;padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:18px;transition:.2s;cursor:pointer}.card:hover{transform:translateY(-3px);border-color:#35c8ff66}.icon{font-size:30px}.card h3{margin:0 0 7px}.card small{color:var(--muted)}.card strong{margin-right:auto;color:var(--a)}
+.ann-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.announcement p{color:var(--muted);line-height:1.8;margin:8px 0 0}
+.page-head{padding:20px 0}.page-head h1{font-size:36px;margin:12px 0}.page-head p{color:var(--muted)}
+.filters{max-width:1180px;margin:0 auto 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.filters a{padding:9px 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--muted);cursor:pointer}.filters .active{color:var(--a);border-color:var(--a)}
+.mini{max-width:1180px;margin:20px auto;display:flex;gap:10px;flex-wrap:wrap}
+.file{display:flex;align-items:center;gap:15px;background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:16px;margin:10px 0}
+.pdf{background:#ff47571a;color:#ff7080;border:1px solid #ff475740;padding:12px;border-radius:10px;font-weight:bold}
+.fileinfo{flex:1}.fileinfo h3{margin:0 0 8px;display:flex;align-items:center;flex-wrap:wrap;gap:6px}.fileinfo span{color:var(--muted);font-size:12px;margin-left:12px}
+.actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:8px 12px;cursor:pointer;font-weight:bold;display:inline-flex;align-items:center;gap:5px;font-size:13px}
+.view{background:#35c8ff18;color:var(--a)}.download{background:#35d39a18;color:var(--ok)}.danger{background:#ff547018;color:#ff7187}.warn-btn{background:#ffb14220;color:var(--warn)}
+.star-btn{background:transparent;border:1px solid var(--line);color:var(--muted);font-size:16px;padding:6px 10px;border-radius:10px;cursor:pointer}.star-btn.fav{color:#ffd32a;border-color:#ffd32a66;background:#ffd32a15}
+.empty{text-align:center;padding:50px;color:var(--muted);background:var(--panel);border-radius:18px}
+.auth{min-height:70vh;display:grid;place-items:center}.authbox{width:min(430px,90%);background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:35px;text-align:center}.authbox>*{margin-bottom:15px}.authbox form{display:grid;gap:12px}.authbox .primary{padding:13px}.bigicon{font-size:45px}
+.admin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.panel h2{font-size:19px}.panel form{display:grid;gap:10px}.panel label{display:grid;gap:6px;color:var(--muted);font-size:13px}
+.uploadbox{border:1px dashed #35c8ff66;padding:16px;text-align:center;border-radius:14px;cursor:pointer}.uploadbox input{border:0}.panel hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+.minirow{display:flex;justify-content:space-between;gap:12px;align-items:center;border-top:1px solid var(--line);padding:12px 0;flex-wrap:wrap}.minirow small{display:block;color:var(--muted);margin-top:4px}
+.schedule{display:grid;gap:12px}.schedule article{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr 2fr 1.5fr auto;gap:10px;align-items:center}.schedule strong{color:var(--a)}.schedule small{color:var(--muted)}
+.sync-bar{max-width:1180px;margin:0 auto 25px;background:linear-gradient(135deg,#10243a,#0e1a2a);border:1px solid var(--a);border-radius:18px;padding:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.82);backdrop-filter:blur(6px);z-index:100;display:none;place-items:center;padding:15px}
+.modal-backdrop.open{display:grid}
+.modal-box{width:min(1000px,96vw);height:86vh;background:var(--panel);border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;overflow:hidden}
+.modal-head{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--panel2)}
+.modal-body{flex:1;background:#000;position:relative}.modal-body iframe{width:100%;height:100%;border:0}
+.fab-tg{position:fixed;bottom:22px;left:22px;background:linear-gradient(135deg,#0088cc,#35c8ff);color:#fff;padding:12px 18px;border-radius:999px;font-weight:bold;box-shadow:0 8px 25px rgba(53,200,255,0.35);z-index:40;display:flex;align-items:center;gap:8px;cursor:pointer;border:0}
+.const-table{width:100%;border-collapse:collapse}.const-table th,.const-table td{padding:12px;border-bottom:1px solid var(--line);text-align:right}.const-table th{color:var(--a);background:var(--panel2)}
+.quiz-opt{display:block;width:100%;text-align:right;padding:12px 16px;margin:8px 0;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--text);cursor:pointer;font-size:15px}.quiz-opt:hover{border-color:var(--a)}.quiz-opt.correct{background:#35d39a25;border-color:var(--ok);color:var(--ok)}.quiz-opt.wrong{background:#ff547025;border-color:var(--danger);color:#ff7187}
+footer{text-align:center;color:var(--muted);padding:50px 20px;border-top:1px solid var(--line);margin-top:50px}
+.flash{max-width:1180px;margin:15px auto;padding:14px 18px;border-radius:12px;background:#35d39a18;color:var(--ok);border:1px solid #35d39a44}.flash.error{background:#ff547018;color:#ff7187;border-color:#ff547044}
+body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63758b;--line:#d8e1ec}body.light .top{background:#ffffffdd}body.light input,body.light select,body.light textarea{background:#f7faff;color:#102035}body.light .hero,body.light .countdown-bar,body.light .sync-bar{background:linear-gradient(135deg,#e3effd,#ffffff)}body.light .cd-box{background:#f7faff}
+@media(max-width:850px){.hero{margin:20px 4%;padding:28px;display:block}.hero h1{font-size:34px}.orb{display:none}.section,.page-head,.files,.schedule,.admin-grid,.sync-bar,.countdown-bar{margin-left:4%;margin-right:4%}.grid,.admin-grid,.ann-grid,.stats{grid-template-columns:1fr}.stats{margin-left:4%;margin-right:4%}.file{align-items:flex-start;flex-wrap:wrap}.actions{width:100%}.actions .btn{flex:1;justify-content:center}.schedule article{grid-template-columns:1fr 1fr}.schedule article span,.schedule article small{grid-column:1/-1}}
 </style>
 </head>
 <body>
+
+<div id="urgentTicker" class="ticker" style="display:none"></div>
 
 <header class="top">
   <a class="brand" onclick="navigate('home')">
     <span>⚛️</span>
     <div>
-      <b>مكتبة الفيزياء</b>
-      <small>المرحلة الرابعة</small>
+      <b id="brandTitle">مكتبة الفيزياء</b>
+      <small id="brandSub">المرحلة الرابعة</small>
     </div>
   </a>
   <nav id="mainNav">
     <a onclick="navigate('home')">الرئيسية</a>
-    <a onclick="navigate('schedule')">الجدول الدراسي</a>
-    <a id="adminNavLink" onclick="navigate(isAdmin() ? 'admin' : 'login')">لوحة الإدارة</a>
+    <a onclick="navigate('favorites')">⭐ المفضلة (<span id="favCount">0</span>)</a>
+    <a onclick="navigate('schedule')">📅 الجدول</a>
+    <a onclick="navigate('tools')">🧰 أدوات الفيزياء</a>
+    <a onclick="navigate('graduation')">🎓 التخرج والتطبيق</a>
+    <a onclick="navigate('quiz')">📝 اختبر نفسك ومفكرتي</a>
+    <a onclick="navigate('request')">📩 اطلب ملزمة</a>
+    <a id="adminNavLink" onclick="navigate(isAdmin() ? 'admin' : 'login')">⚙️ الإدارة</a>
     <a id="logoutNavLink" style="display:none;color:var(--danger)" onclick="logoutAdmin()">خروج</a>
   </nav>
-  <button class="theme" onclick="toggleTheme()" title="تغيير المظهر">🌓</button>
+  <div class="top-tools">
+    <button class="theme" onclick="changeFontSize(0.08)" title="تكبير الخط">A+</button>
+    <button class="theme" onclick="changeFontSize(-0.08)" title="تصغير الخط">A-</button>
+    <button class="theme" onclick="toggleTheme()" title="تغيير المظهر">🌓</button>
+  </div>
 </header>
 
 <div id="flashContainer"></div>
 <main id="appContent"></main>
 
-<footer>
-  مكتبة فيزياء المرحلة الرابعة - النسخة الاحترافية © 2026
-</footer>
+<div id="viewerModal" class="modal-backdrop" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <div class="modal-head">
+      <b id="modalTitle">عرض المحاضرة</b>
+      <div style="display:flex;gap:8px">
+        <a id="modalExternalBtn" target="_blank" class="btn view">فتح في نافذة جديدة ↗</a>
+        <button class="btn danger" onclick="closeModal()">إغلاق ✖</button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<button class="fab-tg" onclick="openTelegramChannel()">
+  <span>✈️</span> <span id="fabText">قناة المرحلة</span>
+</button>
+
+<footer id="siteFooter"></footer>
 
 <script>
 /* === START_SHARED_DATA === */
 const SHARED_DATA = {
   files: [],
   announcements: [],
-  schedule: []
+  schedule: [],
+  quizzes: [
+    { id: 1, subject: "ميكانيك الكم", q: "ما هي المعادلة الأساسية التي تصف تطور الدالة الموجية مع الزمن في ميكانيك الكم؟", options: ["معادلة شرودنغر", "معادلة ماكسويل", "معادلة بولتزمان", "قانون كولوم"], ans: 0 },
+    { id: 2, subject: "الفيزياء النووية", q: "تُقاس طاقة الربط النووية عادةً بوحدة:", options: ["الواط (Watt)", "الميغا إلكترون فولت (MeV)", "التسلا (Tesla)", "الفاراد (Farad)"], ans: 1 },
+    { id: 3, subject: "الليزر", q: "الشرط الأساسي لتوليد أشعة الليزر داخل الوسط الفعال هو تحقيق:", options: ["التأين الحراري", "التوزيع المعكوس (Population Inversion)", "الانكسار الكلي", "الحيود البلوري"], ans: 1 },
+    { id: 4, subject: "فيزياء الحالة الصلبة", q: "تُستخدم ظاهرة حيود الأشعة السينية (قانون براغ) في دراسة:", options: ["التركيب البلوري للمواد الصلبة", "انشطار النواة", "طيف ذرة الهيدروجين", "المجال المغناطيسي الأرضي"], ans: 0 }
+  ],
+  resources: [
+    { id: 101, type: "بحث تخرج", title: "قالب كتابة بحث التخرج الرسمي - قسم الفيزياء", desc: "يتضمن ترتيب الواجهة، الإهداء، الملخص، الفصول، وطريقة كتابة المصادر.", url: "#" },
+    { id: 102, type: "التربية العملية", title: "نموذج الخطة اليومية والسنوية للمطبقين (فيزياء)", desc: "نماذج خطط تدريسية جاهزة لطلبة المرحلة الرابعة في فترة التطبيق بالمدارس.", url: "#" }
+  ],
+  settings: {
+    siteTitle: "مكتبة الفيزياء",
+    siteSub: "المرحلة الرابعة • قسم الفيزياء",
+    footerText: "مكتبة فيزياء المرحلة الرابعة - النسخة الاحترافية الشاملة © 2026",
+    urgentText: "مرحباً بكم في البوابة الرقمية لقسم الفيزياء - المرحلة الرابعة! جميع الملازم والمحاضرات محدثة باستمرار.",
+    examTitle: "العد التنازلي للامتحانات القادمة",
+    examDate: "2026-12-20T09:00",
+    tgChannel: "https://t.me/",
+    adminUser: "admin",
+    adminPass: "physics2026"
+  }
 };
 /* === END_SHARED_DATA === */
 
@@ -56,40 +152,49 @@ const SUBJECTS = [
   ["teaching", "التربية التعليمية", "👨‍🏫"]
 ];
 
-const CATEGORIES = ["ملازم", "محاضرات", "ملخصات", "أسئلة وامتحانات", "مصادر", "أخرى"];
+const CATEGORIES = ["ملازم", "محاضرات", "ملخصات", "أسئلة وامتحانات", "فيديوهات يوتيوب", "مصادر", "أخرى"];
 const SUBJECT_MAP = {};
 SUBJECTS.forEach(s => SUBJECT_MAP[s[0]] = s[1]);
+
+const PHYSICS_CONSTANTS = [
+  { name: "ثابت بلانك (h)", symbol: "h", val: "6.62607015 × 10⁻³⁴", unit: "J·s" },
+  { name: "ثابت بلانك المخفض (ℏ)", symbol: "ℏ", val: "1.054571817 × 10⁻³⁴", unit: "J·s" },
+  { name: "سرعة الضوء في الفراغ (c)", symbol: "c", val: "2.99792458 × 10⁸", unit: "m/s" },
+  { name: "شحنة الإلكترون (e)", symbol: "e", val: "1.602176634 × 10⁻¹⁹", unit: "C" },
+  { name: "كتلة الإلكترون السكونية (mₑ)", symbol: "mₑ", val: "9.1093837 × 10⁻³¹", unit: "kg" },
+  { name: "كتلة البروتون (mₚ)", symbol: "mₚ", val: "1.6726219 × 10⁻²⁷", unit: "kg" },
+  { name: "كتلة النيوترون (mₙ)", symbol: "mₙ", val: "1.67492749 × 10⁻²⁷", unit: "kg" },
+  { name: "وحدة الكتل الذرية (u)", symbol: "u", val: "931.494", unit: "MeV/c²" },
+  { name: "ثابت بولتزمان (k_B)", symbol: "k_B", val: "1.380649 × 10⁻²³", unit: "J/K" },
+  { name: "عدد أفوغادرو (N_A)", symbol: "N_A", val: "6.02214076 × 10²³", unit: "mol⁻¹" },
+  { name: "سماحية الفراغ الكهربائية (ε₀)", symbol: "ε₀", val: "8.85418781 × 10⁻¹²", unit: "F/m" },
+  { name: "ثابت ريدبيرغ (R_∞)", symbol: "R_∞", val: "1.097373156 × 10⁷", unit: "m⁻¹" }
+];
 
 let store = {
   files: JSON.parse(localStorage.getItem("phys_files") || "null") || SHARED_DATA.files,
   announcements: JSON.parse(localStorage.getItem("phys_announcements") || "null") || SHARED_DATA.announcements,
-  schedule: JSON.parse(localStorage.getItem("phys_schedule") || "null") || SHARED_DATA.schedule
+  schedule: JSON.parse(localStorage.getItem("phys_schedule") || "null") || SHARED_DATA.schedule,
+  quizzes: JSON.parse(localStorage.getItem("phys_quizzes") || "null") || SHARED_DATA.quizzes,
+  resources: JSON.parse(localStorage.getItem("phys_resources") || "null") || SHARED_DATA.resources,
+  settings: Object.assign({}, SHARED_DATA.settings, JSON.parse(localStorage.getItem("phys_settings") || "{}"))
 };
 
-// إذا كانت البيانات المدمجة في الكود أحدث، ندمجها للطلاب تلقائياً
-function mergeSharedData(remote) {
-  if (!remote) return;
-  if (Array.isArray(remote.files) && remote.files.length > 0 && !isAdmin()) {
-    store.files = remote.files;
-  }
-  if (Array.isArray(remote.announcements) && remote.announcements.length > 0 && !isAdmin()) {
-    store.announcements = remote.announcements;
-  }
-  if (Array.isArray(remote.schedule) && remote.schedule.length > 0 && !isAdmin()) {
-    store.schedule = remote.schedule;
-  }
-}
-mergeSharedData(SHARED_DATA);
+let favorites = JSON.parse(localStorage.getItem("phys_favs") || "[]");
+let todos = JSON.parse(localStorage.getItem("phys_todos") || "[]");
 
-// جلب التحديثات المباشرة من ملف data.json على GitHub إن وجد
 fetch("data.json?t=" + Date.now())
   .then(r => r.ok ? r.json() : null)
   .then(data => {
     if (data) {
-      store.files = data.files || store.files;
-      store.announcements = data.announcements || store.announcements;
-      store.schedule = data.schedule || store.schedule;
+      if (data.files) store.files = data.files;
+      if (data.announcements) store.announcements = data.announcements;
+      if (data.schedule) store.schedule = data.schedule;
+      if (data.quizzes) store.quizzes = data.quizzes;
+      if (data.resources) store.resources = data.resources;
+      if (data.settings) store.settings = Object.assign({}, store.settings, data.settings);
       saveLocalStore();
+      applySiteBranding();
       render();
     }
   })
@@ -99,6 +204,30 @@ function saveLocalStore() {
   localStorage.setItem("phys_files", JSON.stringify(store.files));
   localStorage.setItem("phys_announcements", JSON.stringify(store.announcements));
   localStorage.setItem("phys_schedule", JSON.stringify(store.schedule));
+  localStorage.setItem("phys_quizzes", JSON.stringify(store.quizzes));
+  localStorage.setItem("phys_resources", JSON.stringify(store.resources));
+  localStorage.setItem("phys_settings", JSON.stringify(store.settings));
+  applySiteBranding();
+}
+
+function applySiteBranding() {
+  const s = store.settings || SHARED_DATA.settings;
+  document.getElementById("brandTitle").textContent = s.siteTitle || "مكتبة الفيزياء";
+  document.getElementById("brandSub").textContent = s.siteSub || "المرحلة الرابعة";
+  document.getElementById("siteFooter").textContent = s.footerText || "";
+  document.getElementById("favCount").textContent = favorites.length;
+  const ticker = document.getElementById("urgentTicker");
+  if (s.urgentText && s.urgentText.trim()) {
+    ticker.style.display = "flex";
+    ticker.innerHTML = `<b>📢 تبليغ</b> <span>${escapeHtml(s.urgentText)}</span>`;
+  } else {
+    ticker.style.display = "none";
+  }
+}
+
+function openTelegramChannel() {
+  const url = (store.settings && store.settings.tgChannel) || "https://t.me/";
+  window.open(url, "_blank");
 }
 
 function isAdmin() {
@@ -115,17 +244,54 @@ function toggleTheme() {
   document.body.classList.toggle("light");
   localStorage.setItem("phys_theme", document.body.classList.contains("light") ? "light" : "dark");
 }
-if (localStorage.getItem("phys_theme") === "light") {
-  document.body.classList.add("light");
+if (localStorage.getItem("phys_theme") === "light") document.body.classList.add("light");
+
+let fontScale = parseFloat(localStorage.getItem("phys_font_scale") || "1");
+document.documentElement.style.setProperty("--font-scale", fontScale);
+function changeFontSize(delta) {
+  fontScale = Math.min(1.3, Math.max(0.85, +(fontScale + delta).toFixed(2)));
+  document.documentElement.style.setProperty("--font-scale", fontScale);
+  localStorage.setItem("phys_font_scale", fontScale);
 }
 
-function updateNav() {
-  document.getElementById("logoutNavLink").style.display = isAdmin() ? "inline" : "none";
+function isNewFile(createdAt) {
+  if (!createdAt) return false;
+  return (Date.now() - createdAt) < (3 * 24 * 60 * 60 * 1000);
 }
 
-// تحويل روابط Google Drive إلى روابط عرض وتحميل مباشر
+function toggleFav(id) {
+  const idx = favorites.indexOf(id);
+  if (idx === -1) {
+    favorites.push(id);
+    showFlash("⭐ تمت إضافة الملزمة إلى المفضلة");
+  } else {
+    favorites.splice(idx, 1);
+  }
+  localStorage.setItem("phys_favs", JSON.stringify(favorites));
+  document.getElementById("favCount").textContent = favorites.length;
+  render();
+}
+
+function shareFile(title, url) {
+  const shareUrl = url && url.startsWith("http") ? url : window.location.href;
+  if (navigator.share) {
+    navigator.share({ title, text: `ملزمة/محاضرة: ${title}`, url: shareUrl }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(`${title} - ${shareUrl}`);
+    showFlash("🔗 تم نسخ رابط المشاركة للحافظة");
+  }
+}
+
+function getYoutubeEmbed(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : null;
+}
+
 function getViewUrl(url) {
   if (!url) return "#";
+  const yt = getYoutubeEmbed(url);
+  if (yt) return yt;
   const driveMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
   if (driveMatch) return `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
   return url;
@@ -138,16 +304,89 @@ function getDownloadUrl(url) {
   return url;
 }
 
-let currentState = { page: "home", slug: "", category: "", q: "" };
+function openInModal(id) {
+  const f = store.files.find(x => x.id === id);
+  if (!f) return;
+  countDownload(id, false);
+  const viewUrl = getViewUrl(f.url);
+  document.getElementById("modalTitle").textContent = f.title;
+  document.getElementById("modalExternalBtn").href = f.url || "#";
+  document.getElementById("modalBody").innerHTML = `<iframe src="${viewUrl}" allowfullscreen></iframe>`;
+  document.getElementById("viewerModal").classList.add("open");
+}
+
+function closeModal() {
+  document.getElementById("viewerModal").classList.remove("open");
+  document.getElementById("modalBody").innerHTML = "";
+}
+
+function renderFileCard(f) {
+  const isFav = favorites.includes(f.id);
+  const isVid = f.category === "فيديوهات يوتيوب" || getYoutubeEmbed(f.url);
+  const newBadge = isNewFile(f.created_at || f.id) ? `<span class="badge-new">جديد 🔥</span>` : "";
+  return `
+    <article class="file">
+      <div class="${isVid ? 'badge-vid' : 'pdf'}">${isVid ? '▶ فيديو' : 'PDF'}</div>
+      <div class="fileinfo">
+        <h3>${escapeHtml(f.title)} ${newBadge}</h3>
+        <div>
+          <span>📚 ${SUBJECT_MAP[f.subject] || f.subject}</span>
+          <span>🏷️ ${escapeHtml(f.category)}</span>
+          ${f.teacher ? `<span>👨‍🏫 ${escapeHtml(f.teacher)}</span>` : ""}
+          <span>⬇ ${f.downloads || 0}</span>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="star-btn ${isFav ? 'fav' : ''}" onclick="toggleFav(${f.id})" title="حفظ بالمفضلة">★</button>
+        <button class="btn view" onclick="openInModal(${f.id})">👁 عرض بالموقع</button>
+        <a class="btn download" target="_blank" href="${getDownloadUrl(f.url)}" download="${escapeHtml(f.original_name || f.title + '.pdf')}" onclick="countDownload(${f.id}, true)">⬇ تحميل</a>
+        <button class="btn warn-btn" onclick="shareFile('${escapeHtml(f.title)}', '${escapeHtml(f.url || '')}')">🔗 مشاركة</button>
+        ${isAdmin() ? `<button class="btn view" onclick="editFilePrompt(${f.id})">✏️ تعديل</button><button class="btn danger" onclick="deleteFile(${f.id})">🗑 حذف</button>` : ""}
+      </div>
+    </article>
+  `;
+}
+
+let currentState = { page: "home", slug: "", category: "", q: "", sort: "newest" };
 
 function navigate(page, params = {}) {
-  currentState = { page, slug: params.slug || "", category: params.category || "", q: params.q || "" };
-  updateNav();
+  currentState = {
+    page,
+    slug: params.slug || "",
+    category: params.category || "",
+    q: params.q || "",
+    sort: params.sort || "newest"
+  };
+  document.getElementById("logoutNavLink").style.display = isAdmin() ? "inline" : "none";
   render();
   window.scrollTo(0, 0);
 }
 
+function getCountdownHtml() {
+  const s = store.settings || {};
+  if (!s.examDate) return "";
+  const diff = new Date(s.examDate).getTime() - Date.now();
+  if (diff <= 0) return "";
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const mins = Math.floor((diff / (1000 * 60)) % 60);
+  return `
+    <div class="countdown-bar">
+      <div>
+        <span class="pill">⏳ تذكير المواعيد</span>
+        <h3 style="margin:6px 0 0">${escapeHtml(s.examTitle || "العد التنازلي للامتحانات")}</h3>
+      </div>
+      <div class="cd-boxes">
+        <div class="cd-box"><b>${days}</b><small>يوم</small></div>
+        <div class="cd-box"><b>${hours}</b><small>ساعة</small></div>
+        <div class="cd-box"><b>${mins}</b><small>دقيقة</small></div>
+      </div>
+    </div>
+  `;
+}
+
 function render() {
+  applySiteBranding();
   const app = document.getElementById("appContent");
   const files = store.files;
   const announcements = store.announcements;
@@ -156,31 +395,32 @@ function render() {
   const downloads = files.reduce((sum, f) => sum + (f.downloads || 0), 0);
 
   if (currentState.page === "home") {
-    document.title = "الرئيسية | مكتبة الفيزياء";
+    document.title = `الرئيسية | ${store.settings.siteTitle}`;
     const counts = {};
     files.forEach(f => { counts[f.subject] = (counts[f.subject] || 0) + 1; });
 
     let annHtml = "";
     if (announcements.length > 0) {
-      annHtml = `<section class="section"><div class="section-head"><h2>📢 آخر الإعلانات</h2></div><div class="ann-grid">` +
-        announcements.slice(0, 5).map(a => `<article class="announcement"><b>${escapeHtml(a.title)}</b><p>${escapeHtml(a.body)}</p></article>`).join("") +
+      annHtml = `<section class="section"><div class="section-head"><h2>📢 آخر الإعلانات والتبليغات</h2></div><div class="ann-grid">` +
+        announcements.slice(0, 6).map(a => `<article class="announcement"><b>${escapeHtml(a.title)}</b><p>${escapeHtml(a.body)}</p></article>`).join("") +
         `</div></section>`;
     }
 
     const cardsHtml = SUBJECTS.map(([slug, name, icon]) => `
       <a class="card" onclick="navigate('subject', {slug: '${slug}'})">
         <span class="icon">${icon}</span>
-        <div><h3>${name}</h3><small>${counts[slug] || 0} ملف</small></div>
+        <div><h3>${name}</h3><small>${counts[slug] || 0} ملف ومحاضرة</small></div>
         <strong>←</strong>
       </a>
     `).join("");
 
     app.innerHTML = `
+      ${getCountdownHtml()}
       <section class="hero">
         <div>
-          <span class="pill">السنة الدراسية • المرحلة الرابعة</span>
+          <span class="pill">${escapeHtml(store.settings.siteSub || "السنة الدراسية • المرحلة الرابعة")}</span>
           <h1>كل ملفات الفيزياء<br><em>بمكان واحد</em></h1>
-          <p>ملازم، محاضرات، ملخصات، أسئلة وامتحانات ومصادر — مرتبة حسب المادة وسهلة الوصول.</p>
+          <p>ملازم، محاضرات، فيديوهات، ملخصات، أسئلة وامتحانات وأدوات فيزيائية — مرتبة حسب المادة وسهلة الوصول.</p>
           <form class="search" onsubmit="handleGlobalSearch(event)">
             <input id="homeSearchInput" name="q" placeholder="ابحث عن ملزمة أو محاضرة أو اسم مدرس...">
             <button type="submit">🔎 بحث</button>
@@ -189,13 +429,14 @@ function render() {
         <div class="orb">⚛</div>
       </section>
       <div class="stats">
-        <div><b>${total}</b><span>ملف</span></div>
-        <div><b>${downloads}</b><span>تحميل</span></div>
-        <div><b>9</b><span>مواد</span></div>
+        <div><b>${total}</b><span>ملف ومحاضرة</span></div>
+        <div><b>${downloads}</b><span>عملية تحميل</span></div>
+        <div><b>9</b><span>مواد دراسية</span></div>
+        <div><b>${favorites.length}</b><span>في مفضلتك ⭐</span></div>
       </div>
       ${annHtml}
       <section class="section">
-        <div class="section-head"><h2>📚 المواد الدراسية</h2><span>اختر المادة</span></div>
+        <div class="section-head"><h2>📚 المواد الدراسية</h2><span>اختر المادة لتصفح الملازم والفيديوهات</span></div>
         <div class="grid">${cardsHtml}</div>
       </section>
     `;
@@ -207,6 +448,7 @@ function render() {
     document.title = `${subjectName} | المكتبة`;
     const activeCat = currentState.category;
     const q = currentState.q;
+    const sort = currentState.sort || "newest";
 
     let filtered = files.filter(f => f.subject === slug);
     if (activeCat) filtered = filtered.filter(f => f.category === activeCat);
@@ -219,42 +461,47 @@ function render() {
       );
     }
 
-    const filtersHtml = `<a class="${!activeCat ? 'active' : ''}" onclick="navigate('subject', {slug: '${slug}', category: '', q: '${escapeHtml(q)}'})">الكل</a>` +
-      CATEGORIES.map(c => `<a class="${activeCat === c ? 'active' : ''}" onclick="navigate('subject', {slug: '${slug}', category: '${c}', q: '${escapeHtml(q)}'})">${c}</a>`).join("");
+    if (sort === "downloads") filtered.sort((a, b) => (b.downloads || 0) - (a.downloads || 0));
+    else if (sort === "teacher") filtered.sort((a, b) => (a.teacher || "").localeCompare(b.teacher || ""));
+    else filtered.sort((a, b) => (b.id || 0) - (a.id || 0));
 
-    const filesHtml = filtered.length > 0 ? filtered.map(f => `
-      <article class="file">
-        <div class="pdf">PDF</div>
-        <div class="fileinfo">
-          <h3>${escapeHtml(f.title)}</h3>
-          <div>
-            <span>${escapeHtml(f.category)}</span>
-            ${f.teacher ? `<span>👨‍🏫 ${escapeHtml(f.teacher)}</span>` : ""}
-            <span>⬇ ${f.downloads || 0}</span>
-          </div>
-        </div>
-        <div class="actions">
-          <a class="btn view" target="_blank" href="${getViewUrl(f.url)}" onclick="countDownload(${f.id}, false)">👁 عرض</a>
-          <a class="btn download" target="_blank" href="${getDownloadUrl(f.url)}" download="${escapeHtml(f.original_name || f.title + '.pdf')}" onclick="countDownload(${f.id}, true)">⬇ تحميل</a>
-          ${isAdmin() ? `<button class="btn danger" onclick="deleteFile(${f.id})">🗑 حذف</button>` : ""}
-        </div>
-      </article>
-    `).join("") : `<div class="empty">لا توجد ملفات هنا حالياً.</div>`;
+    const filtersHtml = `<a class="${!activeCat ? 'active' : ''}" onclick="navigate('subject', {slug: '${slug}', category: '', q: '${escapeHtml(q)}', sort: '${sort}'})">الكل</a>` +
+      CATEGORIES.map(c => `<a class="${activeCat === c ? 'active' : ''}" onclick="navigate('subject', {slug: '${slug}', category: '${c}', q: '${escapeHtml(q)}', sort: '${sort}'})">${c}</a>`).join("");
+
+    const filesHtml = filtered.length > 0 ? filtered.map(renderFileCard).join("") : `<div class="empty">لا توجد ملفات هنا حالياً.</div>`;
 
     app.innerHTML = `
       <section class="page-head">
         <div>
           <span class="pill">مادة دراسية</span>
           <h1>${subjectName}</h1>
-          <p>تصفح ملفات المادة أو ابحث داخلها.</p>
+          <p>تصفح ملفات المادة، الفيديوهات، أو ابحث داخلها.</p>
         </div>
       </section>
       <div class="filters">${filtersHtml}</div>
-      <form class="search mini" onsubmit="handleSubjectSearch(event, '${slug}', '${activeCat}')">
-        <input id="subjSearchInput" name="q" value="${escapeHtml(q)}" placeholder="بحث داخل المادة...">
-        <button type="submit">بحث</button>
+      <form class="mini" onsubmit="handleSubjectSearch(event, '${slug}', '${activeCat}')">
+        <input id="subjSearchInput" style="flex:2" name="q" value="${escapeHtml(q)}" placeholder="بحث داخل المادة أو اسم المدرس...">
+        <select id="subjSortSelect" style="flex:1" onchange="navigate('subject', {slug:'${slug}', category:'${activeCat}', q:document.getElementById('subjSearchInput').value, sort:this.value})">
+          <option value="newest" ${sort === 'newest' ? 'selected' : ''}>الترتيب: الأحدث أولاً</option>
+          <option value="downloads" ${sort === 'downloads' ? 'selected' : ''}>الترتيب: الأكثر تحميلاً</option>
+          <option value="teacher" ${sort === 'teacher' ? 'selected' : ''}>الترتيب: حسب المدرس</option>
+        </select>
+        <button type="submit" class="primary">بحث</button>
       </form>
       <div class="files">${filesHtml}</div>
+    `;
+  }
+
+  else if (currentState.page === "favorites") {
+    document.title = "المفضلة ⭐ | مكتبة الفيزياء";
+    const favFiles = files.filter(f => favorites.includes(f.id));
+    app.innerHTML = `
+      <section class="page-head">
+        <span class="pill">محفوظاتي السريعة</span>
+        <h1>⭐ الملازم والمحاضرات المفضلة</h1>
+        <p>جميع الملفات التي قمت بتمييزها بنجمة للرجوع إليها سريعاً وقت الامتحانات.</p>
+      </section>
+      <div class="files">${favFiles.length ? favFiles.map(renderFileCard).join("") : `<div class="empty">لم تقم بإضافة أي ملزمة إلى المفضلة بعد. اضغط على علامة (★) بجانب أي ملزمة لحفظها هنا.</div>`}</div>
     `;
   }
 
@@ -268,29 +515,12 @@ function render() {
       (f.original_name && f.original_name.toLowerCase().includes(ql))
     ) : [];
 
-    const filesHtml = results.length > 0 ? results.map(f => `
-      <article class="file">
-        <div class="pdf">PDF</div>
-        <div class="fileinfo">
-          <h3>${escapeHtml(f.title)}</h3>
-          <div>
-            <span>${SUBJECT_MAP[f.subject] || f.subject}</span>
-            <span>${escapeHtml(f.category)}</span>
-          </div>
-        </div>
-        <div class="actions">
-          <a class="btn view" target="_blank" href="${getViewUrl(f.url)}">👁 عرض</a>
-          <a class="btn download" target="_blank" href="${getDownloadUrl(f.url)}" download="${escapeHtml(f.original_name || f.title + '.pdf')}" onclick="countDownload(${f.id}, true)">⬇ تحميل</a>
-        </div>
-      </article>
-    `).join("") : `<div class="empty">لم نجد ملفات مطابقة.</div>`;
-
     app.innerHTML = `
       <section class="page-head">
         <h1>🔎 نتائج البحث</h1>
         <p>نتائج البحث عن: <b>${escapeHtml(q)}</b></p>
       </section>
-      <div class="files">${filesHtml}</div>
+      <div class="files">${results.length ? results.map(renderFileCard).join("") : `<div class="empty">لم نجد ملفات مطابقة.</div>`}</div>
     `;
   }
 
@@ -302,16 +532,189 @@ function render() {
         <strong>${escapeHtml(r.time)}</strong>
         <span>${escapeHtml(r.subject)}</span>
         ${r.room ? `<small>📍 ${escapeHtml(r.room)}</small>` : `<small></small>`}
-        ${isAdmin() ? `<button class="btn danger" onclick="deleteSchedule(${r.id})">حذف</button>` : ""}
+        ${isAdmin() ? `<div style="display:flex;gap:6px"><button class="btn view" onclick="editSchedulePrompt(${r.id})">✏️</button><button class="btn danger" onclick="deleteSchedule(${r.id})">حذف</button></div>` : ""}
       </article>
     `).join("") : `<div class="empty">لم تتم إضافة مواعيد بعد.</div>`;
 
     app.innerHTML = `
       <section class="page-head">
-        <span class="pill">المواعيد</span>
-        <h1>📅 الجدول الدراسي</h1>
+        <span class="pill">المواعيد الأسبوعية</span>
+        <h1>📅 الجدول الدراسي والمختبرات</h1>
       </section>
       <div class="schedule">${rowsHtml}</div>
+    `;
+  }
+
+  else if (currentState.page === "tools") {
+    document.title = "أدوات الفيزياء وحاسبة المعدل";
+    const constRows = PHYSICS_CONSTANTS.map(c => `
+      <tr>
+        <td><b>${c.name}</b></td>
+        <td dir="ltr" style="font-family:monospace;color:var(--a)">${c.val}</td>
+        <td dir="ltr">${c.unit}</td>
+        <td><button class="btn view" onclick="navigator.clipboard.writeText('${c.val}');showFlash('تم نسخ القيمة')">نسخ</button></td>
+      </tr>
+    `).join("");
+
+    app.innerHTML = `
+      <section class="page-head">
+        <span class="pill">مساعد الطالب الذكي</span>
+        <h1>🧰 أدوات الفيزياء وحاسبة السعي والمعدل</h1>
+        <p>محول الوحدات الذرية والنووية، حاسبة السعي الفصلي، وجدول الثوابت الفيزيائية الأساسية.</p>
+      </section>
+
+      <div class="admin-grid">
+        <section class="panel">
+          <h2>⚡ محول الوحدات الفيزيائية</h2>
+          <label>القيمة المراد تحويلها<input id="convInput" type="number" step="any" value="1" oninput="runUnitConverter()"></label>
+          <label>نوع التحويل
+            <select id="convType" onchange="runUnitConverter()">
+              <option value="ev_to_j">إلكترون فولت (eV) ← جول (J)</option>
+              <option value="j_to_ev">جول (J) ← إلكترون فولت (eV)</option>
+              <option value="mev_to_j">ميغا إلكترون فولت (MeV) ← جول (J)</option>
+              <option value="ang_to_nm">أنغستروم (Å) ← نانومتر (nm)</option>
+              <option value="ang_to_m">أنغستروم (Å) ← متر (m)</option>
+              <option value="c_to_k">سيليزي (°C) ← كلفن (K)</option>
+              <option value="nm_to_ev">طول موجي للضوء (nm) ← طاقة فوتون (eV)</option>
+            </select>
+          </label>
+          <div style="margin-top:15px;padding:15px;background:var(--bg);border-radius:12px;border:1px solid var(--line);text-align:center">
+            <small style="color:var(--muted)">النتيجة:</small>
+            <b id="convOutput" dir="ltr" style="display:block;font-size:20px;color:var(--a);margin-top:5px">1.602176634e-19 J</b>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>🧮 حاسبة السعي والدرجة النهائية</h2>
+          <label>درجة الشهر الأول (من 15 أو 20)<input id="gMonth1" type="number" placeholder="مثال: 14" oninput="calcGrade()"></label>
+          <label>درجة الشهر الثاني<input id="gMonth2" type="number" placeholder="مثال: 15" oninput="calcGrade()"></label>
+          <label>درجة العملي / اليومي / التقارير<input id="gLab" type="number" placeholder="مثال: 8" oninput="calcGrade()"></label>
+          <label>درجة الامتحان النهائي (اختياري)<input id="gFinal" type="number" placeholder="من 50 أو 60" oninput="calcGrade()"></label>
+          <div style="margin-top:10px;padding:15px;background:var(--bg);border-radius:12px;border:1px solid var(--line)">
+            <div>مجموع السعي: <b id="gSaiResult" style="color:var(--a)">0</b></div>
+            <div style="margin-top:6px">المجموع النهائي والتقدير: <b id="gTotalResult" style="color:var(--ok)">—</b></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>🎓 حاسبة معدل التخرج التراكمي</h2>
+          <label>معدل المرحلة الأولى (10%)<input id="gpa1" type="number" placeholder="مثال: 70" oninput="calcGPA()"></label>
+          <label>معدل المرحلة الثانية (20%)<input id="gpa2" type="number" placeholder="مثال: 75" oninput="calcGPA()"></label>
+          <label>معدل المرحلة الثالثة (30%)<input id="gpa3" type="number" placeholder="مثال: 78" oninput="calcGPA()"></label>
+          <label>معدل المرحلة الرابعة (40%)<input id="gpa4" type="number" placeholder="مثال: 82" oninput="calcGPA()"></label>
+          <div style="margin-top:10px;padding:15px;background:var(--bg);border-radius:12px;border:1px solid var(--line);text-align:center">
+            <small style="color:var(--muted)">المعدل التراكمي النهائي:</small>
+            <b id="gpaFinalOut" style="display:block;font-size:22px;color:var(--ok);margin-top:5px">0.00%</b>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel section">
+        <h2>📐 جدول الثوابت الفيزيائية المهمة</h2>
+        <div style="overflow-x:auto">
+          <table class="const-table">
+            <thead><tr><th>الثابت الفيزيائي</th><th>القيمة</th><th>الوحدة</th><th>نسخ</th></tr></thead>
+            <tbody>${constRows}</tbody>
+          </table>
+        </div>
+      </section>
+    `;
+  }
+
+  else if (currentState.page === "graduation") {
+    document.title = "بحوث التخرج والتطبيق الميداني";
+    const items = store.resources || [];
+    const cards = items.map(r => `
+      <article class="file">
+        <div class="badge-vid">${escapeHtml(r.type)}</div>
+        <div class="fileinfo">
+          <h3>${escapeHtml(r.title)}</h3>
+          <p style="color:var(--muted);margin:4px 0">${escapeHtml(r.desc)}</p>
+        </div>
+        <div class="actions">
+          <a class="btn view" target="_blank" href="${getViewUrl(r.url)}">فتح الملف ↗</a>
+          ${isAdmin() ? `<button class="btn danger" onclick="deleteResource(${r.id})">حذف</button>` : ""}
+        </div>
+      </article>
+    `).join("");
+
+    app.innerHTML = `
+      <section class="page-head">
+        <span class="pill">خاص بطلبة المرحلة الرابعة</span>
+        <h1>🎓 ركن بحوث التخرج وحقيبة المطبقين (التربية العملية)</h1>
+        <p>قوالب كتابة البحث، ترتيب المصادر، ونماذج الخطط اليومية والسنوية للتطبيق في المدارس.</p>
+      </section>
+      <div class="files">${cards}</div>
+    `;
+  }
+
+  else if (currentState.page === "quiz") {
+    document.title = "اختبر نفسك ومفكرة الواجبات";
+    const quizHtml = (store.quizzes || []).map((q, idx) => `
+      <div class="panel" style="margin-bottom:15px">
+        <span class="pill">${escapeHtml(q.subject)}</span>
+        <h3 style="margin:10px 0">${idx + 1}. ${escapeHtml(q.q)}</h3>
+        <div>
+          ${q.options.map((opt, oi) => `<button class="quiz-opt" onclick="checkQuizAnswer(this, ${oi}, ${q.ans})">${escapeHtml(opt)}</button>`).join("")}
+        </div>
+        ${isAdmin() ? `<button class="btn danger" style="margin-top:8px" onclick="deleteQuiz(${q.id})">حذف السؤال</button>` : ""}
+      </div>
+    `).join("");
+
+    const todoHtml = todos.length ? todos.map(t => `
+      <div class="minirow">
+        <span style="${t.done ? 'text-decoration:line-through;color:var(--muted)' : ''}">
+          <input type="checkbox" style="width:auto;margin-left:8px" ${t.done ? 'checked' : ''} onchange="toggleTodo(${t.id})">
+          <b>${escapeHtml(t.text)}</b> <small>${escapeHtml(t.due || '')}</small>
+        </span>
+        <button class="btn danger" onclick="deleteTodo(${t.id})">✖</button>
+      </div>
+    `).join("") : `<p style="color:var(--muted)">لا توجد مهام أو تقارير مسجلة حالياً.</p>`;
+
+    app.innerHTML = `
+      <section class="page-head">
+        <span class="pill">مراجعة وتنظيم الوقت</span>
+        <h1>📝 اختبر نفسك + مفكرة تقارير المختبر والواجبات</h1>
+      </section>
+      <div class="admin-grid" style="grid-template-columns: 1.5fr 1fr">
+        <div>
+          <h2>🧠 بنك الأسئلة السريعة (MCQ)</h2>
+          ${quizHtml}
+        </div>
+        <div class="panel" style="height:fit-content">
+          <h2>📌 مفكرتي (تقارير المختبر والواجبات)</h2>
+          <form onsubmit="addTodo(event)">
+            <input id="todoText" placeholder="مثال: تسليم تقرير مختبر النووية" required>
+            <input id="todoDue" placeholder="الموعد (مثال: يوم الثلاثاء)">
+            <button class="primary" type="submit">إضافة للمفكرة</button>
+          </form>
+          <hr>
+          ${todoHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  else if (currentState.page === "request") {
+    document.title = "اطلب ملزمة أو تواصل معنا";
+    app.innerHTML = `
+      <section class="page-head">
+        <span class="pill">تواصل مباشر</span>
+        <h1>📩 اطلب ملزمة ناقصة أو أرسل ملاحظة</h1>
+        <p>اكتب اسم الملزمة أو المحاضرة التي تحتاجها ليتم توفيرها في المكتبة.</p>
+      </section>
+      <div class="panel" style="max-width:600px;margin:0 auto">
+        <form onsubmit="sendStudentRequest(event)">
+          <label>اسمك (اختياري)<input id="reqName" placeholder="اسم الطالب"></label>
+          <label>المادة الدراسية
+            <select id="reqSubj">${SUBJECTS.map(([s,n]) => `<option value="${n}">${n}</option>`).join("")}</select>
+          </label>
+          <label>تفاصيل الملزمة أو المحاضرة المطلوبة
+            <textarea id="reqMsg" rows="4" placeholder="اكتب اسم المحاضرة أو سؤالك..." required></textarea>
+          </label>
+          <button type="submit" class="primary">✈️ إرسال الطلب عبر التليگرام</button>
+        </form>
+      </div>
     `;
   }
 
@@ -335,15 +738,19 @@ function render() {
 
   else if (currentState.page === "admin") {
     if (!isAdmin()) { navigate("login"); return; }
-    document.title = "لوحة الإدارة";
+    document.title = "لوحة الإدارة الشاملة";
     const subjOptions = SUBJECTS.map(([s, n]) => `<option value="${s}">${n}</option>`).join("");
     const catOptions = CATEGORIES.map(c => `<option value="${c}">${c}</option>`).join("");
     const ghCfg = JSON.parse(localStorage.getItem("phys_gh_cfg") || "{}");
+    const st = store.settings || {};
 
     const annList = announcements.map(a => `
       <div class="minirow">
         <span><b>${escapeHtml(a.title)}</b><br>${escapeHtml(a.body)}</span>
-        <button class="btn danger" onclick="deleteAnnouncement(${a.id})">حذف</button>
+        <div style="display:flex;gap:6px">
+          <button class="btn view" onclick="editAnnPrompt(${a.id})">✏️</button>
+          <button class="btn danger" onclick="deleteAnnouncement(${a.id})">حذف</button>
+        </div>
       </div>
     `).join("");
 
@@ -351,10 +758,11 @@ function render() {
       <div class="minirow">
         <span>
           <b>${escapeHtml(f.title)}</b>
-          <small>${SUBJECT_MAP[f.subject] || f.subject} • ${escapeHtml(f.category)} • ${escapeHtml(f.original_name || "رابط مباشر")}</small>
+          <small>${SUBJECT_MAP[f.subject] || f.subject} • ${escapeHtml(f.category)} • ⬇ ${f.downloads || 0}</small>
         </span>
         <span class="actions">
-          <a class="btn view" target="_blank" href="${getViewUrl(f.url)}">عرض</a>
+          <button class="btn view" onclick="openInModal(${f.id})">عرض</button>
+          <button class="btn warn-btn" onclick="editFilePrompt(${f.id})">✏️ تعديل</button>
           <button class="btn danger" onclick="deleteFile(${f.id})">حذف</button>
         </span>
       </div>
@@ -363,46 +771,46 @@ function render() {
     app.innerHTML = `
       <section class="page-head">
         <div>
-          <span class="pill">ADMIN</span>
-          <h1>لوحة إدارة المكتبة</h1>
-          <p>أضف الملفات، الإعلانات، وجدول المحاضرات، وانشرها لكل الطلاب على GitHub.</p>
+          <span class="pill">ADMIN PANEL PRO</span>
+          <h1>⚙️ لوحة إدارة المكتبة الشاملة</h1>
+          <p>تحكم كامل بالملازم، الفيديوهات، الإعلانات، الجدول، عداد الامتحانات، وإعدادات الموقع.</p>
         </div>
       </section>
 
       <div class="sync-bar">
         <div>
-          <h3 style="margin:0 0 6px;color:var(--a)">🌐 نشر التحديثات لكل الطلاب (على جميع الأجهزة)</h3>
-          <small style="color:var(--muted)">بعد إضافة الملازم أو الإعلانات أو الجدول، اضغط على زر التنزيل ليرتفع ملف index.html المحدث لكل الطلاب، أو فعّل الربط التلقائي مع GitHub بالأسفل.</small>
+          <h3 style="margin:0 0 6px;color:var(--a)">🌐 نشر وحفظ التعديلات لجميع الطلاب</h3>
+          <small style="color:var(--muted)">اضغط على (نشر تلقائي مباشر إلى GitHub) بعد أي إضافة أو تعديل ليظهر فوراً عند كل الطلاب.</small>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <button class="primary" onclick="exportUpdatedHtml()">💾 تنزيل index.html المحدث لكل الطلاب</button>
-          <button class="btn view" onclick="syncToGitHub()">☁️ نشر تلقائي مباشر إلى GitHub</button>
+          <button class="primary" onclick="syncToGitHub()">☁️ نشر تلقائي مباشر إلى GitHub</button>
+          <button class="btn view" onclick="exportUpdatedHtml()">💾 تنزيل index.html المحدث</button>
         </div>
       </div>
 
       <div class="admin-grid">
         <section class="panel">
-          <h2>➕ إضافة ملفات PDF</h2>
+          <h2>➕ إضافة ملزمة PDF أو فيديو يوتيوب</h2>
           <form onsubmit="handleUpload(event)">
-            <label>المادة<select id="upSubject" name="subject">${subjOptions}</select></label>
-            <label>التصنيف<select id="upCategory" name="category">${catOptions}</select></label>
-            <label>عنوان الملف<input id="upTitle" name="title" placeholder="مثال: المحاضرة الأولى - ميكانيك الكم"></label>
-            <label>اسم المدرس (اختياري)<input id="upTeacher" name="teacher"></label>
-            <label>رابط الملف (Google Drive / Telegram أو اتركه فارغاً إذا اخترت ملفاً بالأسفل)
-              <input id="upUrl" name="url" placeholder="https://drive.google.com/...">
+            <label>المادة<select id="upSubject">${subjOptions}</select></label>
+            <label>التصنيف<select id="upCategory">${catOptions}</select></label>
+            <label>عنوان المحاضرة أو الفيديو<input id="upTitle" placeholder="مثال: المحاضرة الأولى - ميكانيك الكم"></label>
+            <label>اسم المدرس (اختياري)<input id="upTeacher" placeholder="مثال: د. أحمد"></label>
+            <label>رابط خارجي (Google Drive / YouTube / Telegram)
+              <input id="upUrl" placeholder="https://...">
             </label>
             <label class="uploadbox">📄 أو اختر ملف PDF من جهازك
-              <input id="upFiles" type="file" name="files" accept=".pdf,application/pdf" multiple>
+              <input id="upFiles" type="file" accept=".pdf,application/pdf" multiple>
             </label>
-            <button type="submit" id="uploadBtn" class="primary">إضافة وحفظ الملف</button>
+            <button type="submit" id="uploadBtn" class="primary">إضافة وحفظ</button>
           </form>
         </section>
 
         <section class="panel">
-          <h2>📢 إضافة إعلان</h2>
+          <h2>📢 الإعلانات والتبليغات</h2>
           <form onsubmit="handleAddAnnouncement(event)">
-            <input id="annTitle" name="title" placeholder="عنوان الإعلان" required>
-            <textarea id="annBody" name="body" placeholder="نص الإعلان" required></textarea>
+            <input id="annTitle" placeholder="عنوان الإعلان" required>
+            <textarea id="annBody" placeholder="نص الإعلان" required></textarea>
             <button type="submit" class="primary">نشر الإعلان</button>
           </form>
           <hr>
@@ -411,28 +819,77 @@ function render() {
         </section>
 
         <section class="panel">
-          <h2>📅 إضافة موعد للجدول</h2>
+          <h2>📅 الجدول الدراسي + التخرج</h2>
           <form onsubmit="handleAddSchedule(event)">
-            <input id="schDay" name="day" placeholder="اليوم" required>
-            <input id="schTime" name="time" placeholder="الوقت" required>
-            <input id="schSubject" name="subject" placeholder="المادة" required>
-            <input id="schRoom" name="room" placeholder="القاعة / المختبر">
+            <input id="schDay" placeholder="اليوم (مثال: الأحد)" required>
+            <input id="schTime" placeholder="الوقت (مثال: 8:30 - 10:30)" required>
+            <input id="schSubject" placeholder="المادة" required>
+            <input id="schRoom" placeholder="القاعة / المختبر">
             <button type="submit" class="primary">إضافة للجدول</button>
           </form>
           <hr>
-          <h2>⚡ إعداد النشر التلقائي (اختياري)</h2>
+          <h2>🎓 إضافة ملف لركن التخرج/التطبيق</h2>
+          <form onsubmit="handleAddResource(event)">
+            <select id="resType"><option>بحث تخرج</option><option>التربية العملية</option></select>
+            <input id="resTitle" placeholder="عنوان الملف أو الخطة" required>
+            <input id="resDesc" placeholder="وصف مختصر" required>
+            <input id="resUrl" placeholder="رابط الملف (Drive / Telegram)" required>
+            <button type="submit" class="btn view">إضافة لركن التخرج</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="admin-grid">
+        <section class="panel">
+          <h2>⏳ إعدادات الموقع وعداد الامتحانات</h2>
+          <form onsubmit="saveSiteSettings(event)">
+            <label>عنوان الموقع الرئيسي<input id="setSiteTitle" value="${escapeHtml(st.siteTitle || '')}"></label>
+            <label>العنوان الفرعي (اسم الجامعة/المرحلة)<input id="setSiteSub" value="${escapeHtml(st.siteSub || '')}"></label>
+            <label>شريط التبليغ العاجل بأعلى الموقع<input id="setUrgent" value="${escapeHtml(st.urgentText || '')}" placeholder="اتركه فارغاً لإخفائه"></label>
+            <label>عنوان عداد الامتحانات<input id="setExamTitle" value="${escapeHtml(st.examTitle || '')}"></label>
+            <label>تاريخ الامتحان القادم<input id="setExamDate" type="datetime-local" value="${escapeHtml(st.examDate || '')}"></label>
+            <label>رابط قناة التليگرام<input id="setTg" value="${escapeHtml(st.tgChannel || '')}"></label>
+            <label>نص الحقوق أسفل الموقع (Footer)<input id="setFooter" value="${escapeHtml(st.footerText || '')}"></label>
+            <button type="submit" class="primary">حفظ إعدادات الموقع</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>🧠 إضافة سؤال لبنك (اختبر نفسك)</h2>
+          <form onsubmit="handleAddQuiz(event)">
+            <label>المادة<select id="qzSubj">${SUBJECTS.map(([s,n]) => `<option value="${n}">${n}</option>`).join("")}</select></label>
+            <input id="qzQ" placeholder="نص السؤال..." required>
+            <input id="qzO1" placeholder="الخيار الأول" required>
+            <input id="qzO2" placeholder="الخيار الثاني" required>
+            <input id="qzO3" placeholder="الخيار الثالث" required>
+            <input id="qzO4" placeholder="الخيار الرابع" required>
+            <label>رقم الجواب الصحيح
+              <select id="qzAns"><option value="0">الخيار الأول</option><option value="1">الخيار الثاني</option><option value="2">الخيار الثالث</option><option value="3">الخيار الرابع</option></select>
+            </label>
+            <button type="submit" class="primary">إضافة السؤال</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>🔐 الحماية والربط مع GitHub</h2>
+          <form onsubmit="saveAdminCreds(event)">
+            <label>اسم مستخدم الإدارة<input id="setAdmUser" value="${escapeHtml(st.adminUser || 'admin')}" required></label>
+            <label>كلمة مرور الإدارة<input id="setAdmPass" value="${escapeHtml(st.adminPass || 'physics2026')}" required></label>
+            <button type="submit" class="btn warn-btn">تحديث بيانات الدخول</button>
+          </form>
+          <hr>
           <form onsubmit="saveGhConfig(event)">
-            <input id="ghOwner" placeholder="اسم حسابك في GitHub (مثال: ahmed)" value="${escapeHtml(ghCfg.owner || '')}">
-            <input id="ghRepo" placeholder="اسم المستودع (مثال: physics-site)" value="${escapeHtml(ghCfg.repo || '')}">
-            <input id="ghToken" type="password" placeholder="مفتاح GitHub Token (اختياري للنشر التلقائي)" value="${escapeHtml(ghCfg.token || '')}">
+            <label>اسم حساب GitHub<input id="ghOwner" value="${escapeHtml(ghCfg.owner || '')}"></label>
+            <label>اسم المستودع (Repository)<input id="ghRepo" value="${escapeHtml(ghCfg.repo || '')}"></label>
+            <label>مفتاح GitHub Token<input id="ghToken" type="password" value="${escapeHtml(ghCfg.token || '')}"></label>
             <button type="submit" class="btn view">حفظ إعدادات GitHub</button>
           </form>
         </section>
       </div>
 
-      <section class="panel">
+      <section class="panel section">
         <div class="section-head">
-          <h2>📚 الملفات (${total})</h2>
+          <h2>📚 إدارة الملفات المرفوعة (${total})</h2>
           <span>إجمالي التحميلات: ${downloads}</span>
         </div>
         <div class="adminlist">${filesList}</div>
@@ -441,23 +898,107 @@ function render() {
   }
 }
 
+function runUnitConverter() {
+  const val = parseFloat(document.getElementById("convInput").value) || 0;
+  const type = document.getElementById("convType").value;
+  let out = "";
+  if (type === "ev_to_j") out = (val * 1.602176634e-19).toExponential(5) + " J";
+  else if (type === "j_to_ev") out = (val / 1.602176634e-19).toExponential(5) + " eV";
+  else if (type === "mev_to_j") out = (val * 1.602176634e-13).toExponential(5) + " J";
+  else if (type === "ang_to_nm") out = (val * 0.1).toFixed(4) + " nm";
+  else if (type === "ang_to_m") out = (val * 1e-10).toExponential(4) + " m";
+  else if (type === "c_to_k") out = (val + 273.15).toFixed(2) + " K";
+  else if (type === "nm_to_ev") out = val > 0 ? (1239.84193 / val).toFixed(4) + " eV" : "0 eV";
+  document.getElementById("convOutput").textContent = out;
+}
+
+function calcGrade() {
+  const m1 = parseFloat(document.getElementById("gMonth1").value) || 0;
+  const m2 = parseFloat(document.getElementById("gMonth2").value) || 0;
+  const lab = parseFloat(document.getElementById("gLab").value) || 0;
+  const fin = parseFloat(document.getElementById("gFinal").value) || 0;
+  const sai = m1 + m2 + lab;
+  document.getElementById("gSaiResult").textContent = sai.toFixed(1);
+  if (fin > 0) {
+    const tot = sai + fin;
+    let est = "راسب";
+    if (tot >= 90) est = "امتياز 🌟";
+    else if (tot >= 80) est = "جيد جداً ✨";
+    else if (tot >= 70) est = "جيد 👍";
+    else if (tot >= 60) est = "متوسط";
+    else if (tot >= 50) est = "مقبول";
+    document.getElementById("gTotalResult").textContent = `${tot.toFixed(1)} (${est})`;
+  } else {
+    document.getElementById("gTotalResult").textContent = `تحتاج ${(50 - sai > 0 ? (50 - sai).toFixed(1) : 0)} للنجاح`;
+  }
+}
+
+function calcGPA() {
+  const g1 = parseFloat(document.getElementById("gpa1").value) || 0;
+  const g2 = parseFloat(document.getElementById("gpa2").value) || 0;
+  const g3 = parseFloat(document.getElementById("gpa3").value) || 0;
+  const g4 = parseFloat(document.getElementById("gpa4").value) || 0;
+  const res = (g1 * 0.10) + (g2 * 0.20) + (g3 * 0.30) + (g4 * 0.40);
+  document.getElementById("gpaFinalOut").textContent = res.toFixed(2) + "%";
+}
+
+function checkQuizAnswer(btn, chosen, correct) {
+  const parent = btn.parentElement;
+  Array.from(parent.children).forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === correct) b.classList.add("correct");
+    else if (idx === chosen) b.classList.add("wrong");
+  });
+}
+
+function addTodo(e) {
+  e.preventDefault();
+  const text = document.getElementById("todoText").value.trim();
+  const due = document.getElementById("todoDue").value.trim();
+  if (!text) return;
+  todos.unshift({ id: Date.now(), text, due, done: false });
+  localStorage.setItem("phys_todos", JSON.stringify(todos));
+  render();
+}
+function toggleTodo(id) {
+  const t = todos.find(x => x.id === id);
+  if (t) t.done = !t.done;
+  localStorage.setItem("phys_todos", JSON.stringify(todos));
+  render();
+}
+function deleteTodo(id) {
+  todos = todos.filter(x => x.id !== id);
+  localStorage.setItem("phys_todos", JSON.stringify(todos));
+  render();
+}
+
+function sendStudentRequest(e) {
+  e.preventDefault();
+  const name = document.getElementById("reqName").value.trim() || "طالب في المرحلة الرابعة";
+  const subj = document.getElementById("reqSubj").value;
+  const msg = document.getElementById("reqMsg").value.trim();
+  const text = encodeURIComponent(`📩 طلب من موقع مكتبة الفيزياء:\n👤 الاسم: ${name}\n📚 المادة: ${subj}\n📝 الطلب: ${msg}`);
+  const tg = (store.settings && store.settings.tgChannel) || "https://t.me/";
+  window.open(tg.includes("t.me/") ? `${tg}?text=${text}` : `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${text}`, "_blank");
+}
+
 function handleGlobalSearch(e) {
   e.preventDefault();
-  const q = document.getElementById("homeSearchInput").value.trim();
-  navigate("search", { q });
+  navigate("search", { q: document.getElementById("homeSearchInput").value.trim() });
 }
 
 function handleSubjectSearch(e, slug, category) {
   e.preventDefault();
-  const q = document.getElementById("subjSearchInput").value.trim();
-  navigate("subject", { slug, category, q });
+  navigate("subject", { slug, category, q: document.getElementById("subjSearchInput").value.trim() });
 }
 
 function handleLogin(e) {
   e.preventDefault();
   const u = document.getElementById("loginUser").value.trim();
   const p = document.getElementById("loginPass").value;
-  if (u === "admin" && p === "physics2026") {
+  const validU = (store.settings && store.settings.adminUser) || "admin";
+  const validP = (store.settings && store.settings.adminPass) || "physics2026";
+  if (u === validU && p === validP) {
     sessionStorage.setItem("phys_admin", "1");
     showFlash("تم تسجيل الدخول بنجاح");
     navigate("admin");
@@ -469,6 +1010,28 @@ function handleLogin(e) {
 function logoutAdmin() {
   sessionStorage.removeItem("phys_admin");
   navigate("home");
+}
+
+function saveSiteSettings(e) {
+  e.preventDefault();
+  store.settings.siteTitle = document.getElementById("setSiteTitle").value.trim();
+  store.settings.siteSub = document.getElementById("setSiteSub").value.trim();
+  store.settings.urgentText = document.getElementById("setUrgent").value.trim();
+  store.settings.examTitle = document.getElementById("setExamTitle").value.trim();
+  store.settings.examDate = document.getElementById("setExamDate").value;
+  store.settings.tgChannel = document.getElementById("setTg").value.trim();
+  store.settings.footerText = document.getElementById("setFooter").value.trim();
+  saveLocalStore();
+  showFlash("تم حفظ إعدادات الموقع! اضغط (نشر تلقائي مباشر إلى GitHub) لتظهر عند الطلاب.");
+  render();
+}
+
+function saveAdminCreds(e) {
+  e.preventDefault();
+  store.settings.adminUser = document.getElementById("setAdmUser").value.trim();
+  store.settings.adminPass = document.getElementById("setAdmPass").value;
+  saveLocalStore();
+  showFlash("تم تحديث اسم المستخدم وكلمة المرور بنجاح");
 }
 
 function saveGhConfig(e) {
@@ -495,17 +1058,10 @@ async function uploadFileToGitHubRepo(file, ghCfg) {
   const safeName = Date.now() + "_" + file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
   const path = `uploads/${safeName}`;
   const apiUrl = `https://api.github.com/repos/${ghCfg.owner}/${ghCfg.repo}/contents/${path}`;
-
   const res = await fetch(apiUrl, {
     method: "PUT",
-    headers: {
-      "Authorization": `Bearer ${ghCfg.token}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      message: `Upload ${file.name}`,
-      content: base64Content
-    })
+    headers: { "Authorization": `Bearer ${ghCfg.token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ message: `Upload ${file.name}`, content: base64Content })
   });
   if (!res.ok) throw new Error("فشل رفع الملف إلى GitHub");
   return path;
@@ -523,64 +1079,94 @@ async function handleUpload(e) {
 
   const btn = document.getElementById("uploadBtn");
   btn.disabled = true;
-  btn.textContent = "جاري الحفظ...";
+  btn.textContent = "جاري الرفع والحفظ...";
 
   try {
     if (directUrl) {
       store.files.unshift({
         id: Date.now(),
-        subject,
-        category,
-        title: titleInput || "ملف دراسي",
+        created_at: Date.now(),
+        subject, category,
+        title: titleInput || "محاضرة دراسية",
         original_name: (titleInput || "file") + ".pdf",
-        teacher,
-        url: directUrl,
-        downloads: 0
+        teacher, url: directUrl, downloads: 0
       });
     } else if (fileList && fileList.length > 0) {
       for (const file of Array.from(fileList)) {
         const finalTitle = titleInput || file.name.replace(/\.pdf$/i, "");
-        let fileUrl = "";
-
-        if (ghCfg.owner && ghCfg.repo && ghCfg.token) {
-          fileUrl = await uploadFileToGitHubRepo(file, ghCfg);
-        } else {
-          fileUrl = await fileToBase64(file);
-        }
+        let fileUrl = (ghCfg.owner && ghCfg.repo && ghCfg.token)
+          ? await uploadFileToGitHubRepo(file, ghCfg)
+          : await fileToBase64(file);
 
         store.files.unshift({
-          id: Date.now() + Math.floor(Math.random() * 10000),
-          subject,
-          category,
+          id: Date.now() + Math.floor(Math.random() * 1000),
+          created_at: Date.now(),
+          subject, category,
           title: finalTitle,
           original_name: file.name,
-          teacher,
-          url: fileUrl,
-          downloads: 0
+          teacher, url: fileUrl, downloads: 0
         });
       }
     } else {
-      showFlash("يرجى وضع رابط الملف أو اختيار ملف PDF من جهازك", "error");
-      btn.disabled = false;
-      btn.textContent = "إضافة وحفظ الملف";
+      showFlash("يرجى وضع رابط أو اختيار ملف PDF", "error");
+      btn.disabled = false; btn.textContent = "إضافة وحفظ";
       return;
     }
 
     saveLocalStore();
-    if (ghCfg.owner && ghCfg.repo && ghCfg.token) {
-      await syncToGitHub(true);
-    } else {
-      showFlash("تمت الإضافة! اضغط على (تنزيل index.html المحدث) لرفعها لكل الطلاب على GitHub");
-    }
+    if (ghCfg.owner && ghCfg.repo && ghCfg.token) await syncToGitHub(true);
+    else showFlash("تم الحفظ! اضغط على (نشر تلقائي) أو (تنزيل index.html)");
     render();
   } catch (err) {
-    showFlash("حدث خطأ أثناء رفع الملف: " + err.message, "error");
+    showFlash("حدث خطأ: " + err.message, "error");
   } finally {
     if (document.getElementById("uploadBtn")) {
       document.getElementById("uploadBtn").disabled = false;
-      document.getElementById("uploadBtn").textContent = "إضافة وحفظ الملف";
+      document.getElementById("uploadBtn").textContent = "إضافة وحفظ";
     }
   }
+}
+
+function editFilePrompt(id) {
+  const f = store.files.find(x => x.id === id);
+  if (!f) return;
+  const newTitle = prompt("تعديل عنوان الملزمة / المحاضرة:", f.title);
+  if (newTitle === null) return;
+  const newTeacher = prompt("تعديل اسم المدرس:", f.teacher || "");
+  if (newTeacher === null) return;
+  f.title = newTitle.trim() || f.title;
+  f.teacher = newTeacher.trim();
+  saveLocalStore();
+  showFlash("تم تعديل الملزمة بنجاح! لا تنسَ الضغط على زر النشر التلقائي.");
+  render();
+}
+
+function editAnnPrompt(id) {
+  const a = store.announcements.find(x => x.id === id);
+  if (!a) return;
+  const t = prompt("تعديل عنوان الإعلان:", a.title);
+  if (t === null) return;
+  const b = prompt("تعديل نص الإعلان:", a.body);
+  if (b === null) return;
+  a.title = t.trim() || a.title;
+  a.body = b.trim() || a.body;
+  saveLocalStore();
+  render();
+}
+
+function editSchedulePrompt(id) {
+  const r = store.schedule.find(x => x.id === id);
+  if (!r) return;
+  const d = prompt("اليوم:", r.day); if (d === null) return;
+  const t = prompt("الوقت:", r.time); if (t === null) return;
+  const s = prompt("المادة:", r.subject); if (s === null) return;
+  const rm = prompt("القاعة / المختبر:", r.room || "");
+  r.day = d.trim() || r.day;
+  r.time = t.trim() || r.time;
+  r.subject = s.trim() || r.subject;
+  r.room = rm ? rm.trim() : "";
+  saveLocalStore();
+  render();
 }
 
 function countDownload(id, rerender) {
@@ -607,7 +1193,7 @@ function handleAddAnnouncement(e) {
   if (!title || !body) return;
   store.announcements.unshift({ id: Date.now(), title, body });
   saveLocalStore();
-  showFlash("تمت إضافة الإعلان! لا تنسَ نشر التحديث ليظهر عند الطلاب.");
+  showFlash("تمت إضافة الإعلان!");
   render();
 }
 
@@ -623,7 +1209,6 @@ function handleAddSchedule(e) {
   const time = document.getElementById("schTime").value.trim();
   const subject = document.getElementById("schSubject").value.trim();
   const room = document.getElementById("schRoom").value.trim();
-  if (!day || !time || !subject) return;
   store.schedule.unshift({ id: Date.now(), day, time, subject, room });
   saveLocalStore();
   showFlash("تمت إضافة الموعد للجدول!");
@@ -636,7 +1221,51 @@ function deleteSchedule(id) {
   render();
 }
 
-// تصدير ملف index.html محدث وبداخله كل الملازم والإعلانات والجدول ليظهر لكل الطلاب
+function handleAddResource(e) {
+  e.preventDefault();
+  store.resources.unshift({
+    id: Date.now(),
+    type: document.getElementById("resType").value,
+    title: document.getElementById("resTitle").value.trim(),
+    desc: document.getElementById("resDesc").value.trim(),
+    url: document.getElementById("resUrl").value.trim()
+  });
+  saveLocalStore();
+  showFlash("تمت الإضافة لركن التخرج والتطبيق!");
+  render();
+}
+
+function deleteResource(id) {
+  store.resources = store.resources.filter(r => r.id !== id);
+  saveLocalStore();
+  render();
+}
+
+function handleAddQuiz(e) {
+  e.preventDefault();
+  store.quizzes.unshift({
+    id: Date.now(),
+    subject: document.getElementById("qzSubj").value,
+    q: document.getElementById("qzQ").value.trim(),
+    options: [
+      document.getElementById("qzO1").value.trim(),
+      document.getElementById("qzO2").value.trim(),
+      document.getElementById("qzO3").value.trim(),
+      document.getElementById("qzO4").value.trim()
+    ],
+    ans: parseInt(document.getElementById("qzAns").value, 10)
+  });
+  saveLocalStore();
+  showFlash("تمت إضافة السؤال بنجاح!");
+  render();
+}
+
+function deleteQuiz(id) {
+  store.quizzes = store.quizzes.filter(q => q.id !== id);
+  saveLocalStore();
+  render();
+}
+
 function exportUpdatedHtml() {
   const dataJson = JSON.stringify(store, null, 2);
   let fullHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
@@ -645,48 +1274,35 @@ function exportUpdatedHtml() {
     `/* === START_SHARED_DATA === */\nconst SHARED_DATA = ${dataJson};\n/* === END_SHARED_DATA === */`
   );
   const blob = new Blob([fullHtml], { type: "text/html;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  a.href = url;
+  a.href = URL.createObjectURL(blob);
   a.download = "index.html";
   document.body.appendChild(a);
   a.click();
   a.remove();
-  showFlash("تم تنزيل ملف index.html المحدث! ارفعه إلى GitHub ليظهر لكل الطلاب فوراً.");
+  showFlash("تم تنزيل index.html المحدث!");
 }
 
-// مزامنة تلقائية مع GitHub عبر API
 async function syncToGitHub(silent = false) {
   const ghCfg = JSON.parse(localStorage.getItem("phys_gh_cfg") || "{}");
   if (!ghCfg.owner || !ghCfg.repo || !ghCfg.token) {
-    if (!silent) showFlash("لاستخدام النشر التلقائي، أدخل اسم حسابك والمستودع و Token في أسفل لوحة الإدارة، أو استخدم زر (تنزيل index.html المحدث)", "error");
+    if (!silent) showFlash("أدخل إعدادات GitHub في أسفل لوحة الإدارة أولاً", "error");
     return;
   }
   try {
     const apiUrl = `https://api.github.com/repos/${ghCfg.owner}/${ghCfg.repo}/contents/data.json`;
     let sha = undefined;
-    const getRes = await fetch(apiUrl, {
-      headers: { "Authorization": `Bearer ${ghCfg.token}` }
-    });
-    if (getRes.ok) {
-      const existing = await getRes.json();
-      sha = existing.sha;
-    }
+    const getRes = await fetch(apiUrl, { headers: { "Authorization": `Bearer ${ghCfg.token}` } });
+    if (getRes.ok) sha = (await getRes.json()).sha;
+
     const contentBase64 = btoa(unescape(encodeURIComponent(JSON.stringify(store, null, 2))));
     const putRes = await fetch(apiUrl, {
       method: "PUT",
-      headers: {
-        "Authorization": `Bearer ${ghCfg.token}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        message: "Update library data",
-        content: contentBase64,
-        sha
-      })
+      headers: { "Authorization": `Bearer ${ghCfg.token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ message: "Update physics library data", content: contentBase64, sha })
     });
-    if (!putRes.ok) throw new Error("تأكد من صحة Token واسم المستودع");
-    showFlash("✅ تم نشر التحديثات تلقائياً على GitHub وأصبحت ظاهرة لكل الطلاب الآن!");
+    if (!putRes.ok) throw new Error("تأكد من صلاحية Token واسم المستودع");
+    showFlash("✅ تم نشر جميع التحديثات تلقائياً على GitHub وأصبحت ظاهرة لكل الطلاب الآن!");
   } catch (err) {
     showFlash("خطأ في النشر التلقائي: " + err.message, "error");
   }
@@ -698,7 +1314,6 @@ function escapeHtml(str) {
   }[s]));
 }
 
-updateNav();
 render();
 </script>
 </body>
