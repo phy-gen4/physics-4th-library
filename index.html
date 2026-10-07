@@ -16,12 +16,13 @@ nav{display:flex;gap:10px;color:var(--muted);align-items:center;flex-wrap:wrap}n
 .ticker b{background:var(--danger);color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;white-space:nowrap}
 .countdown-bar{max-width:1180px;margin:20px auto 0;padding:16px 24px;border-radius:18px;background:linear-gradient(135deg,#162c46,#0e1a2a);border:1px solid #35c8ff55;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
 .cd-boxes{display:flex;gap:10px}.cd-box{background:#07101d;border:1px solid var(--line);border-radius:12px;padding:8px 14px;text-align:center;min-width:65px}.cd-box b{display:block;font-size:20px;color:var(--a)}.cd-box small{font-size:11px;color:var(--muted)}
-.hero{max-width:1180px;margin:25px auto;padding:45px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(135deg,#10243a,#0b1525);display:flex;justify-content:space-between;align-items:center;overflow:hidden}
+.hero{max-width:1180px;margin:25px auto;padding:45px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(135deg,#10243a,#0b1525);display:flex;justify-content:space-between;align-items:center;overflow:hidden;position:relative}
 .hero h1{font-size:44px;margin:16px 0}.hero em{font-style:normal;background:linear-gradient(90deg,var(--a),#8791ff);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;line-height:1.9}.orb{font-size:120px;filter:drop-shadow(0 0 35px #35c8ff66)}
 .hero-socials{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.soc-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;font-weight:bold;font-size:14px;color:#fff;transition:.2s}
+.soc-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;font-weight:bold;font-size:14px;color:#fff;transition:.2s;border:0;cursor:pointer}
 .soc-tg{background:linear-gradient(135deg,#0088cc,#35c8ff);box-shadow:0 4px 15px rgba(0,136,204,0.3)}
 .soc-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);box-shadow:0 4px 15px rgba(220,39,67,0.3)}
+.soc-stat{background:linear-gradient(135deg,#132c47,#0e1a2a);border:1px solid var(--a);color:var(--a)}
 .soc-btn:hover{transform:translateY(-2px)}
 .pill{display:inline-block;padding:7px 12px;border-radius:999px;background:#35c8ff15;border:1px solid #35c8ff40;color:var(--a);font-size:13px}
 .badge-new{background:#ff547025;color:#ff7187;border:1px solid #ff547066;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:bold;margin-right:6px}
@@ -58,7 +59,9 @@ nav{display:flex;gap:10px;color:var(--muted);align-items:center;flex-wrap:wrap}n
 .modal-backdrop.open{display:grid}
 .modal-box{width:min(1000px,96vw);height:86vh;background:var(--panel);border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;overflow:hidden}
 .modal-head{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--panel2)}
-.modal-body{flex:1;background:#000;position:relative}.modal-body iframe{width:100%;height:100%;border:0}
+.modal-body{flex:1;background:#000;position:relative;padding:0}.modal-body iframe{width:100%;height:100%;border:0}
+.stat-box-inner{padding:25px;text-align:center;color:var(--text)}
+.stat-box-inner h1{color:var(--a);font-size:45px;margin:10px 0}
 .fab-group{position:fixed;bottom:20px;left:20px;display:flex;flex-direction:column;gap:10px;z-index:40}
 .fab-btn{color:#fff;padding:11px 16px;border-radius:999px;font-weight:bold; display:flex;align-items:center;gap:8px;cursor:pointer;border:0;font-size:13px;transition:.2s}
 .fab-btn:hover{transform:scale(1.04)}
@@ -96,7 +99,7 @@ body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63
     <a onclick="navigate('favorites')">⭐ المفضلة (<span id="favCount">0</span>)</a>
     <a onclick="navigate('schedule')">📅 الجدول والأساتذة</a>
     <a onclick="navigate('tools')">🧰 أدوات الفيزياء</a>
-    <a onclick="navigate('study')">🃏 البطاقات والمؤقت</a>
+    <a onclick="navigate('study')">📝 الأسئلة والمؤقت</a>
     <a onclick="navigate('graduation')">🎓 التخرج والتطبيق</a>
     <a id="adminNavLink" onclick="navigate(isAdmin() ? 'admin' : 'login')">⚙️ الإدارة</a>
     <a id="logoutNavLink" style="display:none;color:var(--danger)" onclick="logoutAdmin()">خروج</a>
@@ -114,9 +117,9 @@ body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63
 <div id="viewerModal" class="modal-backdrop" onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
     <div class="modal-head">
-      <b id="modalTitle">عرض المحاضرة</b>
+      <b id="modalTitle">عرض المحتوي</b>
       <div style="display:flex;gap:8px">
-        <a id="modalExternalBtn" target="_blank" class="btn view">فتح بنافذة خارجية ↗</a>
+        <a id="modalExternalBtn" target="_blank" class="btn view" style="display:none">فتح بنافذة خارجية ↗</a>
         <button class="btn danger" onclick="closeModal()">إغلاق ✖</button>
       </div>
     </div>
@@ -143,27 +146,42 @@ const SHARED_DATA = {
   announcements: [],
   schedule: [],
   teachers: {
-    quantum: "أستاذ المادة",
-    measurement: "أستاذ المادة",
-    educational_lab: "أستاذ المختبر",
-    nuclear: "أستاذ المادة",
-    solid_state: "أستاذ المادة",
-    nuclear_lab: "أستاذ المختبر",
-    laser: "أستاذ المادة",
-    electromagnetic: "أستاذ المادة",
-    teaching: "أستاذ المادة"
+    quantum: "أستاذ المادة", measurement: "أستاذ المادة", educational_lab: "أستاذ المختبر",
+    nuclear: "أستاذ المادة", solid_state: "أستاذ المادة", nuclear_lab: "أستاذ المختبر",
+    laser: "أستاذ المادة", electromagnetic: "أستاذ المادة", teaching: "أستاذ المادة"
   },
   flashcards: [
     { id: 1, subject: "ميكانيك الكم", front: "ما هو مبدأ اللادقة لهايزنبرغ؟", back: "لا يمكن تحديد موضع وزخم جسيم كمي بدقة متناهية في نفس اللحظة: Δx · Δp ≥ ℏ/2" },
     { id: 2, subject: "الفيزياء النووية", front: "ما هو تعريف عمر النصف (t½)؟", back: "هو الزمن اللازم لتحلل نصف عدد النوى المشعة الموجودة في العينة: t½ = ln(2) / λ" },
-    { id: 3, subject: "الليزر", front: "ما الفرق بين الانبعاث التلقائي والانبعاث المحفز؟", back: "التلقائي يحدث عشوائياً بدون مؤثر خارجي، أما المحفز فيحدث بتأثير فوتون ساقط وينتج فوتوناً متشاكهاً معه في الطور والاتجاه." },
-    { id: 4, subject: "فيزياء الحالة الصلبة", front: "ما هو قانون براغ في حيود الأشعة السينية؟", back: "nλ = 2d sin(θ) حيث d المسافة البينية بين المستويات البلورية و θ زاوية الحيود." }
+    { id: 3, subject: "الليزر", front: "ما الفرق بين الانبعاث التلقائي والانبعاث المحفز؟", back: "التلقائي يحدث عشوائياً، أما المحفز فيحدث بتأثير فوتون ساقط وينتج فوتوناً متشاكهاً معه في الطور والاتجاه." },
+    { id: 4, subject: "فيزياء الحالة الصلبة", front: "ما هو قانون براغ في حيود الأشعة السينية؟", back: "nλ = 2d sin(θ) حيث d المسافة البينية بين المستويات البلورية." }
   ],
   quizzes: [
-    { id: 1, subject: "ميكانيك الكم", q: "ما هي المعادلة الأساسية التي تصف تطور الدالة الموجية مع الزمن في ميكانيك الكم؟", options: ["معادلة شرودنغر", "معادلة ماكسويل", "معادلة بولتزمان", "قانون كولوم"], ans: 0 },
-    { id: 2, subject: "الفيزياء النووية", q: "تُقاس طاقة الربط النووية عادةً بوحدة:", options: ["الواط (Watt)", "الميغا إلكترون فولت (MeV)", "التسلا (Tesla)", "الفاراد (Farad)"], ans: 1 },
-    { id: 3, subject: "الليزر", q: "الشرط الأساسي لتوليد أشعة الليزر داخل الوسط الفعال هو تحقيق:", options: ["التأين الحراري", "التوزيع المعكوس (Population Inversion)", "الانكسار الكلي", "الحيود البلوري"], ans: 1 },
-    { id: 4, subject: "فيزياء الحالة الصلبة", q: "تُستخدم ظاهرة حيود الأشعة السينية (قانون براغ) في دراسة:", options: ["التركيب البلوري للمواد الصلبة", "انشطار النواة", "طيف ذرة الهيدروجين", "المجال المغناطيسي الأرضي"], ans: 0 }
+    // أسئلة النظرية الكهرومغناطيسية
+    { id: 101, subject: "النظرية الكهرومغناطيسية", q: "حسب قانون كاوس الكهربائي، الفيض الكهربائي الكلي عبر سطح مغلق يتناسب مع:", options: ["الزمن", "الشحنة الكلية المحتواة داخل السطح", "كثافة التيار", "سرعة الضوء"], ans: 1 },
+    { id: 102, subject: "النظرية الكهرومغناطيسية", q: "معادلة الاستمرارية في الكهرومغناطيسية (∇·J + ∂ρ/∂t = 0) هي تعبير رياضي عن مبدأ:", options: ["حفظ الطاقة", "حفظ الزخم", "حفظ الشحنة الكهربائية", "قانون أمبير"], ans: 2 },
+    { id: 103, subject: "النظرية الكهرومغناطيسية", q: "أي من معادلات ماكسويل الأربعة ينفي وجود أقطاب مغناطيسية منفردة (Monopoles)؟", options: ["∇·E = ρ/ε₀", "∇·B = 0", "∇×E = -∂B/∂t", "∇×B = μ₀J"], ans: 1 },
+    { id: 104, subject: "النظرية الكهرومغناطيسية", q: "في الموجات الكهرومغناطيسية المنتشرة في الفراغ، الزاوية بين المجال الكهربائي (E) والمجال المغناطيسي (B) تكون:", options: ["0 درجة", "45 درجة", "90 درجة", "180 درجة"], ans: 2 },
+    // أسئلة الفيزياء النووية
+    { id: 201, subject: "الفيزياء النووية", q: "أي الجسيمات التالية ليس لها شحنة كهربائية وكتلتها السكونية قريبة جداً من الصفر؟", options: ["جسيمة ألفا", "البروتون", "النيوترينو", "الميزون"], ans: 2 },
+    { id: 202, subject: "الفيزياء النووية", q: "في تحلل بيتا السالب (β-)، ماذا يحدث لعدد الكتلة (A) والعدد الذري (Z) للنواة؟", options: ["يقل A بمقدار 4 ويقل Z بمقدار 2", "يبقى A ثابتاً ويزداد Z بمقدار 1", "يبقى A ثابتاً ويقل Z بمقدار 1", "يزداد A وZ معاً"], ans: 1 },
+    { id: 203, subject: "الفيزياء النووية", q: "نموذج القطرة السائلة السائلة للنواة (Liquid Drop Model) ينجح في تفسير:", options: ["الأعداد السحرية للنواة", "مستويات الطاقة المنفصلة", "طاقة الربط النووية والانشطار", "العزم المغناطيسي للنواة"], ans: 2 },
+    { id: 204, subject: "الفيزياء النووية", q: "النظائر (Isotopes) هي ذرات لها:", options: ["نفس Z ومختلفة في A", "نفس A ومختلفة في Z", "نفس N ومختلفة في A", "نفس A و Z معاً"], ans: 0 },
+    // أسئلة ميكانيك الكم
+    { id: 301, subject: "ميكانيك الكم", q: "الظاهرة التي يمر فيها جسيم كمي عبر حاجز جهد طاقته أكبر من الطاقة الحركية للجسيم تسمى:", options: ["الاستطارة", "الحيود", "التأثير النفقي (Tunneling)", "الامتصاص"], ans: 2 },
+    { id: 302, subject: "ميكانيك الكم", q: "في ذرة الهيدروجين، العدد الكمي الرئيسي (n) يحدد:", options: ["الزخم الزاوي المداري", "مستوى الطاقة الكلية للإلكترون", "الاتجاه الفراغي للزخم الزاوي", "غزل الإلكترون (Spin)"], ans: 1 },
+    { id: 303, subject: "ميكانيك الكم", q: "الدالة الموجية (Ψ) في ميكانيك الكم لا تمتلك معنى فيزيائياً مباشراً، ولكن مربع القيمة المطلقة |Ψ|² يمثل:", options: ["طاقة الجسيم", "سرعة الجسيم", "كثافة الاحتمالية لوجود الجسيم", "طول موجة دي برولي"], ans: 2 },
+    { id: 304, subject: "ميكانيك الكم", q: "حسب مبدأ استبعاد باولي، لا يمكن لإلكترونين في نفس الذرة أن يمتلكا نفس:", options: ["العدد الكمي الرئيسي n", "العدد الكمي المداري l", "الأعداد الكمية الأربعة (n, l, ml, ms)", "السرعة"], ans: 2 },
+    // أسئلة الليزر
+    { id: 401, subject: "الليزر", q: "المصطلح LASER هو اختصار لتكبير الضوء بواسطة:", options: ["الانبعاث التلقائي للإشعاع", "الانبعاث المحفز للإشعاع", "الامتصاص الرنيني", "التأين الحراري"], ans: 1 },
+    { id: 402, subject: "الليزر", q: "من خصائص أشعة الليزر أنها (Monochromatic)، وهذا يعني أنها:", options: ["متوازية جداً", "عالية الشدة", "أحادية اللون (لها طول موجي واحد)", "متشاكهة"], ans: 2 },
+    { id: 403, subject: "الليزر", q: "لتحقيق التوزيع المعكوس (Population Inversion) في وسط ليزري، يجب أن يكون:", options: ["عدد الذرات في المستوي الأرضي أكبر من المتهيج", "عدد الذرات في المستوي المتهيج أكبر من الأرضي", "درجة حرارة الوسط صفراً مطلقاً", "الوسط في حالة توازن حراري"], ans: 1 },
+    { id: 404, subject: "الليزر", q: "المرنان البصري (Optical Resonator) في منظومة الليزر يتكون عادة من:", options: ["مصدر طاقة كهربائية عالية", "عدستين مفرقتين", "مرآتين إحداهما عاكسة كلياً والأخرى جزئياً", "موشورين زجاجيين"], ans: 2 },
+    // أسئلة فيزياء الحالة الصلبة
+    { id: 501, subject: "فيزياء الحالة الصلبة", q: "في نموذج الحزم للطاقة، المواد العازلة تتميز بوجود:", options: ["فجوة طاقة (Band Gap) كبيرة جداً", "تداخل بين حزمة التكافؤ وحزمة التوصيل", "فجوة طاقة صغيرة جداً (أقل من 1 eV)", "حزمة توصيل ممتلئة كلياً"], ans: 0 },
+    { id: 502, subject: "فيزياء الحالة الصلبة", q: "شبيكة برافيه (Bravais Lattice) المكعبة ممركزة الوجه (FCC) تمتلك عدد ذرات فعالة (في وحدة الخلية) يساوي:", options: ["1", "2", "4", "6"], ans: 2 },
+    { id: 503, subject: "فيزياء الحالة الصلبة", q: "أشباه الموصلات المطعمة بشوائب خماسية التكافؤ (مثل الفسفور) تسمى:", options: ["شبه موصل نوع N", "شبه موصل نوع P", "شبه موصل نقي (Intrinsic)", "عازل تام"], ans: 0 },
+    { id: 504, subject: "فيزياء الحالة الصلبة", q: "الفونون (Phonon) هو كمة (Quantum) تمثل:", options: ["الضوء الكهرومغناطيسي", "الاهتزازات الشبيكية (الصوتية أو الحرارية) في البلورة", "الشحنة الكهربائية", "العزم المغناطيسي للإلكترون"], ans: 1 }
   ],
   resources: [
     { id: 101, type: "بحث تخرج", title: "قالب كتابة بحث التخرج الرسمي - قسم الفيزياء", desc: "يتضمن ترتيب الواجهة، الإهداء، الملخص، الفصول، وطريقة كتابة المصادر.", url: "#" },
@@ -174,8 +192,8 @@ const SHARED_DATA = {
     siteSub: "المرحلة الرابعة • قسم الفيزياء",
     footerText: "مكتبة فيزياء المرحلة الرابعة - النسخة الاحترافية الشاملة © 2026",
     urgentText: "مرحباً بكم في البوابة الرقمية لقسم الفيزياء - المرحلة الرابعة! تابعوا قناة التليگرام وبيج القسم لكل جديد.",
-    examTitle: "العد التنازلي للامتحانات القادمة",
-    examDate: "2026-12-20T09:00",
+    examTitle: "العد التنازلي للامتحانات النهائية",
+    examDate: "2027-05-16T08:30",
     tgChannel: "https://t.me/+ULWb5T4LxlkwNmJi",
     igUser: "phy_gen4",
     adminUser: "admin",
@@ -238,8 +256,9 @@ let store = {
 let favorites = JSON.parse(localStorage.getItem("phys_favs") || "[]");
 let readFiles = JSON.parse(localStorage.getItem("phys_read") || "[]");
 let todos = JSON.parse(localStorage.getItem("phys_todos") || "[]");
+let studentStats = JSON.parse(localStorage.getItem("phys_student_stats") || `{"quizCorrect":0,"quizTotal":0}`);
 
-// جلب البيانات المحدثة من GitHub بشرط أن تكون أحدث من التعديلات المحلية (لمنع رجوع المحذوفات)
+// جلب البيانات المحدثة
 fetch("data.json?t=" + Date.now())
   .then(r => r.ok ? r.json() : null)
   .then(data => {
@@ -279,6 +298,7 @@ function saveLocalStore(bumpTime = true) {
   localStorage.setItem("phys_quizzes", JSON.stringify(store.quizzes));
   localStorage.setItem("phys_resources", JSON.stringify(store.resources));
   localStorage.setItem("phys_settings", JSON.stringify(store.settings));
+  localStorage.setItem("phys_student_stats", JSON.stringify(studentStats));
   applySiteBranding();
 }
 
@@ -406,7 +426,36 @@ function openInModal(id) {
   const viewUrl = getViewUrl(f.url);
   document.getElementById("modalTitle").textContent = f.title;
   document.getElementById("modalExternalBtn").href = f.url || "#";
+  document.getElementById("modalExternalBtn").style.display = "inline-flex";
   document.getElementById("modalBody").innerHTML = `<iframe src="${viewUrl}" allowfullscreen></iframe>`;
+  document.getElementById("viewerModal").classList.add("open");
+}
+
+function showMyStatsModal() {
+  const pct = store.files.length > 0 ? Math.round((readFiles.length / store.files.length) * 100) : 0;
+  const qPct = studentStats.quizTotal > 0 ? Math.round((studentStats.quizCorrect / studentStats.quizTotal) * 100) : 0;
+  let msg = "بداية جيدة، استمر بالدراسة!";
+  if (pct > 50) msg = "أنت تعبر منتصف الطريق، بطل!";
+  if (pct > 80) msg = "مستواك ممتاز، الامتياز ينتظرك!";
+  
+  document.getElementById("modalTitle").textContent = "📊 إحصائياتي الدراسية";
+  document.getElementById("modalExternalBtn").style.display = "none";
+  document.getElementById("modalBody").innerHTML = `
+    <div class="stat-box-inner">
+      <div style="font-size:60px;margin-bottom:15px">📈</div>
+      <h3 style="color:var(--muted)">نسبة المحاضرات التي قرأتها</h3>
+      <h1>${pct}%</h1>
+      <p style="color:var(--a);margin-bottom:30px">${readFiles.length} من أصل ${store.files.length} محاضرة وملزمة</p>
+      
+      <h3 style="color:var(--muted)">إجاباتك الصحيحة في بنك الأسئلة (MCQ)</h3>
+      <h1>${studentStats.quizCorrect} <span style="font-size:20px;color:var(--muted)">/ ${studentStats.quizTotal}</span></h1>
+      <p style="color:var(--ok);margin-bottom:30px">نسبة صحة إجاباتك: ${qPct}%</p>
+      
+      <div style="background:var(--bg);padding:15px;border-radius:12px;border:1px solid var(--line)">
+        <b>رسالة المكتبة:</b><br>${msg}
+      </div>
+    </div>
+  `;
   document.getElementById("viewerModal").classList.add("open");
 }
 
@@ -444,7 +493,7 @@ function renderFileCard(f) {
   `;
 }
 
-let currentState = { page: "home", slug: "", category: "", q: "", sort: "newest" };
+let currentState = { page: "home", slug: "", category: "", q: "", sort: "newest", quizFilter: "" };
 
 function navigate(page, params = {}) {
   currentState = {
@@ -452,7 +501,8 @@ function navigate(page, params = {}) {
     slug: params.slug || "",
     category: params.category || "",
     q: params.q || "",
-    sort: params.sort || "newest"
+    sort: params.sort || "newest",
+    quizFilter: params.quizFilter || ""
   };
   document.getElementById("logoutNavLink").style.display = isAdmin() ? "inline" : "none";
   render();
@@ -530,7 +580,7 @@ function render() {
         <div>
           <span class="pill">${escapeHtml(s.siteSub || "السنة الدراسية • المرحلة الرابعة")}</span>
           <h1>كل ملفات الفيزياء<br><em>بمكان واحد</em></h1>
-          <p>ملازم، محاضرات، فيديوهات، بطاقات مراجعة، وأدوات فيزيائية — مرتبة حسب المادة وسهلة الوصول.</p>
+          <p>ملازم، محاضرات، فيديوهات، بنك أسئلة تدريبية، وأدوات فيزيائية — مرتبة حسب المادة وسهلة الوصول.</p>
           <form class="search" onsubmit="handleGlobalSearch(event)">
             <input id="homeSearchInput" name="q" placeholder="ابحث عن ملزمة أو محاضرة أو اسم مدرس...">
             <button type="submit">🔎 بحث</button>
@@ -538,6 +588,7 @@ function render() {
           <div class="hero-socials">
             <a href="${escapeHtml(tgUrl)}" target="_blank" class="soc-btn soc-tg">✈️ انضم لقناة المرحلة</a>
             <a href="${escapeHtml(igUrl)}" target="_blank" class="soc-btn soc-ig">📸 بيج القسم @${escapeHtml(igClean)}</a>
+            <button onclick="showMyStatsModal()" class="soc-btn soc-stat">📊 مستواي</button>
           </div>
         </div>
         <div class="orb">⚛</div>
@@ -767,17 +818,20 @@ function render() {
   }
 
   else if (currentState.page === "study") {
-    document.title = "البطاقات الذكية ومؤقت الدراسة";
-    const fcHtml = (store.flashcards || []).map(fc => `
-      <div class="flashcard" onclick="this.classList.toggle('flipped')">
-        <span class="pill" style="margin-bottom:10px">${escapeHtml(fc.subject)}</span>
-        <div class="fc-front">${escapeHtml(fc.front)}<br><small style="color:var(--muted);font-size:12px;display:block;margin-top:10px">🔄 اضغط لقلب البطاقة وإظهار الجواب</small></div>
-        <div class="fc-back">${escapeHtml(fc.back)}</div>
-        ${isAdmin() ? `<button class="btn danger" style="margin-top:12px" onclick="event.stopPropagation();deleteFlashcard(${fc.id})">حذف</button>` : ""}
-      </div>
-    `).join("");
+    document.title = "بنك الأسئلة التدريبية والمؤقت";
+    const activeFilter = currentState.quizFilter;
+    let filteredQuizzes = store.quizzes || [];
+    if (activeFilter) filteredQuizzes = filteredQuizzes.filter(q => q.subject === activeFilter);
+    
+    // استخراج المواد المتوفرة في الأسئلة حصراً
+    const quizSubjectsSet = new Set();
+    (store.quizzes || []).forEach(q => quizSubjectsSet.add(q.subject));
+    const quizSubjects = Array.from(quizSubjectsSet);
+    
+    const filterLinks = `<a class="${!activeFilter ? 'active' : ''}" onclick="navigate('study', {quizFilter: ''})">الكل</a>` + 
+                        quizSubjects.map(s => `<a class="${activeFilter === s ? 'active' : ''}" onclick="navigate('study', {quizFilter: '${s}'})">${s}</a>`).join("");
 
-    const quizHtml = (store.quizzes || []).map((q, idx) => `
+    const quizHtml = filteredQuizzes.map((q, idx) => `
       <div class="panel" style="margin-bottom:15px">
         <span class="pill">${escapeHtml(q.subject)}</span>
         <h3 style="margin:10px 0">${idx + 1}. ${escapeHtml(q.q)}</h3>
@@ -785,6 +839,15 @@ function render() {
           ${q.options.map((opt, oi) => `<button class="quiz-opt" onclick="checkQuizAnswer(this, ${oi}, ${q.ans})">${escapeHtml(opt)}</button>`).join("")}
         </div>
         ${isAdmin() ? `<button class="btn danger" style="margin-top:8px" onclick="deleteQuiz(${q.id})">حذف السؤال</button>` : ""}
+      </div>
+    `).join("");
+
+    const fcHtml = (store.flashcards || []).map(fc => `
+      <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <span class="pill" style="margin-bottom:10px">${escapeHtml(fc.subject)}</span>
+        <div class="fc-front">${escapeHtml(fc.front)}<br><small style="color:var(--muted);font-size:12px;display:block;margin-top:10px">🔄 اضغط لقلب البطاقة وإظهار الجواب</small></div>
+        <div class="fc-back">${escapeHtml(fc.back)}</div>
+        ${isAdmin() ? `<button class="btn danger" style="margin-top:12px" onclick="event.stopPropagation();deleteFlashcard(${fc.id})">حذف</button>` : ""}
       </div>
     `).join("");
 
@@ -801,12 +864,7 @@ function render() {
     app.innerHTML = `
       <section class="page-head">
         <span class="pill">مراجعة وترتيب الوقت</span>
-        <h1>🃏 البطاقات الذكية + ⏱️ مؤقت التركيز + 📝 اختبر نفسك</h1>
-      </section>
-
-      <section class="section">
-        <div class="section-head"><h2>🃏 البطاقات الذكية للمراجعة السريعة (Flashcards)</h2><span>اضغط على أي بطاقة لقلبها</span></div>
-        <div class="fc-grid">${fcHtml}</div>
+        <h1>🧠 بنك أسئلة MCQ + ⏱️ مؤقت التركيز</h1>
       </section>
 
       <div class="admin-grid" style="grid-template-columns: 1fr 1fr 1.2fr">
@@ -818,7 +876,6 @@ function render() {
             <button class="primary" onclick="togglePomo()" id="pomoStartBtn">${pomoTimer ? 'إيقاف مؤقت ⏸' : 'ابدأ التركيز ▶'}</button>
             <button class="btn view" onclick="setPomoMode(25)">25 د دراسة</button>
             <button class="btn download" onclick="setPomoMode(5)">5 د استراحة</button>
-            <button class="btn warn-btn" onclick="setPomoMode(60)">60 د مراجعة</button>
           </div>
         </section>
 
@@ -834,10 +891,16 @@ function render() {
         </section>
 
         <div>
-          <h2>🧠 بنك الأسئلة السريعة (MCQ)</h2>
-          ${quizHtml}
+          <h2>🧠 بنك الأسئلة التدريبية</h2>
+          <div class="filters" style="margin-bottom:15px">${filterLinks}</div>
+          ${quizHtml || '<div class="empty">لا توجد أسئلة لهذه المادة حالياً.</div>'}
         </div>
       </div>
+
+      <section class="section">
+        <div class="section-head"><h2>🃏 البطاقات الذكية للمراجعة السريعة (Flashcards)</h2><span>اضغط على أي بطاقة لقلبها</span></div>
+        <div class="fc-grid">${fcHtml}</div>
+      </section>
     `;
   }
 
@@ -930,7 +993,7 @@ function render() {
       <div class="sync-bar">
         <div>
           <h3 style="margin:0 0 6px;color:var(--a)">🌐 النشر الفوري لجميع الطلاب</h3>
-          <small style="color:var(--muted)">النشر التلقائي يعمل مع كل إضافة أو حذف، ويمكنك أيضاً الضغط هنا لتأكيد المزامنة الفورية مع GitHub.</small>
+          <small style="color:var(--muted)">النشر التلقائي يعمل مع كل إضافة أو حذف، ويمكنك أيضاً الضغط هنا لتأكيد المزامنة الفورية.</small>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <button class="primary" onclick="syncToGitHub()">☁️ نشر التحديثات الآن إلى GitHub</button>
@@ -1016,7 +1079,16 @@ function render() {
           <hr>
           <h2>🧠 إضافة سؤال لبنك (اختبر نفسك)</h2>
           <form onsubmit="handleAddQuiz(event)">
-            <label>المادة<select id="qzSubj">${SUBJECTS.map(([s,n]) => `<option value="${n}">${n}</option>`).join("")}</select></label>
+            <label>المادة
+              <select id="qzSubj">
+                <option value="ميكانيك الكم">ميكانيك الكم</option>
+                <option value="الفيزياء النووية">الفيزياء النووية</option>
+                <option value="الليزر">الليزر</option>
+                <option value="فيزياء الحالة الصلبة">فيزياء الحالة الصلبة</option>
+                <option value="النظرية الكهرومغناطيسية">النظرية الكهرومغناطيسية</option>
+                <option value="القياس والتقويم">القياس والتقويم</option>
+              </select>
+            </label>
             <input id="qzQ" placeholder="نص السؤال..." required>
             <input id="qzO1" placeholder="الخيار الأول" required>
             <input id="qzO2" placeholder="الخيار الثاني" required>
@@ -1057,7 +1129,6 @@ function render() {
   }
 }
 
-// مؤقت الدراسة Pomodoro
 let pomoSeconds = 25 * 60;
 let pomoTimer = null;
 
@@ -1144,6 +1215,18 @@ function calcGPA() {
 
 function checkQuizAnswer(btn, chosen, correct) {
   const parent = btn.parentElement;
+  if (parent.dataset.answered === "true") return; // منع تكرار الإجابة لنفس السؤال
+  parent.dataset.answered = "true";
+  
+  studentStats.quizTotal++;
+  if (chosen === correct) {
+    studentStats.quizCorrect++;
+    showFlash("✅ إجابة صحيحة! استمر يا بطل.");
+  } else {
+    showFlash("❌ إجابة خاطئة! الجواب الصحيح مظلل باللون الأخضر.", "error");
+  }
+  localStorage.setItem("phys_student_stats", JSON.stringify(studentStats));
+
   Array.from(parent.children).forEach((b, idx) => {
     b.disabled = true;
     if (idx === correct) b.classList.add("correct");
