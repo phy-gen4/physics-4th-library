@@ -1,5 +1,5 @@
 {
-  "lastUpdated": 1791329217590,
+  "lastUpdated": 1791353997147,
   "files": [
     {
       "id": 1791329217710,
@@ -20,16 +20,6 @@
       "original_name": "محاضرات النووية  2027.pdf",
       "teacher": "",
       "url": "uploads/1791326974762__________________2027.pdf",
-      "downloads": 0
-    },
-    {
-      "id": 1791326736494,
-      "subject": "laser",
-      "category": "ملازم",
-      "title": "one chapter",
-      "original_name": "محاضرات الليزر النهائية.pdf",
-      "teacher": "",
-      "url": "uploads/1791326722332________________________.pdf",
       "downloads": 0
     },
     {
@@ -160,7 +150,7 @@
     "footerText": "مكتبة فيزياء المرحلة الرابعة - النسخة الاحترافية الشاملة © 2026",
     "urgentText": "مرحباً بكم في البوابة الرقمية لقسم الفيزياء - المرحلة الرابعة! جميع الملازم والمحاضرات محدثة باستمرار.",
     "examTitle": "العد التنازلي للامتحانات القادمة",
-    "examDate": "2026-12-20T09:00",
+    "examDate": "2027-05-16T09:00",
     "tgChannel": "https://t.me/+ULWb5T4LxlkwNmJi",
     "igUser": "phy_gen4",
     "adminUser": "admin",
