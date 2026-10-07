@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#07101d">
+<link rel="manifest" href="manifest.webmanifest">
 <title>الرئيسية | مكتبة الفيزياء</title>
 <style>
 :root{--bg:#07101d;--panel:#0e1a2a;--panel2:#122237;--text:#eef7ff;--muted:#9eb0c4;--line:#1e334c;--a:#35c8ff;--b:#6675ff;--danger:#ff5470;--ok:#35d39a;--warn:#ffb142;--font-scale:1}
@@ -87,6 +88,8 @@ nav{display:flex;gap:8px;color:var(--muted);align-items:center;flex-wrap:wrap}na
 footer{text-align:center;color:var(--muted);padding:45px 20px;border-top:1px solid var(--line);margin-top:50px}
 .flash{max-width:1180px;margin:15px auto;padding:14px 18px;border-radius:12px;background:#35d39a18;color:var(--ok);border:1px solid #35d39a44}.flash.error{background:#ff547018;color:#ff7187;border-color:#ff547044}
 body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63758b;--line:#d8e1ec}body.light .top{background:#ffffffdd}body.light input,body.light select,body.light textarea{background:#f7faff;color:#102035}body.light .hero,body.light .countdown-bar,body.light .sync-bar,body.light .flashcard.flipped{background:linear-gradient(135deg,#e3effd,#ffffff)}body.light .cd-box,body.light .law-formula{background:#f7faff}
+
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}.feature-card h3{margin:0 0 8px}.feature-card p{color:var(--muted);line-height:1.7}.metric-row{display:flex;gap:8px;flex-wrap:wrap}.metric{flex:1;min-width:120px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}.metric b{display:block;color:var(--a);font-size:24px}.rating{display:flex;gap:4px;direction:rtl;justify-content:flex-start}.rating button{background:transparent;border:0;font-size:24px;cursor:pointer;color:var(--muted)}.rating button:hover,.rating button.active{color:#ffd32a}.comment-item{padding:10px;border-bottom:1px solid var(--line)}.notice-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--danger);margin-left:5px}.offline-badge{color:var(--ok);font-weight:bold}.feature-table{width:100%;border-collapse:collapse}.feature-table th,.feature-table td{padding:10px;border-bottom:1px solid var(--line);text-align:right}.feature-table th{color:var(--a)}@media(max-width:850px){.feature-grid{grid-template-columns:1fr}}
 @media(max-width:850px){.hero{margin:20px 4%;padding:26px;display:block}.hero h1{font-size:32px}.orb{display:none}.section,.page-head,.files,.schedule,.admin-grid,.sync-bar,.countdown-bar,.progress-wrap{margin-left:4%;margin-right:4%}.grid,.admin-grid,.ann-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr);margin-left:4%;margin-right:4%}.file{align-items:flex-start}.actions{width:100%}.actions .btn{flex:1;justify-content:center}.schedule article{grid-template-columns:1fr 1fr}.schedule article span,.schedule article small{grid-column:1/-1}}
 </style>
 </head>
@@ -109,6 +112,7 @@ body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63
     <a onclick="navigate('tools')">🔬 المختبر والأدوات</a>
     <a onclick="navigate('study')">📐 القوانين والاختبارات</a>
     <a onclick="navigate('graduation')">🎓 التخرج والتطبيق</a>
+    <a onclick="navigate('features')">🚀 المزايا الشاملة</a>
     <a id="adminNavLink" onclick="navigate(isAdmin() ? 'admin' : 'login')">⚙️ الإدارة</a>
     <a id="logoutNavLink" style="display:none;color:var(--danger)" onclick="logoutAdmin()">خروج</a>
   </nav>
@@ -431,6 +435,7 @@ function isNewFile(createdAt) {
 }
 
 function toggleFav(id) {
+  logActivity("favorite", "تم تحديث المفضلة");
   const idx = favorites.indexOf(id);
   if (idx === -1) { favorites.push(id); showFlash("⭐ تمت إضافة الملزمة إلى المفضلة"); }
   else { favorites.splice(idx, 1); }
@@ -440,6 +445,7 @@ function toggleFav(id) {
 }
 
 function toggleRead(id) {
+  logActivity("read", "تم تحديث حالة قراءة ملف");
   const idx = readFiles.indexOf(id);
   if (idx === -1) { readFiles.push(id); showFlash("✅ عاشت إيدك! تم تأشير المحاضرة كمقروءة"); }
   else { readFiles.splice(idx, 1); }
@@ -609,7 +615,7 @@ function renderFileCard(f) {
   `;
 }
 
-let currentState = { page: "home", slug: "", category: "", q: "", sort: "newest", quizFilter: "", lawFilter: "" };
+let currentState = { page: "home", slug: "", category: "", q: "", sort: "newest", quizFilter: "", lawFilter: "", featureTab: "overview" };
 
 function navigate(page, params = {}) {
   currentState = {
@@ -619,7 +625,8 @@ function navigate(page, params = {}) {
     q: params.q || "",
     sort: params.sort || "newest",
     quizFilter: params.quizFilter || "",
-    lawFilter: params.lawFilter || ""
+    lawFilter: params.lawFilter || "",
+    featureTab: params.featureTab || "overview"
   };
   document.getElementById("logoutNavLink").style.display = isAdmin() ? "inline" : "none";
   render();
@@ -647,6 +654,58 @@ function getCountdownHtml() {
         <div class="cd-box"><b>${mins}</b><small>دقيقة</small></div>
       </div>
     </div>
+  `;
+}
+
+
+function getActivityLog(){ return JSON.parse(localStorage.getItem("phys_activity_log") || "[]"); }
+function saveActivityLog(log){ localStorage.setItem("phys_activity_log", JSON.stringify(log.slice(0,200))); }
+function logActivity(type, text){ const log=getActivityLog(); log.unshift({id:Date.now(),type,text,at:new Date().toLocaleString("ar-IQ")}); saveActivityLog(log); }
+function getRatings(){ return JSON.parse(localStorage.getItem("phys_ratings") || "{}"); }
+function getComments(){ return JSON.parse(localStorage.getItem("phys_comments") || "{}"); }
+function getReports(){ return JSON.parse(localStorage.getItem("phys_reports") || "[]"); }
+function rateFile(id, score){ const r=getRatings(); r[id]=Number(score); localStorage.setItem("phys_ratings",JSON.stringify(r)); logActivity("rating","قيّمت ملفاً بـ "+score+" نجوم"); showFlash("⭐ تم حفظ تقييمك"); renderFeaturesPage(document.getElementById("appContent")); }
+function addFileComment(e){ e.preventDefault(); const id=Number(document.getElementById("fbFile").value); const text=document.getElementById("fbComment").value.trim(); if(!text)return; const c=getComments(); c[id]=c[id]||[]; c[id].unshift({text,at:new Date().toLocaleString("ar-IQ")}); localStorage.setItem("phys_comments",JSON.stringify(c)); logActivity("comment","أضفت تعليقاً على ملف"); document.getElementById("fbComment").value=""; showFlash("💬 تمت إضافة التعليق"); renderFeaturesPage(document.getElementById("appContent")); }
+function reportIssue(e){ e.preventDefault(); const id=Number(document.getElementById("rpFile").value); const text=document.getElementById("rpText").value.trim(); if(!text)return; const r=getReports(); r.unshift({id,fileId:id,text,at:new Date().toLocaleString("ar-IQ"),status:"جديد"}); localStorage.setItem("phys_reports",JSON.stringify(r)); logActivity("report","تم إرسال بلاغ عن مشكلة"); document.getElementById("rpText").value=""; showFlash("🚩 تم إرسال البلاغ للمراجعة"); }
+function notifyMe(){ if(!("Notification" in window)){showFlash("الإشعارات غير مدعومة بهذا المتصفح","error");return;} Notification.requestPermission().then(x=>showFlash(x==="granted"?"🔔 تم تفعيل الإشعارات على هذا الجهاز":"لم يتم تفعيل الإشعارات")); }
+function installPWA(){ if(window.__pwaPrompt){window.__pwaPrompt.prompt();window.__pwaPrompt.userChoice.finally(()=>window.__pwaPrompt=null);return;} showFlash("من قائمة المتصفح اختر: إضافة إلى الشاشة الرئيسية 📲"); }
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();window.__pwaPrompt=e;});
+function searchAdvanced(){ const q=(document.getElementById("advQ").value||"").toLowerCase(); const subj=document.getElementById("advSubj").value; const cat=document.getElementById("advCat").value; const res=store.files.filter(f=>(!q||[f.title,f.teacher,f.original_name].join(" ").toLowerCase().includes(q))&&(!subj||f.subject===subj)&&(!cat||f.category===cat)); const box=document.getElementById("advResults"); box.innerHTML=res.length?res.map(renderFileCard).join(""):'<div class="empty">لا توجد نتائج مطابقة.</div>'; }
+function renderFeaturesPage(app){
+  document.title="المزايا الشاملة | مكتبة الفيزياء";
+  const logs=getActivityLog(), ratings=getRatings(), comments=getComments(), reports=getReports();
+  const read=readFiles.length, total=store.files.length, downloads=store.files.reduce((a,f)=>a+(f.downloads||0),0);
+  const qTotal=studentStats.quizTotal||0, qCorrect=studentStats.quizCorrect||0, qPct=qTotal?Math.round(qCorrect/qTotal*100):0;
+  const upcoming=(store.exams||[]).filter(x=>new Date(x.date).getTime()>=Date.now()).sort((a,b)=>new Date(a.date)-new Date(b.date));
+  const achievements=[
+    [read>=1,"📖","أول محاضرة","قرأت أول ملف"],[read>=5,"🔥","قارئ نشيط","قرأت 5 ملفات"],[favorites.length>=3,"⭐","جامع المفضلة","3 ملفات مفضلة"],[qTotal>=5,"🧠","متدرّب الأسئلة","أجبت 5 أسئلة"],[qPct>=80&&qTotal>=5,"🏆","متفوّق","دقة 80% فأعلى"],[downloads>=10,"⬇️","باحث مجتهد","10 عمليات تحميل"]
+  ];
+  const subjOpts=SUBJECTS.map(([id,n])=>`<option value="${id}">${n}</option>`).join("");
+  const catOpts=CATEGORIES.map(c=>`<option value="${c}">${c}</option>`).join("");
+  const fileOpts=store.files.map(f=>`<option value="${f.id}">${escapeHtml(f.title)} — ${escapeHtml(SUBJECT_MAP[f.subject]||f.subject)}</option>`).join("");
+  const ann=store.announcements||[];
+  app.innerHTML=`
+    <section class="page-head"><span class="pill">كل المزايا 2 → 26</span><h1>🚀 مركز المزايا الشاملة</h1><p>كل أدوات المكتبة في مكان واحد، بدون حسابات طلاب.</p></section>
+    <section class="panel section"><div class="metric-row"><div class="metric"><b>${read}/${total}</b>المحاضرات المقروءة</div><div class="metric"><b>${downloads}</b>التحميلات</div><div class="metric"><b>${qPct}%</b>دقة بنك الأسئلة</div><div class="metric"><b>${favorites.length}</b>المفضلة</div><div class="metric"><b>${reports.length}</b>البلاغات</div></div></section>
+    <div class="feature-grid section">
+      <section class="feature-card"><h3>🔔 الإشعارات والمتابعة</h3><p>${ann.length?`لديك ${ann.length} إعلان/إشعار منشور.`:'لا توجد إشعارات جديدة حالياً.'}</p><button class="btn view" onclick="notifyMe()">تفعيل إشعارات الجهاز</button></section>
+      <section class="feature-card"><h3>📊 سجل الإضافات والتحميلات</h3><p>يتم حفظ نشاطك على هذا الجهاز بدون إنشاء حساب.</p><button class="btn view" onclick="navigate('features',{featureTab:'activity'})">عرض السجل</button></section>
+      <section class="feature-card"><h3>📝 الملاحظات والمخطط الدراسي</h3><p>استخدم ملاحظات الملفات وقائمة المهام الموجودة بالموقع.</p><button class="btn view" onclick="navigate('features',{featureTab:'planner'})">فتح المخطط</button></section>
+      <section class="feature-card"><h3>🧠 بنك الأسئلة والإنجازات</h3><p>${qCorrect}/${qTotal} إجابة صحيحة.</p><button class="btn view" onclick="navigate('study')">اختبر نفسك</button></section>
+      <section class="feature-card"><h3>🃏 البطاقات التعليمية</h3><p>${(store.flashcards||[]).length} بطاقة مراجعة جاهزة.</p><button class="btn view" onclick="navigate('study')">فتح البطاقات</button></section>
+      <section class="feature-card"><h3>🧮 حاسبات الفيزياء</h3><p>التحلل الإشعاعي، الوحدات، الخطأ، المعدل، والرسم البياني.</p><button class="btn view" onclick="navigate('tools')">فتح الحاسبات</button></section>
+      <section class="feature-card"><h3>🔬 المختبر والتقارير</h3><p>راسم بياني، ميل، نسبة خطأ، وواجهة تقرير A4.</p><button class="btn view" onclick="navigate('tools')">فتح أدوات المختبر</button></section>
+      <section class="feature-card"><h3>📅 الامتحانات والجدول التفاعلي</h3><p>${upcoming.length?`أقرب امتحان: ${escapeHtml(upcoming[0].subject)} — ${escapeHtml(upcoming[0].date)}`:'لا توجد امتحانات قادمة مضافة.'}</p><button class="btn view" onclick="navigate('schedule')">فتح الجدول</button></section>
+      <section class="feature-card"><h3>🎓 التخرج والتطبيق</h3><p>ملفات بحوث التخرج والتربية العملية.</p><button class="btn view" onclick="navigate('graduation')">فتح الركن</button></section>
+      <section class="feature-card"><h3>📲 PWA والعمل بدون نت</h3><p><span class="offline-badge">●</span> الموقع مجهز للتثبيت على الهاتف مع ملفات الخدمة.</p><button class="btn view" onclick="installPWA()">تثبيت/إضافة للشاشة</button></section>
+      <section class="feature-card"><h3>⚙️ الإدارة والإحصائيات</h3><p>${isAdmin()?'أنت داخل الإدارة ويمكنك إدارة المحتوى والنشر.':'الدخول متاح لمسؤول المكتبة فقط.'}</p><button class="btn view" onclick="navigate(isAdmin()?'admin':'login')">لوحة الإدارة</button></section>
+      <section class="feature-card"><h3>🎨 تخصيص الموقع</h3><p>الوضع الليلي، حجم الخط، الاسم، التليگرام، الانستگرام والإعلانات من الإعدادات.</p><button class="btn view" onclick="navigate(isAdmin()?'admin':'login')">تخصيص الموقع</button></section>
+    </div>
+    <section class="panel section"><h2>🔎 البحث المتقدم</h2><div class="mini"><input id="advQ" placeholder="العنوان أو المدرس أو اسم الملف"><select id="advSubj"><option value="">كل المواد</option>${subjOpts}</select><select id="advCat"><option value="">كل التصنيفات</option>${catOpts}</select><button class="primary" onclick="searchAdvanced()">بحث متقدم</button></div><div id="advResults"></div></section>
+    <section class="panel section"><h2>⭐ تقييم الملفات + 💬 التعليقات + 🚩 الإبلاغ</h2><div class="mini"><select id="fbFile" style="flex:2">${fileOpts||'<option>لا توجد ملفات</option>'}</select><div class="rating" id="ratingBtns">${[5,4,3,2,1].map(n=>`<button type="button" onclick="rateFile(document.getElementById('fbFile').value,${n})">★</button>`).join('')}</div></div><form onsubmit="addFileComment(event)" class="mini"><input id="fbComment" placeholder="اكتب تعليقك أو ملاحظتك على الملف" required><button class="btn view">إضافة تعليق</button></form><form onsubmit="reportIssue(event)" class="mini"><select id="rpFile">${fileOpts||'<option>لا توجد ملفات</option>'}</select><input id="rpText" placeholder="ما المشكلة؟ رابط لا يعمل، ملف خاطئ..." required><button class="btn warn-btn">🚩 إرسال بلاغ</button></form><div>${Object.entries(comments).flatMap(([id,arr])=>arr.slice(0,5).map(c=>`<div class="comment-item">💬 ${escapeHtml(c.text)} <small>${escapeHtml(c.at)}</small></div>`)).join('')||'<p style="color:var(--muted)">لا توجد تعليقات بعد.</p>'}</div></section>
+    <section class="panel section"><h2>🏆 الإنجازات</h2><div class="feature-grid">${achievements.map(a=>`<div class="feature-card" style="opacity:${a[0]?1:.45}"><div style="font-size:32px">${a[1]}</div><b>${a[2]}</b><p>${a[3]} ${a[0]?'✅':'🔒'}</p></div>`).join('')}</div></section>
+    ${currentState.featureTab==='activity'?`<section class="panel section"><h2>📜 سجل النشاط</h2>${logs.length?logs.map(x=>`<div class="minirow"><span>${escapeHtml(x.text)}</span><small>${escapeHtml(x.at)}</small></div>`).join(''):'<div class="empty">لا يوجد نشاط مسجل بعد.</div>'}</section>`:''}
+    ${currentState.featureTab==='planner'?`<section class="panel section"><h2>🗓️ المخطط الدراسي</h2><p style="color:var(--muted)">قائمة المهام والملاحظات مرتبطة بالموقع الحالي.</p><button class="primary" onclick="navigate('tools')">الانتقال للأدوات والمخطط</button></section>`:''}
   `;
 }
 
@@ -1150,6 +1209,10 @@ function render() {
       </section>
       <div class="files">${cards}</div>
     `;
+  }
+
+  else if (currentState.page === "features") {
+    renderFeaturesPage(app);
   }
 
   else if (currentState.page === "login") {
@@ -1889,6 +1952,7 @@ function editSchedulePrompt(id) {
 }
 
 function countDownload(id, rerender) {
+  logActivity("download", "تم تحميل ملف");
   const f = store.files.find(x => x.id === id);
   if (f) {
     f.downloads = (f.downloads || 0) + 1;
@@ -2090,6 +2154,7 @@ function escapeHtml(str) {
 
 render();
 initVisitorCounter();
+if("serviceWorker" in navigator){ navigator.serviceWorker.register("sw.js").catch(()=>{}); }
 </script>
 </body>
 </html>
