@@ -3,83 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#07101d">
 <title>الرئيسية | مكتبة الفيزياء</title>
 <style>
 :root{--bg:#07101d;--panel:#0e1a2a;--panel2:#122237;--text:#eef7ff;--muted:#9eb0c4;--line:#1e334c;--a:#35c8ff;--b:#6675ff;--danger:#ff5470;--ok:#35d39a;--warn:#ffb142;--font-scale:1}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#153052 0,transparent 35%),var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh;font-size:calc(16px * var(--font-scale))}a{text-decoration:none;color:inherit}
 .top{min-height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:10px 4%;position:sticky;top:0;background:#07101de8;backdrop-filter:blur(16px);z-index:20;gap:12px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;cursor:pointer}.brand>span{font-size:30px}.brand b{display:block;font-size:18px}.brand small{color:var(--muted)}
-nav{display:flex;gap:10px;color:var(--muted);align-items:center;flex-wrap:wrap}nav a{cursor:pointer;font-size:14px;padding:6px 10px;border-radius:8px;transition:.2s}nav a:hover,nav a.active-nav{color:var(--a);background:#35c8ff15}
-.top-tools{display:flex;gap:8px;align-items:center}
-.theme{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 11px;cursor:pointer;color:var(--text);font-weight:bold}
+nav{display:flex;gap:8px;color:var(--muted);align-items:center;flex-wrap:wrap}nav a{cursor:pointer;font-size:13.5px;padding:6px 10px;border-radius:8px;transition:.2s}nav a:hover,nav a.active-nav{color:var(--a);background:#35c8ff15}
+.top-tools{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.theme{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 11px;cursor:pointer;color:var(--text);font-weight:bold;font-size:13px}
 .ticker{background:linear-gradient(90deg,#1e3a8a,#0e1a2a);border-bottom:1px solid var(--line);padding:9px 5%;color:var(--a);font-size:14px;display:flex;align-items:center;gap:10px}
 .ticker b{background:var(--danger);color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;white-space:nowrap}
 .countdown-bar{max-width:1180px;margin:20px auto 0;padding:16px 24px;border-radius:18px;background:linear-gradient(135deg,#162c46,#0e1a2a);border:1px solid #35c8ff55;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
 .cd-boxes{display:flex;gap:10px}.cd-box{background:#07101d;border:1px solid var(--line);border-radius:12px;padding:8px 14px;text-align:center;min-width:65px}.cd-box b{display:block;font-size:20px;color:var(--a)}.cd-box small{font-size:11px;color:var(--muted)}
-.hero{max-width:1180px;margin:25px auto;padding:45px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(135deg,#10243a,#0b1525);display:flex;justify-content:space-between;align-items:center;overflow:hidden;position:relative}
-.hero h1{font-size:44px;margin:16px 0}.hero em{font-style:normal;background:linear-gradient(90deg,var(--a),#8791ff);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;line-height:1.9}.orb{font-size:120px;filter:drop-shadow(0 0 35px #35c8ff66)}
+.hero{max-width:1180px;margin:25px auto;padding:42px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(135deg,#10243a,#0b1525);display:flex;justify-content:space-between;align-items:center;overflow:hidden;position:relative}
+.hero h1{font-size:42px;margin:16px 0}.hero em{font-style:normal;background:linear-gradient(90deg,var(--a),#8791ff);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;line-height:1.9}.orb{font-size:120px;filter:drop-shadow(0 0 35px #35c8ff66)}
 .hero-socials{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.soc-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;font-weight:bold;font-size:14px;color:#fff;transition:.2s;border:0;cursor:pointer}
+.soc-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:12px;font-weight:bold;font-size:13.5px;color:#fff;transition:.2s;border:0;cursor:pointer}
 .soc-tg{background:linear-gradient(135deg,#0088cc,#35c8ff);box-shadow:0 4px 15px rgba(0,136,204,0.3)}
 .soc-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);box-shadow:0 4px 15px rgba(220,39,67,0.3)}
 .soc-stat{background:linear-gradient(135deg,#132c47,#0e1a2a);border:1px solid var(--a);color:var(--a)}
 .soc-btn:hover{transform:translateY(-2px)}
-.pill{display:inline-block;padding:7px 12px;border-radius:999px;background:#35c8ff15;border:1px solid #35c8ff40;color:var(--a);font-size:13px}
+.pill{display:inline-block;padding:6px 12px;border-radius:999px;background:#35c8ff15;border:1px solid #35c8ff40;color:var(--a);font-size:12.5px}
 .badge-new{background:#ff547025;color:#ff7187;border:1px solid #ff547066;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:bold;margin-right:6px}
 .badge-vid{background:#6675ff25;color:#9aa4ff;border:1px solid #6675ff66;padding:12px;border-radius:10px;font-weight:bold}
-.search{display:flex;gap:10px;margin-top:22px;max-width:650px}.search input,input,select,textarea{width:100%;background:#081322;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px;outline:none;font-family:inherit}
-.search button,.primary{border:0;border-radius:12px;background:linear-gradient(90deg,var(--a),var(--b));color:white;padding:12px 22px;font-weight:bold;cursor:pointer}
-.stats{max-width:1180px;margin:20px auto 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.stats div,.panel,.announcement{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.stats b{font-size:28px;display:block;color:var(--a)}.stats span{color:var(--muted)}
-.section,.page-head,.admin-grid,.files,.schedule{max-width:1180px;margin:35px auto}.section-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}.section-head span{color:var(--muted)}h2{margin:0 0 20px}
+.search{display:flex;gap:10px;margin-top:22px;max-width:650px}.search input,input,select,textarea{width:100%;background:#081322;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:11px 12px;outline:none;font-family:inherit}
+.search button,.primary{border:0;border-radius:12px;background:linear-gradient(90deg,var(--a),var(--b));color:white;padding:11px 20px;font-weight:bold;cursor:pointer}
+.stats{max-width:1180px;margin:20px auto 40px;display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.stats div,.panel,.announcement{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}.stats b{font-size:26px;display:block;color:var(--a)}.stats span{color:var(--muted);font-size:13.5px}
+.section,.page-head,.admin-grid,.files,.schedule{max-width:1180px;margin:32px auto}.section-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}.section-head span{color:var(--muted)}h2{margin:0 0 18px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{display:flex;align-items:center;gap:15px;padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:18px;transition:.2s;cursor:pointer}.card:hover{transform:translateY(-3px);border-color:#35c8ff66}.icon{font-size:30px}.card h3{margin:0 0 7px}.card small{color:var(--muted)}.card strong{margin-right:auto;color:var(--a)}
 .ann-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.announcement p{color:var(--muted);line-height:1.8;margin:8px 0 0}
-.page-head{padding:20px 0}.page-head h1{font-size:36px;margin:12px 0}.page-head p{color:var(--muted)}
+.page-head{padding:15px 0}.page-head h1{font-size:34px;margin:12px 0}.page-head p{color:var(--muted)}
 .progress-wrap{max-width:1180px;margin:0 auto 20px;background:var(--panel);border:1px solid var(--line);padding:16px 20px;border-radius:16px}
 .progress-bar-bg{width:100%;height:12px;background:var(--bg);border-radius:999px;overflow:hidden;margin-top:8px;border:1px solid var(--line)}
 .progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--ok),var(--a));transition:width .4s ease}
-.filters{max-width:1180px;margin:0 auto 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.filters a{padding:9px 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--muted);cursor:pointer}.filters .active{color:var(--a);border-color:var(--a)}
+.filters{max-width:1180px;margin:0 auto 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.filters a{padding:8px 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--muted);cursor:pointer;font-size:13.5px}.filters .active{color:var(--a);border-color:var(--a)}
 .mini{max-width:1180px;margin:20px auto;display:flex;gap:10px;flex-wrap:wrap}
-.file{display:flex;align-items:center;gap:15px;background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:16px;margin:10px 0;transition:.2s}
+.file{display:flex;align-items:center;gap:15px;background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:16px;margin:10px 0;transition:.2s;flex-wrap:wrap}
 .file.read-done{border-color:#35d39a66;background:linear-gradient(90deg,#35d39a0a,var(--panel))}
 .pdf{background:#ff47571a;color:#ff7080;border:1px solid #ff475740;padding:12px;border-radius:10px;font-weight:bold}
-.fileinfo{flex:1}.fileinfo h3{margin:0 0 8px;display:flex;align-items:center;flex-wrap:wrap;gap:6px}.fileinfo span{color:var(--muted);font-size:12px;margin-left:12px}
-.actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:8px 12px;cursor:pointer;font-weight:bold;display:inline-flex;align-items:center;gap:5px;font-size:13px}
+.fileinfo{flex:1;min-width:220px}.fileinfo h3{margin:0 0 8px;display:flex;align-items:center;flex-wrap:wrap;gap:6px}.fileinfo span{color:var(--muted);font-size:12px;margin-left:12px}
+.student-note-box{margin-top:8px;padding:8px 12px;background:#ffb14215;border-right:3px solid var(--warn);border-radius:8px;font-size:13px;color:var(--warn)}
+.actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:8px 11px;cursor:pointer;font-weight:bold;display:inline-flex;align-items:center;gap:5px;font-size:12.5px}
 .view{background:#35c8ff18;color:var(--a)}.download{background:#35d39a18;color:var(--ok)}.danger{background:#ff547018;color:#ff7187}.warn-btn{background:#ffb14220;color:var(--warn)}
 .star-btn{background:transparent;border:1px solid var(--line);color:var(--muted);font-size:15px;padding:6px 10px;border-radius:10px;cursor:pointer}.star-btn.fav{color:#ffd32a;border-color:#ffd32a66;background:#ffd32a15}
-.read-btn{background:transparent;border:1px solid var(--line);color:var(--muted);font-size:13px;padding:7px 10px;border-radius:10px;cursor:pointer;font-weight:bold}.read-btn.done{color:var(--ok);border-color:#35d39a66;background:#35d39a18}
-.empty{text-align:center;padding:50px;color:var(--muted);background:var(--panel);border-radius:18px}
+.read-btn{background:transparent;border:1px solid var(--line);color:var(--muted);font-size:12.5px;padding:7px 10px;border-radius:10px;cursor:pointer;font-weight:bold}.read-btn.done{color:var(--ok);border-color:#35d39a66;background:#35d39a18}
+.empty{text-align:center;padding:45px;color:var(--muted);background:var(--panel);border-radius:18px}
 .auth{min-height:70vh;display:grid;place-items:center}.authbox{width:min(430px,90%);background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:35px;text-align:center}.authbox>*{margin-bottom:15px}.authbox form{display:grid;gap:12px}.authbox .primary{padding:13px}.bigicon{font-size:45px}
-.admin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.panel h2{font-size:19px}.panel form{display:grid;gap:10px}.panel label{display:grid;gap:6px;color:var(--muted);font-size:13px}
-.uploadbox{border:1px dashed #35c8ff66;padding:16px;text-align:center;border-radius:14px;cursor:pointer}.uploadbox input{border:0}.panel hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+.admin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.panel h2{font-size:18px}.panel form{display:grid;gap:10px}.panel label{display:grid;gap:6px;color:var(--muted);font-size:13px}
+.uploadbox{border:1px dashed #35c8ff66;padding:14px;text-align:center;border-radius:14px;cursor:pointer}.uploadbox input{border:0}.panel hr{border:0;border-top:1px solid var(--line);margin:18px 0}
 .minirow{display:flex;justify-content:space-between;gap:12px;align-items:center;border-top:1px solid var(--line);padding:12px 0;flex-wrap:wrap}.minirow small{display:block;color:var(--muted);margin-top:4px}
 .schedule{display:grid;gap:12px}.schedule article{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;grid-template-columns:1fr 1fr 2fr 1.5fr auto;gap:10px;align-items:center}.schedule strong{color:var(--a)}.schedule small{color:var(--muted)}
 .sync-bar{max-width:1180px;margin:0 auto 25px;background:linear-gradient(135deg,#10243a,#0e1a2a);border:1px solid var(--a);border-radius:18px;padding:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.82);backdrop-filter:blur(6px);z-index:100;display:none;place-items:center;padding:15px}
 .modal-backdrop.open{display:grid}
 .modal-box{width:min(1000px,96vw);height:86vh;background:var(--panel);border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;overflow:hidden}
+.modal-box.auto-h{height:auto;max-height:90vh;width:min(560px,95vw);overflow-y:auto}
 .modal-head{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--panel2)}
 .modal-body{flex:1;background:#000;position:relative;padding:0}.modal-body iframe{width:100%;height:100%;border:0}
-.stat-box-inner{padding:25px;text-align:center;color:var(--text)}
-.stat-box-inner h1{color:var(--a);font-size:45px;margin:10px 0}
+.stat-box-inner{padding:25px;text-align:center;color:var(--text);background:var(--panel)}
+.stat-box-inner h1{color:var(--a);font-size:42px;margin:8px 0}
 .fab-group{position:fixed;bottom:20px;left:20px;display:flex;flex-direction:column;gap:10px;z-index:40}
-.fab-btn{color:#fff;padding:11px 16px;border-radius:999px;font-weight:bold; display:flex;align-items:center;gap:8px;cursor:pointer;border:0;font-size:13px;transition:.2s}
+.fab-btn{color:#fff;padding:10px 15px;border-radius:999px;font-weight:bold;display:flex;align-items:center;gap:8px;cursor:pointer;border:0;font-size:13px;transition:.2s}
 .fab-btn:hover{transform:scale(1.04)}
 .const-table{width:100%;border-collapse:collapse}.const-table th,.const-table td{padding:12px;border-bottom:1px solid var(--line);text-align:right}.const-table th{color:var(--a);background:var(--panel2)}
-.quiz-opt{display:block;width:100%;text-align:right;padding:12px 16px;margin:8px 0;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--text);cursor:pointer;font-size:15px}.quiz-opt:hover{border-color:var(--a)}.quiz-opt.correct{background:#35d39a25;border-color:var(--ok);color:var(--ok)}.quiz-opt.wrong{background:#ff547025;border-color:var(--danger);color:#ff7187}
+.quiz-opt{display:block;width:100%;text-align:right;padding:11px 15px;margin:8px 0;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--text);cursor:pointer;font-size:14.5px}.quiz-opt:hover{border-color:var(--a)}.quiz-opt.correct{background:#35d39a25;border-color:var(--ok);color:var(--ok)}.quiz-opt.wrong{background:#ff547025;border-color:var(--danger);color:#ff7187}
 .fc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px;margin-bottom:30px}
 .flashcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;min-height:170px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer;transition:.3s;position:relative}
 .flashcard:hover{border-color:var(--a);transform:translateY(-3px)}
 .flashcard.flipped{background:linear-gradient(135deg,#132c47,#0e1a2a);border-color:var(--ok)}
-.flashcard .fc-front{font-size:17px;font-weight:bold}
-.flashcard .fc-back{display:none;font-size:16px;color:var(--ok);line-height:1.7}
+.flashcard .fc-front{font-size:16.5px;font-weight:bold}
+.flashcard .fc-back{display:none;font-size:15.5px;color:var(--ok);line-height:1.7}
 .flashcard.flipped .fc-front{display:none}
 .flashcard.flipped .fc-back{display:block}
-.pomo-circle{width:180px;height:180px;border-radius:50%;border:6px solid var(--a);margin:15px auto;display:grid;place-items:center;font-size:38px;font-weight:bold;color:var(--text);box-shadow:0 0 25px #35c8ff33}
+.pomo-circle{width:170px;height:170px;border-radius:50%;border:6px solid var(--a);margin:15px auto;display:grid;place-items:center;font-size:36px;font-weight:bold;color:var(--text);box-shadow:0 0 25px #35c8ff33}
+.visit-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:#35d39a18;border:1px solid #35d39a55;color:var(--ok);font-size:13px;font-weight:bold}
+.law-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.law-formula{background:var(--bg);border:1px solid var(--line);padding:12px;border-radius:10px;font-family:monospace;font-size:17px;color:var(--a);text-align:center;direction:ltr}
+.graph-canvas{width:100%;max-width:100%;background:#060d18;border:1px solid var(--line);border-radius:14px;margin-top:12px}
 footer{text-align:center;color:var(--muted);padding:45px 20px;border-top:1px solid var(--line);margin-top:50px}
 .flash{max-width:1180px;margin:15px auto;padding:14px 18px;border-radius:12px;background:#35d39a18;color:var(--ok);border:1px solid #35d39a44}.flash.error{background:#ff547018;color:#ff7187;border-color:#ff547044}
-body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63758b;--line:#d8e1ec}body.light .top{background:#ffffffdd}body.light input,body.light select,body.light textarea{background:#f7faff;color:#102035}body.light .hero,body.light .countdown-bar,body.light .sync-bar,body.light .flashcard.flipped{background:linear-gradient(135deg,#e3effd,#ffffff)}body.light .cd-box{background:#f7faff}
-@media(max-width:850px){.hero{margin:20px 4%;padding:28px;display:block}.hero h1{font-size:34px}.orb{display:none}.section,.page-head,.files,.schedule,.admin-grid,.sync-bar,.countdown-bar,.progress-wrap{margin-left:4%;margin-right:4%}.grid,.admin-grid,.ann-grid,.stats{grid-template-columns:1fr}.stats{margin-left:4%;margin-right:4%}.file{align-items:flex-start;flex-wrap:wrap}.actions{width:100%}.actions .btn{flex:1;justify-content:center}.schedule article{grid-template-columns:1fr 1fr}.schedule article span,.schedule article small{grid-column:1/-1}}
+body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63758b;--line:#d8e1ec}body.light .top{background:#ffffffdd}body.light input,body.light select,body.light textarea{background:#f7faff;color:#102035}body.light .hero,body.light .countdown-bar,body.light .sync-bar,body.light .flashcard.flipped{background:linear-gradient(135deg,#e3effd,#ffffff)}body.light .cd-box,body.light .law-formula{background:#f7faff}
+@media(max-width:850px){.hero{margin:20px 4%;padding:26px;display:block}.hero h1{font-size:32px}.orb{display:none}.section,.page-head,.files,.schedule,.admin-grid,.sync-bar,.countdown-bar,.progress-wrap{margin-left:4%;margin-right:4%}.grid,.admin-grid,.ann-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr);margin-left:4%;margin-right:4%}.file{align-items:flex-start}.actions{width:100%}.actions .btn{flex:1;justify-content:center}.schedule article{grid-template-columns:1fr 1fr}.schedule article span,.schedule article small{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -97,14 +105,15 @@ body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63
   <nav id="mainNav">
     <a onclick="navigate('home')">الرئيسية</a>
     <a onclick="navigate('favorites')">⭐ المفضلة (<span id="favCount">0</span>)</a>
-    <a onclick="navigate('schedule')">📅 الجدول والأساتذة</a>
-    <a onclick="navigate('tools')">🧰 أدوات الفيزياء</a>
-    <a onclick="navigate('study')">📝 الأسئلة والمؤقت</a>
+    <a onclick="navigate('schedule')">📅 الجدول والامتحانات</a>
+    <a onclick="navigate('tools')">🔬 المختبر والأدوات</a>
+    <a onclick="navigate('study')">📐 القوانين والاختبارات</a>
     <a onclick="navigate('graduation')">🎓 التخرج والتطبيق</a>
     <a id="adminNavLink" onclick="navigate(isAdmin() ? 'admin' : 'login')">⚙️ الإدارة</a>
     <a id="logoutNavLink" style="display:none;color:var(--danger)" onclick="logoutAdmin()">خروج</a>
   </nav>
   <div class="top-tools">
+    <button class="theme" onclick="openQrAndAppModal()" title="باركود الموقع وتثبيته كتطبيق">📲 تطبيق/QR</button>
     <button class="theme" onclick="changeFontSize(0.08)" title="تكبير الخط">A+</button>
     <button class="theme" onclick="changeFontSize(-0.08)" title="تصغير الخط">A-</button>
     <button class="theme" onclick="toggleTheme()" title="تغيير المظهر">🌓</button>
@@ -115,9 +124,9 @@ body.light{--bg:#f2f6fb;--panel:#fff;--panel2:#eef4fb;--text:#102035;--muted:#63
 <main id="appContent"></main>
 
 <div id="viewerModal" class="modal-backdrop" onclick="if(event.target===this)closeModal()">
-  <div class="modal-box">
+  <div class="modal-box" id="modalBoxContainer">
     <div class="modal-head">
-      <b id="modalTitle">عرض المحتوي</b>
+      <b id="modalTitle">عرض المحتوى</b>
       <div style="display:flex;gap:8px">
         <a id="modalExternalBtn" target="_blank" class="btn view" style="display:none">فتح بنافذة خارجية ↗</a>
         <button class="btn danger" onclick="closeModal()">إغلاق ✖</button>
@@ -145,6 +154,13 @@ const SHARED_DATA = {
   files: [],
   announcements: [],
   schedule: [],
+  exams: [
+    { id: 1, subject: "ميكانيك الكم", date: "2027-05-16", material: "الفصل الأول والثاني والثالث (معادلة شرودنغر وتطبيقاتها)", type: "نهائي" },
+    { id: 2, subject: "الفيزياء النووية", date: "2027-05-19", material: "خواص النواة، طاقة الربط، النشاط الإشعاعي، والتفاعلات النووية", type: "نهائي" },
+    { id: 3, subject: "الليزر", date: "2027-05-22", material: "أساسيات الليزر، التوزيع المعكوس، المرنانات، وأنواع الليزرات", type: "نهائي" },
+    { id: 4, subject: "فيزياء الحالة الصلبة", date: "2027-05-25", material: "التركيب البلوري، حيود الأشعة السينية، الفونونات، ونظرية الحزم", type: "نهائي" },
+    { id: 5, subject: "النظرية الكهرومغناطيسية", date: "2027-05-28", material: "معادلات ماكسويل، الموجات الكهرومغناطيسية، ومتجه بوينتنغ", type: "نهائي" }
+  ],
   teachers: {
     quantum: "أستاذ المادة", measurement: "أستاذ المادة", educational_lab: "أستاذ المختبر",
     nuclear: "أستاذ المادة", solid_state: "أستاذ المادة", nuclear_lab: "أستاذ المختبر",
@@ -157,27 +173,22 @@ const SHARED_DATA = {
     { id: 4, subject: "فيزياء الحالة الصلبة", front: "ما هو قانون براغ في حيود الأشعة السينية؟", back: "nλ = 2d sin(θ) حيث d المسافة البينية بين المستويات البلورية." }
   ],
   quizzes: [
-    // أسئلة النظرية الكهرومغناطيسية
     { id: 101, subject: "النظرية الكهرومغناطيسية", q: "حسب قانون كاوس الكهربائي، الفيض الكهربائي الكلي عبر سطح مغلق يتناسب مع:", options: ["الزمن", "الشحنة الكلية المحتواة داخل السطح", "كثافة التيار", "سرعة الضوء"], ans: 1 },
     { id: 102, subject: "النظرية الكهرومغناطيسية", q: "معادلة الاستمرارية في الكهرومغناطيسية (∇·J + ∂ρ/∂t = 0) هي تعبير رياضي عن مبدأ:", options: ["حفظ الطاقة", "حفظ الزخم", "حفظ الشحنة الكهربائية", "قانون أمبير"], ans: 2 },
     { id: 103, subject: "النظرية الكهرومغناطيسية", q: "أي من معادلات ماكسويل الأربعة ينفي وجود أقطاب مغناطيسية منفردة (Monopoles)؟", options: ["∇·E = ρ/ε₀", "∇·B = 0", "∇×E = -∂B/∂t", "∇×B = μ₀J"], ans: 1 },
     { id: 104, subject: "النظرية الكهرومغناطيسية", q: "في الموجات الكهرومغناطيسية المنتشرة في الفراغ، الزاوية بين المجال الكهربائي (E) والمجال المغناطيسي (B) تكون:", options: ["0 درجة", "45 درجة", "90 درجة", "180 درجة"], ans: 2 },
-    // أسئلة الفيزياء النووية
     { id: 201, subject: "الفيزياء النووية", q: "أي الجسيمات التالية ليس لها شحنة كهربائية وكتلتها السكونية قريبة جداً من الصفر؟", options: ["جسيمة ألفا", "البروتون", "النيوترينو", "الميزون"], ans: 2 },
     { id: 202, subject: "الفيزياء النووية", q: "في تحلل بيتا السالب (β-)، ماذا يحدث لعدد الكتلة (A) والعدد الذري (Z) للنواة؟", options: ["يقل A بمقدار 4 ويقل Z بمقدار 2", "يبقى A ثابتاً ويزداد Z بمقدار 1", "يبقى A ثابتاً ويقل Z بمقدار 1", "يزداد A وZ معاً"], ans: 1 },
-    { id: 203, subject: "الفيزياء النووية", q: "نموذج القطرة السائلة السائلة للنواة (Liquid Drop Model) ينجح في تفسير:", options: ["الأعداد السحرية للنواة", "مستويات الطاقة المنفصلة", "طاقة الربط النووية والانشطار", "العزم المغناطيسي للنواة"], ans: 2 },
+    { id: 203, subject: "الفيزياء النووية", q: "نموذج القطرة السائلة للنواة (Liquid Drop Model) ينجح في تفسير:", options: ["الأعداد السحرية للنواة", "مستويات الطاقة المنفصلة", "طاقة الربط النووية والانشطار", "العزم المغناطيسي للنواة"], ans: 2 },
     { id: 204, subject: "الفيزياء النووية", q: "النظائر (Isotopes) هي ذرات لها:", options: ["نفس Z ومختلفة في A", "نفس A ومختلفة في Z", "نفس N ومختلفة في A", "نفس A و Z معاً"], ans: 0 },
-    // أسئلة ميكانيك الكم
     { id: 301, subject: "ميكانيك الكم", q: "الظاهرة التي يمر فيها جسيم كمي عبر حاجز جهد طاقته أكبر من الطاقة الحركية للجسيم تسمى:", options: ["الاستطارة", "الحيود", "التأثير النفقي (Tunneling)", "الامتصاص"], ans: 2 },
     { id: 302, subject: "ميكانيك الكم", q: "في ذرة الهيدروجين، العدد الكمي الرئيسي (n) يحدد:", options: ["الزخم الزاوي المداري", "مستوى الطاقة الكلية للإلكترون", "الاتجاه الفراغي للزخم الزاوي", "غزل الإلكترون (Spin)"], ans: 1 },
     { id: 303, subject: "ميكانيك الكم", q: "الدالة الموجية (Ψ) في ميكانيك الكم لا تمتلك معنى فيزيائياً مباشراً، ولكن مربع القيمة المطلقة |Ψ|² يمثل:", options: ["طاقة الجسيم", "سرعة الجسيم", "كثافة الاحتمالية لوجود الجسيم", "طول موجة دي برولي"], ans: 2 },
     { id: 304, subject: "ميكانيك الكم", q: "حسب مبدأ استبعاد باولي، لا يمكن لإلكترونين في نفس الذرة أن يمتلكا نفس:", options: ["العدد الكمي الرئيسي n", "العدد الكمي المداري l", "الأعداد الكمية الأربعة (n, l, ml, ms)", "السرعة"], ans: 2 },
-    // أسئلة الليزر
     { id: 401, subject: "الليزر", q: "المصطلح LASER هو اختصار لتكبير الضوء بواسطة:", options: ["الانبعاث التلقائي للإشعاع", "الانبعاث المحفز للإشعاع", "الامتصاص الرنيني", "التأين الحراري"], ans: 1 },
     { id: 402, subject: "الليزر", q: "من خصائص أشعة الليزر أنها (Monochromatic)، وهذا يعني أنها:", options: ["متوازية جداً", "عالية الشدة", "أحادية اللون (لها طول موجي واحد)", "متشاكهة"], ans: 2 },
     { id: 403, subject: "الليزر", q: "لتحقيق التوزيع المعكوس (Population Inversion) في وسط ليزري، يجب أن يكون:", options: ["عدد الذرات في المستوي الأرضي أكبر من المتهيج", "عدد الذرات في المستوي المتهيج أكبر من الأرضي", "درجة حرارة الوسط صفراً مطلقاً", "الوسط في حالة توازن حراري"], ans: 1 },
     { id: 404, subject: "الليزر", q: "المرنان البصري (Optical Resonator) في منظومة الليزر يتكون عادة من:", options: ["مصدر طاقة كهربائية عالية", "عدستين مفرقتين", "مرآتين إحداهما عاكسة كلياً والأخرى جزئياً", "موشورين زجاجيين"], ans: 2 },
-    // أسئلة فيزياء الحالة الصلبة
     { id: 501, subject: "فيزياء الحالة الصلبة", q: "في نموذج الحزم للطاقة، المواد العازلة تتميز بوجود:", options: ["فجوة طاقة (Band Gap) كبيرة جداً", "تداخل بين حزمة التكافؤ وحزمة التوصيل", "فجوة طاقة صغيرة جداً (أقل من 1 eV)", "حزمة توصيل ممتلئة كلياً"], ans: 0 },
     { id: 502, subject: "فيزياء الحالة الصلبة", q: "شبيكة برافيه (Bravais Lattice) المكعبة ممركزة الوجه (FCC) تمتلك عدد ذرات فعالة (في وحدة الخلية) يساوي:", options: ["1", "2", "4", "6"], ans: 2 },
     { id: 503, subject: "فيزياء الحالة الصلبة", q: "أشباه الموصلات المطعمة بشوائب خماسية التكافؤ (مثل الفسفور) تسمى:", options: ["شبه موصل نوع N", "شبه موصل نوع P", "شبه موصل نقي (Intrinsic)", "عازل تام"], ans: 0 },
@@ -196,6 +207,7 @@ const SHARED_DATA = {
     examDate: "2027-05-16T08:30",
     tgChannel: "https://t.me/+ULWb5T4LxlkwNmJi",
     igUser: "phy_gen4",
+    baseVisits: 0,
     adminUser: "admin",
     adminPass: "physics2026"
   }
@@ -218,6 +230,20 @@ const CATEGORIES = ["ملازم", "محاضرات", "ملخصات", "أسئلة 
 const SUBJECT_MAP = {};
 SUBJECTS.forEach(s => SUBJECT_MAP[s[0]] = s[1]);
 
+const PHYSICS_LAWS = [
+  { subj: "ميكانيك الكم", title: "معادلة شرودنغر غير المعتمدة على الزمن", formula: "(-ℏ² / 2m) ∇²ψ + Vψ = Eψ", desc: "تصف الحالات المستقرة للجسيم الكمي داخل جهد V وإيجاد قيم الطاقة المسموحة E." },
+  { subj: "ميكانيك الكم", title: "طول موجة دي برولي ومبدأ اللادقة", formula: "λ = h / p   |   Δx · Δp ≥ ℏ / 2", desc: "ربط الطبيعة الموجية بالجسيمية، وحدود الدقة في القياس الكمي المتزامن." },
+  { subj: "ميكانيك الكم", title: "طاقة الجسيم في صندوق جهدي أحادي البعد", formula: "Eₙ = (n² π² ℏ²) / (2 m L²)", desc: "حيث n = 1, 2, 3... و L عرض الصندوق الجهدي." },
+  { subj: "الفيزياء النووية", title: "نصف قطر النواة وطاقة الربط النووية", formula: "R = R₀ A^(1/3)   |   B.E = [Z·mₚ + N·mₙ - M(A,Z)] × 931.5 MeV", desc: "حيث R₀ ≈ 1.2 fm و A العدد الكتلي للنواة." },
+  { subj: "الفيزياء النووية", title: "قانون التحلل الإشعاعي وعمر النصف", formula: "N(t) = N₀ e^(-λt)   |   t₁/₂ = ln(2) / λ = 0.693 / λ", desc: "يصف تناقص عدد النوى المشعة مع الزمن، والنشاط الإشعاعي A = λN." },
+  { subj: "الليزر", title: "توزيع بولتزمان وشرط التوزيع المعكوس", formula: "N₂ / N₁ = (g₂ / g₁) exp(-(E₂ - E₁) / k_B T)", desc: "لتوليد الليزر يجب كسر التوازن الحراري وجعل N₂ > N₁ بواسطة الضخ (Pumping)." },
+  { subj: "الليزر", title: "تردد أنماط المرنان الطولية والمسافة الفاصلة", formula: "Δν = c / (2 n L)", desc: "حيث L طول المرنان البصري و n معامل انكسار الوسط الفعال." },
+  { subj: "فيزياء الحالة الصلبة", title: "قانون براغ لحيود الأشعة السينية", formula: "2 d sin(θ) = n λ", desc: "لتحديد المسافات البينية d للمستويات البلورية (hkl) في المواد الصلبة." },
+  { subj: "فيزياء الحالة الصلبة", title: "طاقة فيرمي للإلكترونات الحرة (3D)", formula: "E_F = (ℏ² / 2m) (3 π² n)^(2/3)", desc: "حيث n تركيز الإلكترونات الحرة في المعدن عند الصفر المطلق." },
+  { subj: "النظرية الكهرومغناطيسية", title: "معادلات ماكسويل في الفراغ", formula: "∇·E = ρ/ε₀ , ∇·B = 0 , ∇×E = -∂B/∂t , ∇×B = μ₀J + μ₀ε₀ ∂E/∂t", desc: "المعادلات الأربع التي تحكم المجالات الكهربائية والمغناطيسية وانتشار الموجات." },
+  { subj: "النظرية الكهرومغناطيسية", title: "متجه بوينتنغ وسرعة الموجة الكهرومغناطيسية", formula: "S = (1 / μ₀) (E × B)   |   c = 1 / √(μ₀ ε₀)", desc: "يمثل متجه بوينتنغ S تدفق القدرة الكهرومغناطيسية لكل وحدة مساحة (W/m²)." }
+];
+
 const PHYSICS_CONSTANTS = [
   { name: "ثابت بلانك (h)", val: "6.62607015 × 10⁻³⁴", unit: "J·s" },
   { name: "ثابت بلانك المخفض (ℏ)", val: "1.054571817 × 10⁻³⁴", unit: "J·s" },
@@ -237,15 +263,14 @@ let savedSettings = JSON.parse(localStorage.getItem("phys_settings") || "{}");
 if (!savedSettings.tgChannel || savedSettings.tgChannel === "https://t.me/") {
   savedSettings.tgChannel = "https://t.me/+ULWb5T4LxlkwNmJi";
 }
-if (!savedSettings.igUser) {
-  savedSettings.igUser = "phy_gen4";
-}
+if (!savedSettings.igUser) savedSettings.igUser = "phy_gen4";
 
 let store = {
   lastUpdated: parseInt(localStorage.getItem("phys_last_updated") || "0", 10) || SHARED_DATA.lastUpdated || 0,
   files: JSON.parse(localStorage.getItem("phys_files") || "null") || SHARED_DATA.files,
   announcements: JSON.parse(localStorage.getItem("phys_announcements") || "null") || SHARED_DATA.announcements,
   schedule: JSON.parse(localStorage.getItem("phys_schedule") || "null") || SHARED_DATA.schedule,
+  exams: JSON.parse(localStorage.getItem("phys_exams") || "null") || SHARED_DATA.exams,
   teachers: Object.assign({}, SHARED_DATA.teachers, JSON.parse(localStorage.getItem("phys_teachers") || "{}")),
   flashcards: JSON.parse(localStorage.getItem("phys_flashcards") || "null") || SHARED_DATA.flashcards,
   quizzes: JSON.parse(localStorage.getItem("phys_quizzes") || "null") || SHARED_DATA.quizzes,
@@ -255,10 +280,52 @@ let store = {
 
 let favorites = JSON.parse(localStorage.getItem("phys_favs") || "[]");
 let readFiles = JSON.parse(localStorage.getItem("phys_read") || "[]");
+let fileNotes = JSON.parse(localStorage.getItem("phys_file_notes") || "{}");
 let todos = JSON.parse(localStorage.getItem("phys_todos") || "[]");
 let studentStats = JSON.parse(localStorage.getItem("phys_student_stats") || `{"quizCorrect":0,"quizTotal":0}`);
 
-// جلب البيانات المحدثة
+let rawVisitsCount = parseInt(localStorage.getItem("phys_raw_visits") || "1", 10);
+
+function getTotalVisits() {
+  const base = parseInt((store.settings && store.settings.baseVisits) || 0, 10);
+  return rawVisitsCount + base;
+}
+
+function updateVisitElements() {
+  const totalV = getTotalVisits();
+  const el1 = document.getElementById("statVisits");
+  const el2 = document.getElementById("footerVisits");
+  if (el1) el1.textContent = totalV;
+  if (el2) el2.textContent = totalV;
+}
+
+function initVisitorCounter() {
+  if (!sessionStorage.getItem("phys_visit_counted")) {
+    sessionStorage.setItem("phys_visit_counted", "1");
+    rawVisitsCount++;
+    localStorage.setItem("phys_raw_visits", String(rawVisitsCount));
+    fetch("https://api.counterapi.dev/v1/physics_4th_library_wasit/visits/up")
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (d && typeof d.count === "number") {
+          rawVisitsCount = Math.max(rawVisitsCount, d.count);
+          localStorage.setItem("phys_raw_visits", String(rawVisitsCount));
+          updateVisitElements();
+        }
+      }).catch(() => {});
+  } else {
+    fetch("https://api.counterapi.dev/v1/physics_4th_library_wasit/visits")
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (d && typeof d.count === "number") {
+          rawVisitsCount = Math.max(rawVisitsCount, d.count);
+          localStorage.setItem("phys_raw_visits", String(rawVisitsCount));
+          updateVisitElements();
+        }
+      }).catch(() => {});
+  }
+}
+
 fetch("data.json?t=" + Date.now())
   .then(r => r.ok ? r.json() : null)
   .then(data => {
@@ -268,6 +335,7 @@ fetch("data.json?t=" + Date.now())
         if (Array.isArray(data.files)) store.files = data.files;
         if (Array.isArray(data.announcements)) store.announcements = data.announcements;
         if (Array.isArray(data.schedule)) store.schedule = data.schedule;
+        if (Array.isArray(data.exams)) store.exams = data.exams;
         if (data.teachers) store.teachers = Object.assign({}, store.teachers, data.teachers);
         if (Array.isArray(data.flashcards)) store.flashcards = data.flashcards;
         if (Array.isArray(data.quizzes)) store.quizzes = data.quizzes;
@@ -284,8 +352,7 @@ fetch("data.json?t=" + Date.now())
         render();
       }
     }
-  })
-  .catch(() => {});
+  }).catch(() => {});
 
 function saveLocalStore(bumpTime = true) {
   if (bumpTime) store.lastUpdated = Date.now();
@@ -293,6 +360,7 @@ function saveLocalStore(bumpTime = true) {
   localStorage.setItem("phys_files", JSON.stringify(store.files));
   localStorage.setItem("phys_announcements", JSON.stringify(store.announcements));
   localStorage.setItem("phys_schedule", JSON.stringify(store.schedule));
+  localStorage.setItem("phys_exams", JSON.stringify(store.exams));
   localStorage.setItem("phys_teachers", JSON.stringify(store.teachers));
   localStorage.setItem("phys_flashcards", JSON.stringify(store.flashcards));
   localStorage.setItem("phys_quizzes", JSON.stringify(store.quizzes));
@@ -317,9 +385,11 @@ function applySiteBranding() {
   document.getElementById("fabIg").innerHTML = `<span>📸</span> <span>@${escapeHtml(igClean)}</span>`;
 
   document.getElementById("siteFooter").innerHTML = `
-    <div style="margin-bottom:14px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+    <div style="margin-bottom:14px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;align-items:center">
       <a href="${escapeHtml(tgUrl)}" target="_blank" class="soc-btn soc-tg">✈️ قناة المرحلة على تليگرام</a>
       <a href="${escapeHtml(igUrl)}" target="_blank" class="soc-btn soc-ig">📸 بيج القسم @${escapeHtml(igClean)}</a>
+      <button onclick="openQrAndAppModal()" class="soc-btn soc-stat">📲 باركود وتثبيت الموقع</button>
+      <span class="visit-pill">👥 عدد الزيارات: <b id="footerVisits">${getTotalVisits()}</b></span>
     </div>
     <div>${escapeHtml(s.footerText || "مكتبة فيزياء المرحلة الرابعة © 2026")}</div>
   `;
@@ -333,9 +403,7 @@ function applySiteBranding() {
   }
 }
 
-function isAdmin() {
-  return sessionStorage.getItem("phys_admin") === "1";
-}
+function isAdmin() { return sessionStorage.getItem("phys_admin") === "1"; }
 
 function showFlash(msg, type = "success") {
   const c = document.getElementById("flashContainer");
@@ -364,12 +432,8 @@ function isNewFile(createdAt) {
 
 function toggleFav(id) {
   const idx = favorites.indexOf(id);
-  if (idx === -1) {
-    favorites.push(id);
-    showFlash("⭐ تمت إضافة الملزمة إلى المفضلة");
-  } else {
-    favorites.splice(idx, 1);
-  }
+  if (idx === -1) { favorites.push(id); showFlash("⭐ تمت إضافة الملزمة إلى المفضلة"); }
+  else { favorites.splice(idx, 1); }
   localStorage.setItem("phys_favs", JSON.stringify(favorites));
   document.getElementById("favCount").textContent = favorites.length;
   render();
@@ -377,13 +441,23 @@ function toggleFav(id) {
 
 function toggleRead(id) {
   const idx = readFiles.indexOf(id);
-  if (idx === -1) {
-    readFiles.push(id);
-    showFlash("✅ عاشت إيدك! تم تأشير المحاضرة كمقروءة");
-  } else {
-    readFiles.splice(idx, 1);
-  }
+  if (idx === -1) { readFiles.push(id); showFlash("✅ عاشت إيدك! تم تأشير المحاضرة كمقروءة"); }
+  else { readFiles.splice(idx, 1); }
   localStorage.setItem("phys_read", JSON.stringify(readFiles));
+  render();
+}
+
+function editStudentNote(id) {
+  const current = fileNotes[id] || "";
+  const val = prompt("📝 اكتب ملاحظتك الخاصة على هذه المحاضرة (أو اتركها فارغة لحذفها):", current);
+  if (val === null) return;
+  if (val.trim()) {
+    fileNotes[id] = val.trim();
+    showFlash("📌 تم حفظ ملاحظتك الخاصة على هذه الملزمة");
+  } else {
+    delete fileNotes[id];
+  }
+  localStorage.setItem("phys_file_notes", JSON.stringify(fileNotes));
   render();
 }
 
@@ -395,6 +469,43 @@ function shareFile(title, url) {
     navigator.clipboard.writeText(`${title} - ${shareUrl}`);
     showFlash("🔗 تم نسخ رابط المحاضرة للحافظة");
   }
+}
+
+function openFileQrModal(title, url) {
+  const targetUrl = (url && url.startsWith("http")) ? url : window.location.href;
+  const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(targetUrl)}`;
+  document.getElementById("modalBoxContainer").classList.add("auto-h");
+  document.getElementById("modalTitle").textContent = "📲 مشاركة سريعة بالباركود (QR)";
+  document.getElementById("modalExternalBtn").style.display = "none";
+  document.getElementById("modalBody").innerHTML = `
+    <div class="stat-box-inner">
+      <h3 style="margin-top:0">${escapeHtml(title)}</h3>
+      <p style="color:var(--muted);font-size:13px">وجّه كاميرا الموبايل نحو الباركود لفتح الرابط مباشرة:</p>
+      <img src="${qrImg}" alt="QR Code" style="background:#fff;padding:12px;border-radius:16px;margin:10px auto;display:block">
+      <button class="primary" style="margin-top:12px" onclick="navigator.clipboard.writeText('${escapeHtml(targetUrl)}');showFlash('تم نسخ الرابط')">📋 نسخ الرابط المباشر</button>
+    </div>
+  `;
+  document.getElementById("viewerModal").classList.add("open");
+}
+
+function openQrAndAppModal() {
+  const siteUrl = window.location.href.split("#")[0];
+  const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(siteUrl)}`;
+  document.getElementById("modalBoxContainer").classList.add("auto-h");
+  document.getElementById("modalTitle").textContent = "📲 باركود الموقع وتثبيته كتطبيق";
+  document.getElementById("modalExternalBtn").style.display = "none";
+  document.getElementById("modalBody").innerHTML = `
+    <div class="stat-box-inner">
+      <img src="${qrImg}" alt="Site QR" style="background:#fff;padding:10px;border-radius:16px;margin:0 auto 12px;display:block">
+      <p style="color:var(--a);font-weight:bold;margin:6px 0">امسح الباركود بكاميرا صديقك لفتح المكتبة فوراً!</p>
+      <div style="text-align:right;background:var(--bg);padding:15px;border-radius:14px;border:1px solid var(--line);margin-top:15px;line-height:1.8;font-size:13.5px">
+        <b style="color:var(--ok)">📱 كيف تثبت المكتبة كتطبيق على شاشة موبايلك؟</b><br>
+        • <b>للآيفون (Safari):</b> اضغط على زر المشاركة (السهم للأعلى ⬆️) بأسفل المتصفح ثم اختر <b>Add to Home Screen (إضافة للشاشة الرئيسية)</b>.<br>
+        • <b>للأندرويد (Chrome):</b> اضغط على النقاط الثلاث (⋮) بأعلى المتصفح ثم اختر <b>Add to Home screen (الإضافة إلى الشاشة الرئيسية)</b>.
+      </div>
+    </div>
+  `;
+  document.getElementById("viewerModal").classList.add("open");
 }
 
 function getYoutubeEmbed(url) {
@@ -424,6 +535,7 @@ function openInModal(id) {
   if (!f) return;
   countDownload(id, false);
   const viewUrl = getViewUrl(f.url);
+  document.getElementById("modalBoxContainer").classList.remove("auto-h");
   document.getElementById("modalTitle").textContent = f.title;
   document.getElementById("modalExternalBtn").href = f.url || "#";
   document.getElementById("modalExternalBtn").style.display = "inline-flex";
@@ -438,20 +550,21 @@ function showMyStatsModal() {
   if (pct > 50) msg = "أنت تعبر منتصف الطريق، بطل!";
   if (pct > 80) msg = "مستواك ممتاز، الامتياز ينتظرك!";
   
+  document.getElementById("modalBoxContainer").classList.add("auto-h");
   document.getElementById("modalTitle").textContent = "📊 إحصائياتي الدراسية";
   document.getElementById("modalExternalBtn").style.display = "none";
   document.getElementById("modalBody").innerHTML = `
     <div class="stat-box-inner">
-      <div style="font-size:60px;margin-bottom:15px">📈</div>
-      <h3 style="color:var(--muted)">نسبة المحاضرات التي قرأتها</h3>
+      <div style="font-size:50px;margin-bottom:10px">📈</div>
+      <h3 style="color:var(--muted);margin:0">نسبة المحاضرات التي قرأتها</h3>
       <h1>${pct}%</h1>
-      <p style="color:var(--a);margin-bottom:30px">${readFiles.length} من أصل ${store.files.length} محاضرة وملزمة</p>
+      <p style="color:var(--a);margin-bottom:22px">${readFiles.length} من أصل ${store.files.length} محاضرة وملزمة</p>
       
-      <h3 style="color:var(--muted)">إجاباتك الصحيحة في بنك الأسئلة (MCQ)</h3>
+      <h3 style="color:var(--muted);margin:0">إجاباتك الصحيحة في بنك الأسئلة (MCQ)</h3>
       <h1>${studentStats.quizCorrect} <span style="font-size:20px;color:var(--muted)">/ ${studentStats.quizTotal}</span></h1>
-      <p style="color:var(--ok);margin-bottom:30px">نسبة صحة إجاباتك: ${qPct}%</p>
+      <p style="color:var(--ok);margin-bottom:22px">نسبة صحة إجاباتك: ${qPct}%</p>
       
-      <div style="background:var(--bg);padding:15px;border-radius:12px;border:1px solid var(--line)">
+      <div style="background:var(--bg);padding:14px;border-radius:12px;border:1px solid var(--line)">
         <b>رسالة المكتبة:</b><br>${msg}
       </div>
     </div>
@@ -467,6 +580,7 @@ function closeModal() {
 function renderFileCard(f) {
   const isFav = favorites.includes(f.id);
   const isRead = readFiles.includes(f.id);
+  const myNote = fileNotes[f.id] || "";
   const isVid = f.category === "فيديوهات يوتيوب" || getYoutubeEmbed(f.url);
   const newBadge = isNewFile(f.created_at || f.id) ? `<span class="badge-new">جديد 🔥</span>` : "";
   return `
@@ -480,20 +594,22 @@ function renderFileCard(f) {
           ${f.teacher ? `<span>👨‍🏫 ${escapeHtml(f.teacher)}</span>` : ""}
           <span>⬇ ${f.downloads || 0}</span>
         </div>
+        ${myNote ? `<div class="student-note-box">📌 <b>ملاحظتي:</b> ${escapeHtml(myNote)}</div>` : ""}
       </div>
       <div class="actions">
-        <button class="read-btn ${isRead ? 'done' : ''}" onclick="toggleRead(${f.id})">${isRead ? '✅ تمت القراءة' : '☑️ قراءة'}</button>
+        <button class="read-btn ${isRead ? 'done' : ''}" onclick="toggleRead(${f.id})">${isRead ? '✅ مقروءة' : '☑️ قراءة'}</button>
+        <button class="btn warn-btn" onclick="editStudentNote(${f.id})" title="اكتب ملاحظة خاصة بك على هذه الملزمة">📝 ملاحظة</button>
         <button class="star-btn ${isFav ? 'fav' : ''}" onclick="toggleFav(${f.id})" title="حفظ بالمفضلة">★</button>
         <button class="btn view" onclick="openInModal(${f.id})">👁 عرض</button>
         <a class="btn download" target="_blank" href="${getDownloadUrl(f.url)}" download="${escapeHtml(f.original_name || f.title + '.pdf')}" onclick="countDownload(${f.id}, true)">⬇ تحميل</a>
-        <button class="btn warn-btn" onclick="shareFile('${escapeHtml(f.title)}', '${escapeHtml(f.url || '')}')">🔗</button>
-        ${isAdmin() ? `<button class="btn view" onclick="editFilePrompt(${f.id})">✏️</button><button class="btn danger" onclick="deleteFile(${f.id})">🗑 حذف</button>` : ""}
+        <button class="btn view" onclick="openFileQrModal('${escapeHtml(f.title)}', '${escapeHtml(f.url || '')}')" title="باركود الملزمة">📲 QR</button>
+        ${isAdmin() ? `<button class="btn view" onclick="editFilePrompt(${f.id})">✏️</button><button class="btn danger" onclick="deleteFile(${f.id})">🗑</button>` : ""}
       </div>
     </article>
   `;
 }
 
-let currentState = { page: "home", slug: "", category: "", q: "", sort: "newest", quizFilter: "" };
+let currentState = { page: "home", slug: "", category: "", q: "", sort: "newest", quizFilter: "", lawFilter: "" };
 
 function navigate(page, params = {}) {
   currentState = {
@@ -502,10 +618,12 @@ function navigate(page, params = {}) {
     category: params.category || "",
     q: params.q || "",
     sort: params.sort || "newest",
-    quizFilter: params.quizFilter || ""
+    quizFilter: params.quizFilter || "",
+    lawFilter: params.lawFilter || ""
   };
   document.getElementById("logoutNavLink").style.display = isAdmin() ? "inline" : "none";
   render();
+  if (page === "tools") setTimeout(drawLabGraph, 60);
   window.scrollTo(0, 0);
 }
 
@@ -521,7 +639,7 @@ function getCountdownHtml() {
     <div class="countdown-bar">
       <div>
         <span class="pill">⏳ تذكير الامتحانات</span>
-        <h3 style="margin:6px 0 0">${escapeHtml(s.examTitle || "العد التنازلي للامتحانات")}</h3>
+        <h3 style="margin:6px 0 0">${escapeHtml(s.examTitle || "العد التنازلي للامتحانات النهائية")}</h3>
       </div>
       <div class="cd-boxes">
         <div class="cd-box"><b>${days}</b><small>يوم</small></div>
@@ -580,7 +698,7 @@ function render() {
         <div>
           <span class="pill">${escapeHtml(s.siteSub || "السنة الدراسية • المرحلة الرابعة")}</span>
           <h1>كل ملفات الفيزياء<br><em>بمكان واحد</em></h1>
-          <p>ملازم، محاضرات، فيديوهات، بنك أسئلة تدريبية، وأدوات فيزيائية — مرتبة حسب المادة وسهلة الوصول.</p>
+          <p>ملازم، محاضرات، راسم بياني للمختبر، مولد واجهة تقارير، موسوعة قوانين، وبنك أسئلة تدريبية — مرتبة وسهلة الوصول.</p>
           <form class="search" onsubmit="handleGlobalSearch(event)">
             <input id="homeSearchInput" name="q" placeholder="ابحث عن ملزمة أو محاضرة أو اسم مدرس...">
             <button type="submit">🔎 بحث</button>
@@ -589,13 +707,15 @@ function render() {
             <a href="${escapeHtml(tgUrl)}" target="_blank" class="soc-btn soc-tg">✈️ انضم لقناة المرحلة</a>
             <a href="${escapeHtml(igUrl)}" target="_blank" class="soc-btn soc-ig">📸 بيج القسم @${escapeHtml(igClean)}</a>
             <button onclick="showMyStatsModal()" class="soc-btn soc-stat">📊 مستواي</button>
+            <button onclick="navigate('tools')" class="soc-btn soc-stat">📈 راسم المختبر والتقارير</button>
           </div>
         </div>
         <div class="orb">⚛</div>
       </section>
       <div class="stats">
-        <div><b>${total}</b><span>ملف ومحاضرة</span></div>
-        <div><b>${downloads}</b><span>عملية تحميل</span></div>
+        <div><b id="statVisits">${getTotalVisits()}</b><span>عدد الزيارات 👥</span></div>
+        <div><b>${total}</b><span>ملف ومحاضرة 📚</span></div>
+        <div><b>${downloads}</b><span>عملية تحميل ⬇️</span></div>
         <div><b>${readFiles.length}</b><span>محاضرة مقروءة ✅</span></div>
         <div><b>${favorites.length}</b><span>في مفضلتك ⭐</span></div>
       </div>
@@ -644,7 +764,7 @@ function render() {
         <div>
           <span class="pill">مادة دراسية • 👨‍🏫 ${escapeHtml((store.teachers && store.teachers[slug]) || "قسم الفيزياء")}</span>
           <h1>${subjectName}</h1>
-          <p>تصفح ملفات المادة، الفيديوهات، أو أشر المحاضرات التي أكملت قراءتها.</p>
+          <p>تصفح ملفات المادة، سجل ملاحظاتك الخاصة عليها، أو أشر المحاضرات التي أكملت قراءتها.</p>
         </div>
       </section>
       <div class="progress-wrap">
@@ -701,7 +821,7 @@ function render() {
   }
 
   else if (currentState.page === "schedule") {
-    document.title = "الجدول الدراسي ودليل الأساتذة";
+    document.title = "الجدول الدراسي وجدول الامتحانات";
     const rowsHtml = schedule.length > 0 ? schedule.map(r => `
       <article>
         <b>${escapeHtml(r.day)}</b>
@@ -710,7 +830,21 @@ function render() {
         ${r.room ? `<small>📍 ${escapeHtml(r.room)}</small>` : `<small></small>`}
         ${isAdmin() ? `<div style="display:flex;gap:6px"><button class="btn view" onclick="editSchedulePrompt(${r.id})">✏️</button><button class="btn danger" onclick="deleteSchedule(${r.id})">حذف</button></div>` : ""}
       </article>
-    `).join("") : `<div class="empty">لم تتم إضافة مواعيد للجدول بعد.</div>`;
+    `).join("") : `<div class="empty">لم تتم إضافة مواعيد للجدول الأسبوعي بعد.</div>`;
+
+    const examsRows = (store.exams || []).map(ex => {
+      const dLeft = Math.ceil((new Date(ex.date).getTime() - Date.now()) / (1000 * 60 * 60 * 24));
+      const badge = dLeft > 0 ? `<span class="pill">باقي ${dLeft} يوم</span>` : `<span class="badge-new">حان الموعد</span>`;
+      return `
+        <tr>
+          <td><b>${escapeHtml(ex.subject)}</b> <small style="color:var(--muted)">(${escapeHtml(ex.type || 'امتحان')})</small></td>
+          <td dir="ltr">${escapeHtml(ex.date)}</td>
+          <td>${badge}</td>
+          <td>${escapeHtml(ex.material)}</td>
+          ${isAdmin() ? `<td><button class="btn danger" onclick="deleteExam(${ex.id})">حذف</button></td>` : `<td></td>`}
+        </tr>
+      `;
+    }).join("");
 
     const teachersRows = SUBJECTS.map(([slug, name, icon]) => `
       <tr>
@@ -725,10 +859,25 @@ function render() {
 
     app.innerHTML = `
       <section class="page-head">
-        <span class="pill">المواعيد الأسبوعية</span>
-        <h1>📅 الجدول الدراسي ودليل أساتذة المرحلة الرابعة</h1>
+        <span class="pill">المواعيد الأسبوعية والامتحانات</span>
+        <h1>📅 الجدول الأسبوعي + جدول الامتحانات والمادة الداخلة</h1>
       </section>
-      <div class="schedule">${rowsHtml}</div>
+
+      <section class="panel section">
+        <h2>📋 جدول الامتحانات التفصيلي والمادة الداخلة</h2>
+        <div style="overflow-x:auto">
+          <table class="const-table">
+            <thead><tr><th>المادة</th><th>التاريخ</th><th>الوقت المتبقي</th><th>المادة الداخلة بالامتحان</th><th></th></tr></thead>
+            <tbody>${examsRows || '<tr><td colspan="5">لا توجد امتحانات مضافة حالياً.</td></tr>'}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>🕒 جدول المحاضرات الأسبوعي</h2>
+        <div class="schedule">${rowsHtml}</div>
+      </section>
+
       <section class="panel section">
         <h2>👨‍🏫 دليل المواد وأساتذة المرحلة الرابعة</h2>
         <div style="overflow-x:auto">
@@ -742,7 +891,7 @@ function render() {
   }
 
   else if (currentState.page === "tools") {
-    document.title = "أدوات الفيزياء وحاسبة المعدل";
+    document.title = "أدوات المختبر والفيزياء وحاسبة المعدل";
     const constRows = PHYSICS_CONSTANTS.map(c => `
       <tr>
         <td><b>${c.name}</b></td>
@@ -754,14 +903,71 @@ function render() {
 
     app.innerHTML = `
       <section class="page-head">
-        <span class="pill">مساعد الطالب الذكي</span>
-        <h1>🧰 أدوات الفيزياء وحاسبة السعي والمعدل</h1>
-        <p>محول الوحدات الذرية والنووية، حاسبة السعي الفصلي، وجدول الثوابت الفيزيائية الأساسية.</p>
+        <span class="pill">أدوات المختبر والحسابات الفيزيائية</span>
+        <h1>🔬 الراسم البياني للمختبر + واجهة التقارير + الحاسبات العلمية</h1>
+        <p>ارسم نقاط تجربتك واحسب الميل (Slope) ونسبة الخطأ، وولّد واجهة تقرير جاهزة للطباعة بضغطة زر.</p>
       </section>
+
+      <div class="admin-grid" style="grid-template-columns: 1.35fr 1fr">
+        <section class="panel">
+          <h2>📈 الراسم البياني للمختبر وحاسبة الميل (Slope)</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <label>عنوان محور X<input id="grLabelX" value="الزمن t (s)" oninput="drawLabGraph()"></label>
+            <label>عنوان محور Y<input id="grLabelY" value="الجهد V (Volt)" oninput="drawLabGraph()"></label>
+          </div>
+          <label style="margin-top:8px">قيم محور X (افصل بينها بفاصلة ,)<input id="grDataX" dir="ltr" value="1, 2, 3, 4, 5" oninput="drawLabGraph()"></label>
+          <label style="margin-top:8px">قيم محور Y (افصل بينها بفاصلة ,)<input id="grDataY" dir="ltr" value="2.1, 3.9, 6.2, 8.0, 9.9" oninput="drawLabGraph()"></label>
+          <canvas id="labGraphCanvas" width="600" height="320" class="graph-canvas"></canvas>
+          <div id="graphResultBox" style="margin-top:10px;padding:12px;background:var(--bg);border-radius:12px;border:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px"></div>
+          <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+            <button class="primary" onclick="downloadGraphImage()">💾 تحميل الرسم البياني كصورة للتقرير</button>
+          </div>
+          <hr>
+          <h2>🎯 حاسبة نسبة الخطأ المئوية للتجارب</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <label>القيمة النظرية (Theoretical)<input id="errTheo" type="number" step="any" placeholder="مثال: 9.8" oninput="calcLabError()"></label>
+            <label>القيمة العملية (Experimental)<input id="errExp" type="number" step="any" placeholder="مثال: 9.5" oninput="calcLabError()"></label>
+          </div>
+          <div style="margin-top:10px;padding:10px;background:var(--bg);border-radius:10px;text-align:center">
+            نسبة الخطأ المئوية: <b id="errOut" style="color:var(--warn);font-size:18px">0.00%</b>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>📄 مولّد واجهة تقرير مختبر جاهزة للطباعة (A4)</h2>
+          <form onsubmit="generateLabCover(event)">
+            <label>اسم الجامعة والكلية<input id="covUni" value="جامعة واسط / كلية التربية للعلوم الصرفة" required></label>
+            <label>القسم والمرحلة<input id="covDept" value="قسم الفيزياء - المرحلة الرابعة" required></label>
+            <label>اسم المختبر
+              <select id="covLab">
+                <option value="مختبر الفيزياء النووية">مختبر الفيزياء النووية</option>
+                <option value="المختبر التعليمي">المختبر التعليمي</option>
+              </select>
+            </label>
+            <label>رقم واسم التجربة<input id="covExpTitle" placeholder="مثال: التجربة (1): تحقيق قانون التربيع العكسي لأشعة كاما" required></label>
+            <label>إعداد الطالب (أو أسماء المجموعة)<textarea id="covStudents" rows="2" placeholder="اكتب اسمك أو أسماء الكروب..." required></textarea></label>
+            <label>الكروب / الشعبة<input id="covGroup" placeholder="مثال: كروب A - الصباحي"></label>
+            <label>بإشراف الأستاذ(ة)<input id="covTeacher" placeholder="مثال: د. ..."></label>
+            <button type="submit" class="primary" style="margin-top:8px">🖨️ توليد وطباعة واجهة التقرير (PDF)</button>
+          </form>
+        </section>
+      </div>
 
       <div class="admin-grid">
         <section class="panel">
-          <h2>⚡ محول الوحدات الفيزيائية</h2>
+          <h2>☢️ حاسبة التحلل الإشعاعي وعمر النصف</h2>
+          <label>الكمية الابتدائية (N₀ أو الكتلة بالغرام)<input id="ndN0" type="number" step="any" value="100" oninput="calcNuclearDecay()"></label>
+          <label>عمر النصف (t½)<input id="ndHalf" type="number" step="any" value="5" oninput="calcNuclearDecay()"></label>
+          <label>الزمن الكلي المنقضي (t بنفس وحدة عمر النصف)<input id="ndTime" type="number" step="any" value="10" oninput="calcNuclearDecay()"></label>
+          <div style="margin-top:12px;padding:14px;background:var(--bg);border-radius:12px;border:1px solid var(--line);line-height:1.8">
+            <div>ثابت التحلل (λ): <b id="ndLambda" dir="ltr" style="color:var(--a)">0.13863</b></div>
+            <div>الكمية المتبقية N(t): <b id="ndRem" dir="ltr" style="color:var(--ok)">25.000</b></div>
+            <div>الكمية المتحللة: <b id="ndDecayed" dir="ltr" style="color:var(--warn)">75.000</b></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>⚡ محول الوحدات + حاسبة السعي</h2>
           <label>القيمة المراد تحويلها<input id="convInput" type="number" step="any" value="1" oninput="runUnitConverter()"></label>
           <label>نوع التحويل
             <select id="convType" onchange="runUnitConverter()">
@@ -774,22 +980,17 @@ function render() {
               <option value="nm_to_ev">طول موجي للضوء (nm) ← طاقة فوتون (eV)</option>
             </select>
           </label>
-          <div style="margin-top:15px;padding:15px;background:var(--bg);border-radius:12px;border:1px solid var(--line);text-align:center">
-            <small style="color:var(--muted)">النتيجة:</small>
-            <b id="convOutput" dir="ltr" style="display:block;font-size:20px;color:var(--a);margin-top:5px">1.602176634e-19 J</b>
+          <div style="margin:8px 0;padding:10px;background:var(--bg);border-radius:10px;text-align:center">
+            <b id="convOutput" dir="ltr" style="color:var(--a)">1.60218e-19 J</b>
           </div>
-        </section>
-
-        <section class="panel">
-          <h2>🧮 حاسبة السعي والدرجة النهائية</h2>
-          <label>درجة الشهر الأول<input id="gMonth1" type="number" placeholder="مثال: 14" oninput="calcGrade()"></label>
-          <label>درجة الشهر الثاني<input id="gMonth2" type="number" placeholder="مثال: 15" oninput="calcGrade()"></label>
-          <label>درجة العملي / اليومي / التقارير<input id="gLab" type="number" placeholder="مثال: 8" oninput="calcGrade()"></label>
-          <label>درجة الامتحان النهائي (اختياري)<input id="gFinal" type="number" placeholder="من 50 أو 60" oninput="calcGrade()"></label>
-          <div style="margin-top:10px;padding:15px;background:var(--bg);border-radius:12px;border:1px solid var(--line)">
-            <div>مجموع السعي: <b id="gSaiResult" style="color:var(--a)">0</b></div>
-            <div style="margin-top:6px">المجموع النهائي والتقدير: <b id="gTotalResult" style="color:var(--ok)">—</b></div>
+          <hr>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <input id="gMonth1" type="number" placeholder="شهر 1" oninput="calcGrade()">
+            <input id="gMonth2" type="number" placeholder="شهر 2" oninput="calcGrade()">
+            <input id="gLab" type="number" placeholder="عملي/يومي" oninput="calcGrade()">
+            <input id="gFinal" type="number" placeholder="النهائي" oninput="calcGrade()">
           </div>
+          <div style="margin-top:8px;font-size:13px">السعي: <b id="gSaiResult" style="color:var(--a)">0</b> | النتيجة: <b id="gTotalResult" style="color:var(--ok)">—</b></div>
         </section>
 
         <section class="panel">
@@ -818,18 +1019,29 @@ function render() {
   }
 
   else if (currentState.page === "study") {
-    document.title = "بنك الأسئلة التدريبية والمؤقت";
+    document.title = "موسوعة القوانين وبنك الأسئلة والمؤقت";
     const activeFilter = currentState.quizFilter;
     let filteredQuizzes = store.quizzes || [];
     if (activeFilter) filteredQuizzes = filteredQuizzes.filter(q => q.subject === activeFilter);
     
-    // استخراج المواد المتوفرة في الأسئلة حصراً
-    const quizSubjectsSet = new Set();
-    (store.quizzes || []).forEach(q => quizSubjectsSet.add(q.subject));
-    const quizSubjects = Array.from(quizSubjectsSet);
-    
-    const filterLinks = `<a class="${!activeFilter ? 'active' : ''}" onclick="navigate('study', {quizFilter: ''})">الكل</a>` + 
-                        quizSubjects.map(s => `<a class="${activeFilter === s ? 'active' : ''}" onclick="navigate('study', {quizFilter: '${s}'})">${s}</a>`).join("");
+    const quizSubjects = Array.from(new Set((store.quizzes || []).map(q => q.subject)));
+    const filterLinks = `<a class="${!activeFilter ? 'active' : ''}" onclick="navigate('study', {quizFilter: '', lawFilter: '${currentState.lawFilter}'})">الكل</a>` + 
+                        quizSubjects.map(s => `<a class="${activeFilter === s ? 'active' : ''}" onclick="navigate('study', {quizFilter: '${s}', lawFilter: '${currentState.lawFilter}'})">${s}</a>`).join("");
+
+    const activeLawSubj = currentState.lawFilter;
+    const lawSubjects = Array.from(new Set(PHYSICS_LAWS.map(l => l.subj)));
+    const lawFilterHtml = `<a class="${!activeLawSubj ? 'active' : ''}" onclick="navigate('study', {lawFilter: '', quizFilter: '${activeFilter}'})">كل القوانين</a>` +
+      lawSubjects.map(ls => `<a class="${activeLawSubj === ls ? 'active' : ''}" onclick="navigate('study', {lawFilter: '${ls}', quizFilter: '${activeFilter}'})">${ls}</a>`).join("");
+
+    const filteredLaws = activeLawSubj ? PHYSICS_LAWS.filter(l => l.subj === activeLawSubj) : PHYSICS_LAWS;
+    const lawsHtml = filteredLaws.map(l => `
+      <div class="law-card">
+        <div><span class="pill">${escapeHtml(l.subj)}</span></div>
+        <b>${escapeHtml(l.title)}</b>
+        <div class="law-formula">${escapeHtml(l.formula)}</div>
+        <small style="color:var(--muted);line-height:1.6">${escapeHtml(l.desc)}</small>
+      </div>
+    `).join("");
 
     const quizHtml = filteredQuizzes.map((q, idx) => `
       <div class="panel" style="margin-bottom:15px">
@@ -863,20 +1075,29 @@ function render() {
 
     app.innerHTML = `
       <section class="page-head">
-        <span class="pill">مراجعة وترتيب الوقت</span>
-        <h1>🧠 بنك أسئلة MCQ + ⏱️ مؤقت التركيز</h1>
+        <span class="pill">موسوعة القوانين وبنك الأسئلة</span>
+        <h1>📐 قوانين الفيزياء + 🧠 اختبارات MCQ + ⏱️ مؤقت التركيز</h1>
       </section>
 
-      <div class="admin-grid" style="grid-template-columns: 1fr 1fr 1.2fr">
+      <section class="section">
+        <div class="section-head"><h2>📐 موسوعة قوانين المرحلة الرابعة السريعة (Cheat Sheet)</h2></div>
+        <div class="filters" style="margin-bottom:15px">${lawFilterHtml}</div>
+        <div class="grid" style="grid-template-columns:repeat(2,1fr)">${lawsHtml}</div>
+      </section>
+
+      <div class="admin-grid" style="grid-template-columns: 1fr 1fr 1.3fr">
         <section class="panel" style="text-align:center">
           <h2>⏱️ مؤقت الدراسة (Pomodoro)</h2>
-          <p style="color:var(--muted);font-size:13px">نظم وقت قراءتك (25 دقيقة تركيز + 5 دقائق استراحة)</p>
+          <p style="color:var(--muted);font-size:13px">نظم وقت قراءتك مع صوت تركيز هادئ</p>
           <div class="pomo-circle" id="pomoDisplay">${formatPomoTime(pomoSeconds)}</div>
           <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:10px">
             <button class="primary" onclick="togglePomo()" id="pomoStartBtn">${pomoTimer ? 'إيقاف مؤقت ⏸' : 'ابدأ التركيز ▶'}</button>
             <button class="btn view" onclick="setPomoMode(25)">25 د دراسة</button>
             <button class="btn download" onclick="setPomoMode(5)">5 د استراحة</button>
           </div>
+          <button class="btn warn-btn" id="ambientSoundBtn" onclick="toggleAmbientSound()" style="width:100%;justify-content:center">
+            ${ambientPlaying ? '🔇 إيقاف صوت المطر الهادئ' : '🌧️ تشغيل صوت مطر هادئ للتركيز'}
+          </button>
         </section>
 
         <section class="panel">
@@ -891,7 +1112,7 @@ function render() {
         </section>
 
         <div>
-          <h2>🧠 بنك الأسئلة التدريبية</h2>
+          <h2>🧠 بنك الأسئلة التدريبية (20+ سؤال)</h2>
           <div class="filters" style="margin-bottom:15px">${filterLinks}</div>
           ${quizHtml || '<div class="empty">لا توجد أسئلة لهذه المادة حالياً.</div>'}
         </div>
@@ -1020,19 +1241,25 @@ function render() {
         </section>
 
         <section class="panel">
-          <h2>📢 الإعلانات والتبليغات</h2>
+          <h2>📢 الإعلانات + 📋 جدول الامتحانات</h2>
           <form onsubmit="handleAddAnnouncement(event)">
             <input id="annTitle" placeholder="عنوان الإعلان" required>
             <textarea id="annBody" placeholder="نص الإعلان" required></textarea>
             <button type="submit" class="primary">نشر الإعلان</button>
           </form>
           <hr>
-          <h3>الإعلانات الحالية</h3>
-          ${annList}
+          <h2>📋 إضافة امتحان لجدول الامتحانات</h2>
+          <form onsubmit="handleAddExam(event)">
+            <input id="exSubj" placeholder="اسم المادة (مثال: ميكانيك الكم)" required>
+            <input id="exDate" type="date" required>
+            <input id="exType" placeholder="نوع الامتحان (شهر أول / نهائي)" value="نهائي">
+            <input id="exMat" placeholder="المادة الداخلة (مثال: الفصل 1 و 2)" required>
+            <button type="submit" class="btn view">إضافة لجدول الامتحانات</button>
+          </form>
         </section>
 
         <section class="panel">
-          <h2>📅 الجدول الدراسي + ركن التخرج</h2>
+          <h2>📅 الجدول الأسبوعي + ركن التخرج</h2>
           <form onsubmit="handleAddSchedule(event)">
             <input id="schDay" placeholder="اليوم (مثال: الأحد)" required>
             <input id="schTime" placeholder="الوقت (مثال: 8:30 - 10:30)" required>
@@ -1054,13 +1281,14 @@ function render() {
 
       <div class="admin-grid">
         <section class="panel">
-          <h2>⏳ إعدادات الموقع وحسابات التواصل</h2>
+          <h2>⏳ إعدادات الموقع والزيارات والتواصل</h2>
           <form onsubmit="saveSiteSettings(event)">
             <label>عنوان الموقع الرئيسي<input id="setSiteTitle" value="${escapeHtml(st.siteTitle || '')}"></label>
             <label>العنوان الفرعي<input id="setSiteSub" value="${escapeHtml(st.siteSub || '')}"></label>
             <label>شريط التبليغ العاجل بأعلى الموقع<input id="setUrgent" value="${escapeHtml(st.urgentText || '')}"></label>
             <label>عنوان عداد الامتحانات<input id="setExamTitle" value="${escapeHtml(st.examTitle || '')}"></label>
             <label>تاريخ الامتحان القادم<input id="setExamDate" type="datetime-local" value="${escapeHtml(st.examDate || '')}"></label>
+            <label>الرقم الإضافي/الابتدائي لعداد الزيارات 👥<input id="setBaseVisits" type="number" value="${escapeHtml(st.baseVisits || 0)}"></label>
             <label>رابط قناة التليگرام<input id="setTg" value="${escapeHtml(st.tgChannel || 'https://t.me/+ULWb5T4LxlkwNmJi')}"></label>
             <label>يوزر بيج الانستگرام<input id="setIg" value="${escapeHtml(st.igUser || 'phy_gen4')}"></label>
             <label>نص الحقوق أسفل الموقع<input id="setFooter" value="${escapeHtml(st.footerText || '')}"></label>
@@ -1115,6 +1343,9 @@ function render() {
             <label>مفتاح GitHub Token<input id="ghToken" type="password" value="${escapeHtml(ghCfg.token || '')}"></label>
             <button type="submit" class="btn view">حفظ إعدادات GitHub</button>
           </form>
+          <hr>
+          <h3>الإعلانات الحالية (${announcements.length})</h3>
+          ${annList}
         </section>
       </div>
 
@@ -1127,6 +1358,209 @@ function render() {
       </section>
     `;
   }
+}
+
+// الراسم البياني للمختبر وحساب الميل
+function drawLabGraph() {
+  const canvas = document.getElementById("labGraphCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const xStr = (document.getElementById("grDataX").value || "").split(",").map(v => parseFloat(v.trim())).filter(v => !isNaN(v));
+  const yStr = (document.getElementById("grDataY").value || "").split(",").map(v => parseFloat(v.trim())).filter(v => !isNaN(v));
+  const labelX = document.getElementById("grLabelX").value || "X";
+  const labelY = document.getElementById("grLabelY").value || "Y";
+  const n = Math.min(xStr.length, yStr.length);
+
+  ctx.fillStyle = "#060d18";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  if (n < 2) {
+    document.getElementById("graphResultBox").innerHTML = `<span style="color:var(--danger)">يرجى إدخال نقطتين على الأقل في كل من محور X ومحور Y.</span>`;
+    return;
+  }
+
+  const xs = xStr.slice(0, n), ys = yStr.slice(0, n);
+  let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+  for (let i = 0; i < n; i++) {
+    sumX += xs[i]; sumY += ys[i];
+    sumXY += xs[i] * ys[i]; sumX2 += xs[i] * xs[i];
+  }
+  const denom = (n * sumX2 - sumX * sumX);
+  const slope = denom !== 0 ? (n * sumXY - sumX * sumY) / denom : 0;
+  const intercept = (sumY - slope * sumX) / n;
+
+  const padL = 55, padR = 25, padT = 30, padB = 45;
+  const w = canvas.width - padL - padR;
+  const h = canvas.height - padT - padB;
+  const minX = Math.min(...xs), maxX = Math.max(...xs);
+  const minY = Math.min(...ys, slope * minX + intercept), maxY = Math.max(...ys, slope * maxX + intercept);
+  const spanX = (maxX - minX) || 1, spanY = (maxY - minY) || 1;
+
+  // رسم الشبكة البيانية
+  ctx.strokeStyle = "#162840";
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 5; i++) {
+    const gy = padT + (h * i / 5);
+    ctx.beginPath(); ctx.moveTo(padL, gy); ctx.lineTo(padL + w, gy); ctx.stroke();
+    const gx = padL + (w * i / 5);
+    ctx.beginPath(); ctx.moveTo(gx, padT); ctx.lineTo(gx, padT + h); ctx.stroke();
+  }
+
+  // المحاور
+  ctx.strokeStyle = "#5c7696";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(padL, padT); ctx.lineTo(padL, padT + h); ctx.lineTo(padL + w, padT + h);
+  ctx.stroke();
+
+  const toPxX = val => padL + ((val - minX) / spanX) * w;
+  const toPxY = val => padT + h - ((val - minY) / spanY) * h;
+
+  // خط أفضل مطابقة (Best-fit Line)
+  ctx.strokeStyle = "#35c8ff";
+  ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  ctx.moveTo(toPxX(minX), toPxY(slope * minX + intercept));
+  ctx.lineTo(toPxX(maxX), toPxY(slope * maxX + intercept));
+  ctx.stroke();
+
+  // النقاط العملية
+  for (let i = 0; i < n; i++) {
+    const px = toPxX(xs[i]), py = toPxY(ys[i]);
+    ctx.fillStyle = "#ff5470";
+    ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2); ctx.fill();
+  }
+
+  // كتابة المعادلة والمحاور على الرسم
+  ctx.fillStyle = "#eef7ff";
+  ctx.font = "bold 13px Tahoma";
+  ctx.fillText(`${labelX}`, padL + w / 2 - 25, canvas.height - 12);
+  ctx.fillText(`${labelY}`, 12, padT - 10);
+  ctx.fillStyle = "#35d39a";
+  ctx.fillText(`Slope (m) = ${slope.toFixed(4)}  |  Y = ${slope.toFixed(3)}X + (${intercept.toFixed(3)})`, padL + 10, padT + 18);
+
+  document.getElementById("graphResultBox").innerHTML = `
+    <div>📐 الميل <b>Slope (m)</b>: <b dir="ltr" style="color:var(--a)">${slope.toFixed(4)}</b></div>
+    <div>📍 التقاطع <b>Intercept (b)</b>: <b dir="ltr" style="color:var(--ok)">${intercept.toFixed(4)}</b></div>
+    <div>📈 معادلة المستقيم: <b dir="ltr" style="color:var(--warn)">Y = ${slope.toFixed(3)} X + ${intercept.toFixed(3)}</b></div>
+  `;
+}
+
+function downloadGraphImage() {
+  const canvas = document.getElementById("labGraphCanvas");
+  if (!canvas) return;
+  const a = document.createElement("a");
+  a.href = canvas.toDataURL("image/png");
+  a.download = "physics_lab_graph.png";
+  a.click();
+}
+
+function calcLabError() {
+  const theo = parseFloat(document.getElementById("errTheo").value);
+  const exp = parseFloat(document.getElementById("errExp").value);
+  if (!theo || isNaN(theo) || isNaN(exp)) {
+    document.getElementById("errOut").textContent = "0.00%";
+    return;
+  }
+  const err = (Math.abs(theo - exp) / Math.abs(theo)) * 100;
+  document.getElementById("errOut").textContent = err.toFixed(2) + "%";
+}
+
+function calcNuclearDecay() {
+  const n0 = parseFloat(document.getElementById("ndN0").value) || 0;
+  const half = parseFloat(document.getElementById("ndHalf").value) || 1;
+  const t = parseFloat(document.getElementById("ndTime").value) || 0;
+  const lambda = Math.LN2 / half;
+  const rem = n0 * Math.exp(-lambda * t);
+  document.getElementById("ndLambda").textContent = lambda.toFixed(5);
+  document.getElementById("ndRem").textContent = rem.toFixed(4);
+  document.getElementById("ndDecayed").textContent = Math.max(0, n0 - rem).toFixed(4);
+}
+
+function generateLabCover(e) {
+  e.preventDefault();
+  const uni = escapeHtml(document.getElementById("covUni").value);
+  const dept = escapeHtml(document.getElementById("covDept").value);
+  const lab = escapeHtml(document.getElementById("covLab").value);
+  const expTitle = escapeHtml(document.getElementById("covExpTitle").value);
+  const students = escapeHtml(document.getElementById("covStudents").value).replace(/\n/g, "<br>");
+  const grp = escapeHtml(document.getElementById("covGroup").value);
+  const teacher = escapeHtml(document.getElementById("covTeacher").value);
+  const today = new Date().toLocaleDateString("ar-IQ");
+
+  const w = window.open("", "_blank");
+  w.document.write(`
+    <!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><title>واجهة تقرير - ${expTitle}</title>
+    <style>
+      body{font-family:Tahoma,Arial,sans-serif;margin:0;padding:25px;background:#fff;color:#000}
+      .border-frame{border:4px double #000;padding:40px;min-height:90vh;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
+      .top-head{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #000;padding-bottom:20px;font-size:18px;font-weight:bold;line-height:1.8}
+      .exp-box{border:2px solid #000;border-radius:14px;padding:30px 20px;margin:40px auto;width:85%;background:#f9f9f9}
+      .info-box{text-align:right;margin:20px auto;width:85%;font-size:20px;line-height:2.2;border:1px solid #000;padding:25px;border-radius:12px}
+      @media print{.no-print{display:none}}
+    </style></head><body>
+      <div class="no-print" style="text-align:center;margin-bottom:15px">
+        <button onclick="window.print()" style="padding:12px 28px;font-size:16px;font-weight:bold;cursor:pointer;background:#0088cc;color:#fff;border:0;border-radius:8px">🖨️ اضغط هنا للطباعة أو الحفظ كـ PDF</button>
+      </div>
+      <div class="border-frame">
+        <div class="top-head">
+          <div style="text-align:right">وزارة التعليم العالي والبحث العلمي<br>${uni}<br>${dept}</div>
+          <div style="font-size:50px">⚛️</div>
+          <div style="text-align:left">${lab}<br>التاريخ: ${today}</div>
+        </div>
+        <div>
+          <h2 style="font-size:26px;margin:0">تقرير عملي في ${lab}</h2>
+          <div class="exp-box">
+            <div style="font-size:16px;color:#444;margin-bottom:10px">عنوان التجربة</div>
+            <h1 style="font-size:30px;margin:0">${expTitle}</h1>
+          </div>
+          <div class="info-box">
+            <div><b>👨‍🎓 إعداد الطالب / المجموعة:</b><br>${students}</div>
+            ${grp ? `<div><b>📌 الكروب / الشعبة:</b> ${grp}</div>` : ""}
+            ${teacher ? `<div><b>👨‍🏫 بإشراف الأستاذ(ة):</b> ${teacher}</div>` : ""}
+          </div>
+        </div>
+        <div style="border-top:2px solid #000;padding-top:15px;font-weight:bold;font-size:16px">السنة الدراسية 2026 - 2027</div>
+      </div>
+    </body></html>
+  `);
+  w.document.close();
+}
+
+// صوت مطر هادئ للتركيز (Web Audio API بدون ملفات خارجية)
+let audioCtx = null;
+let noiseNode = null;
+let ambientPlaying = false;
+
+function toggleAmbientSound() {
+  if (ambientPlaying) {
+    if (noiseNode) { noiseNode.disconnect(); noiseNode = null; }
+    ambientPlaying = false;
+  } else {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const bufferSize = 2 * audioCtx.sampleRate;
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const output = buffer.getChannelData(0);
+    let lastOut = 0.0;
+    for (let i = 0; i < bufferSize; i++) {
+      const white = Math.random() * 2 - 1;
+      output[i] = (lastOut + (0.02 * white)) / 1.02;
+      lastOut = output[i];
+      output[i] *= 0.15;
+    }
+    noiseNode = audioCtx.createBufferSource();
+    noiseNode.buffer = buffer;
+    noiseNode.loop = true;
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.value = 600;
+    noiseNode.connect(filter);
+    filter.connect(audioCtx.destination);
+    noiseNode.start(0);
+    ambientPlaying = true;
+  }
+  const btn = document.getElementById("ambientSoundBtn");
+  if (btn) btn.textContent = ambientPlaying ? "🔇 إيقاف صوت المطر الهادئ" : "🌧️ تشغيل صوت مطر هادئ للتركيز";
 }
 
 let pomoSeconds = 25 * 60;
@@ -1215,9 +1649,8 @@ function calcGPA() {
 
 function checkQuizAnswer(btn, chosen, correct) {
   const parent = btn.parentElement;
-  if (parent.dataset.answered === "true") return; // منع تكرار الإجابة لنفس السؤال
+  if (parent.dataset.answered === "true") return;
   parent.dataset.answered = "true";
-  
   studentStats.quizTotal++;
   if (chosen === correct) {
     studentStats.quizCorrect++;
@@ -1226,7 +1659,6 @@ function checkQuizAnswer(btn, chosen, correct) {
     showFlash("❌ إجابة خاطئة! الجواب الصحيح مظلل باللون الأخضر.", "error");
   }
   localStorage.setItem("phys_student_stats", JSON.stringify(studentStats));
-
   Array.from(parent.children).forEach((b, idx) => {
     b.disabled = true;
     if (idx === correct) b.classList.add("correct");
@@ -1292,6 +1724,7 @@ function saveSiteSettings(e) {
   store.settings.urgentText = document.getElementById("setUrgent").value.trim();
   store.settings.examTitle = document.getElementById("setExamTitle").value.trim();
   store.settings.examDate = document.getElementById("setExamDate").value;
+  store.settings.baseVisits = parseInt(document.getElementById("setBaseVisits").value || "0", 10);
   store.settings.tgChannel = document.getElementById("setTg").value.trim();
   store.settings.igUser = document.getElementById("setIg").value.trim();
   store.settings.footerText = document.getElementById("setFooter").value.trim();
@@ -1360,9 +1793,7 @@ async function handleUpload(e) {
   try {
     if (directUrl) {
       store.files.unshift({
-        id: Date.now(),
-        created_at: Date.now(),
-        subject, category,
+        id: Date.now(), created_at: Date.now(), subject, category,
         title: titleInput || "محاضرة دراسية",
         original_name: (titleInput || "file") + ".pdf",
         teacher, url: directUrl, downloads: 0
@@ -1376,10 +1807,8 @@ async function handleUpload(e) {
 
         store.files.unshift({
           id: Date.now() + Math.floor(Math.random() * 1000),
-          created_at: Date.now(),
-          subject, category,
-          title: finalTitle,
-          original_name: file.name,
+          created_at: Date.now(), subject, category,
+          title: finalTitle, original_name: file.name,
           teacher, url: fileUrl, downloads: 0
         });
       }
@@ -1494,6 +1923,29 @@ function deleteAnnouncement(id) {
   saveLocalStore();
   syncToGitHub(true);
   showFlash("تم حذف الإعلان");
+  render();
+}
+
+function handleAddExam(e) {
+  e.preventDefault();
+  if (!store.exams) store.exams = [];
+  store.exams.push({
+    id: Date.now(),
+    subject: document.getElementById("exSubj").value.trim(),
+    date: document.getElementById("exDate").value,
+    type: document.getElementById("exType").value.trim(),
+    material: document.getElementById("exMat").value.trim()
+  });
+  saveLocalStore();
+  syncToGitHub(true);
+  showFlash("تمت إضافة الامتحان والمادة الداخلة!");
+  render();
+}
+
+function deleteExam(id) {
+  store.exams = (store.exams || []).filter(ex => String(ex.id) !== String(id));
+  saveLocalStore();
+  syncToGitHub(true);
   render();
 }
 
@@ -1637,6 +2089,7 @@ function escapeHtml(str) {
 }
 
 render();
+initVisitorCounter();
 </script>
 </body>
 </html>
