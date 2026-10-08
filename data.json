@@ -157,6 +157,8 @@
     "igUser": "phy_gen4",
     "baseVisits": 0,
     "adminUser": "admin",
-    "adminPass": "ahmed2026"
+    "adminPass": "ahmed2026",
+    "themePrimary": "#35c8ff",
+    "gradYear": "2026 - 2027"
   }
 }
