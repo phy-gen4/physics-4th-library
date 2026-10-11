@@ -1,6 +1,18 @@
 {
-  "lastUpdated": 1791751589207,
+  "lastUpdated": 1791753112313,
   "files": [
+    {
+      "id": 1791753113069,
+      "created_at": 1791753112233,
+      "subject": "electromagnetic",
+      "category": "ملازم",
+      "title": "الملزمه الاولى",
+      "desc": "",
+      "original_name": "Lecture - 1- .pdf",
+      "teacher": "د.هاشم علي العمار",
+      "url": "uploads/1791753100692_Lecture_-_1-_.pdf",
+      "downloads": 0
+    },
     {
       "id": 1791354806828,
       "created_at": 1791354806220,
